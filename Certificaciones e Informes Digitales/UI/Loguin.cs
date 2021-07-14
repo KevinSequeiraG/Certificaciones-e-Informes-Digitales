@@ -101,9 +101,21 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmCompra ventana = new frmCompra();
-            ventana.Show();
-            this.Hide();
+            BLL.UsuarioBLL usuarioBLL = new BLL.UsuarioBLL();
+            Entities.Usuario user = usuarioBLL.TraerUsuario(txtEmail.Text, txtPassw.Text);
+            
+            if (user.changePassword)
+            {
+                frmNuevoPassword ventana = new frmNuevoPassword();
+                ventana.Show();
+                this.Hide();
+            }
+            else if (!user.changePassword)
+            {
+                frmCompra ventana = new frmCompra();
+                ventana.Show();
+                this.Hide();
+            }
         }
 
         private void lnkRecuperarContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

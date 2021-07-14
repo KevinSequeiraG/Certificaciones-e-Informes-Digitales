@@ -75,9 +75,47 @@ namespace Certificaciones_e_Informes_Digitales.DAL
             }            
         }
 
-        public static Entities.Usuario TraerUsuario()
+        public static Entities.Usuario TraerUsuario(string email, string passw)
         {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_UsuarioPorEmail";
 
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@email", email);
+                    comando.Parameters.AddWithValue("@contra", passw);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+                    
+                    while (reader.Read())
+                    {
+                        Entities.Usuario user = new Usuario();
+                        user.Nombre = reader["Nombre"].ToString();
+                        user.Apellido1 = reader["Apellido1"].ToString();
+                        user.Apellido2 = reader["Apellido2"].ToString();
+                        user.telefono = Convert.ToInt32(reader["Telefono"]);
+                        user.email = reader["Email"].ToString();
+                        user.password = reader["Password"].ToString();
+                        user.changePassword = Convert.ToBoolean(reader["ChangePassword"]);
+                        return user;
+                    }
+                    return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
         }
     }
 }

@@ -76,5 +76,25 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al editar la contraseña \n" + ex.Message);
             }
         }
+        public Entities.Usuario TraerUsuario(string email, string passw)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    throw new ApplicationException("Debe ingresar el correo");
+                }
+                if (string.IsNullOrEmpty(passw))
+                {
+                    throw new ApplicationException("Debe ingresar una contraseña"); 
+                }
+                Entities.Usuario user = DAL.UsuarioDAL.TraerUsuario(email, passw);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el usuario \n" + ex.Message);
+            }
+        }
     }
 }

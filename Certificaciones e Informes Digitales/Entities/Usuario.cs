@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Certificaciones_e_Informes_Digitales.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public string email { get; set; }
         public string password { get; set; }
         public bool changePassword { get; set; }
+        public TipoUsuario tipo { get; set; }
     }
 }

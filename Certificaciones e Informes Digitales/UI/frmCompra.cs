@@ -35,10 +35,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmCompra_Load(object sender, EventArgs e)
         {
-            Utilities utilities = new Utilities();
-            cmbTipos.DataSource = utilities.lstTiposCert();
-            string contra = utilities.contrasennaTemp();
-            utilities.correoRecuperacion("kevinsteven.07.sg@gmail.com", contra);
         }
 
         private void frmCompra_Activated(object sender, EventArgs e)
