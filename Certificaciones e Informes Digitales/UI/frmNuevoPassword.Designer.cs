@@ -30,9 +30,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void InitializeComponent()
         {
             this.pnl_fondo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPassw = new System.Windows.Forms.TextBox();
             this.btnListo = new System.Windows.Forms.Button();
+            this.txtPassw = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_fondo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,40 +42,16 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.pnl_fondo.Controls.Add(this.btnListo);
             this.pnl_fondo.Controls.Add(this.txtPassw);
             this.pnl_fondo.Controls.Add(this.label1);
-            this.pnl_fondo.Location = new System.Drawing.Point(1, 0);
+            this.pnl_fondo.Location = new System.Drawing.Point(-2, -3);
             this.pnl_fondo.Name = "pnl_fondo";
-            this.pnl_fondo.Size = new System.Drawing.Size(392, 185);
+            this.pnl_fondo.Size = new System.Drawing.Size(397, 185);
             this.pnl_fondo.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(11, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Debe renovar su contraseña:";
-            // 
-            // txtPassw
-            // 
-            this.txtPassw.BackColor = System.Drawing.Color.Firebrick;
-            this.txtPassw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassw.ForeColor = System.Drawing.Color.Silver;
-            this.txtPassw.Location = new System.Drawing.Point(16, 70);
-            this.txtPassw.Name = "txtPassw";
-            this.txtPassw.Size = new System.Drawing.Size(363, 31);
-            this.txtPassw.TabIndex = 4;
-            this.txtPassw.Text = "Contraseña...";
-            this.txtPassw.Enter += new System.EventHandler(this.txtPassw_Enter);
-            this.txtPassw.Leave += new System.EventHandler(this.txtPassw_Leave);
+            this.pnl_fondo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_fondo_MouseDown);
             // 
             // btnListo
             // 
             this.btnListo.BackColor = System.Drawing.Color.Transparent;
+            this.btnListo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListo.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnListo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListo.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,14 +64,43 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnListo.UseVisualStyleBackColor = false;
             this.btnListo.Click += new System.EventHandler(this.btnListo_Click);
             // 
+            // txtPassw
+            // 
+            this.txtPassw.BackColor = System.Drawing.Color.Black;
+            this.txtPassw.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassw.ForeColor = System.Drawing.Color.Silver;
+            this.txtPassw.Location = new System.Drawing.Point(16, 70);
+            this.txtPassw.Name = "txtPassw";
+            this.txtPassw.Size = new System.Drawing.Size(363, 31);
+            this.txtPassw.TabIndex = 4;
+            this.txtPassw.Text = "Contraseña...";
+            this.txtPassw.Enter += new System.EventHandler(this.txtPassw_Enter);
+            this.txtPassw.Leave += new System.EventHandler(this.txtPassw_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(11, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Debe renovar su contraseña:";
+            // 
             // frmNuevoPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 174);
             this.Controls.Add(this.pnl_fondo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevoPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmNuevoPassword";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmNuevoPassword_MouseDown);
             this.pnl_fondo.ResumeLayout(false);
             this.pnl_fondo.PerformLayout();
             this.ResumeLayout(false);

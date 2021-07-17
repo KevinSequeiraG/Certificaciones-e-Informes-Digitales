@@ -39,6 +39,35 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return lista;
         }
+
+        public List<string> lstGestiones()
+        {
+            List<string> lista = new List<string>();
+            foreach (Gestiones item in Enum.GetValues(typeof(Gestiones)))
+            {
+                if (item == Gestiones.BienesInmuebles)
+                {
+                    lista.Add("Bienes Inmuebles");
+                }
+                if (item == Gestiones.BienesMuebles)
+                {
+                    lista.Add("Bienes Muebles");
+                }
+                if (item == Gestiones.PersonasFisicas)
+                {
+                    lista.Add("Personas Físicas");
+                }
+                if (item == Gestiones.PersonasJuridicas)
+                {
+                    lista.Add("Personas Jurídicas");                   
+                }
+                if (item != Gestiones.BienesInmuebles && item != Gestiones.BienesMuebles && item != Gestiones.PersonasFisicas && item != Gestiones.PersonasJuridicas)
+                {
+                    lista.Add(item.ToString());
+                }
+            }
+            return lista;
+        }
         public void correoRecuperacion(string correoAenviar, string contra)
         {
             MailMessage mensaje = new MailMessage();

@@ -38,7 +38,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 txtEmail.Text = "";
                 txtEmail.ForeColor = Color.LightGray;
             }
-            
+
         }
 
         private void txtPassw_Enter(object sender, EventArgs e)
@@ -103,19 +103,21 @@ namespace Certificaciones_e_Informes_Digitales.UI
         {
             BLL.UsuarioBLL usuarioBLL = new BLL.UsuarioBLL();
             Entities.Usuario user = usuarioBLL.TraerUsuario(txtEmail.Text, txtPassw.Text);
-            
-            if (user.changePassword)
-            {
-                frmNuevoPassword ventana = new frmNuevoPassword();
-                ventana.Show();
-                this.Hide();
-            }
-            else if (!user.changePassword)
+            Util.UsuarioSingleton.setUser(user);
+
+            if (user.tipo == Enums.TipoUsuario.cliente)
             {
                 frmCompra ventana = new frmCompra();
-                ventana.Show();
                 this.Hide();
+                ventana.Show();
             }
+            else
+            {
+                frmAdmin ventana = new frmAdmin();
+                this.Hide();
+                ventana.Show();
+            }
+
         }
 
         private void lnkRecuperarContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

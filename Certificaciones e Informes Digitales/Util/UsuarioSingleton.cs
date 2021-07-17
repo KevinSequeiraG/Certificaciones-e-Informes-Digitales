@@ -17,5 +17,9 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return usuario;
         }
+        public static void setUser(Entities.Usuario user)
+        {
+            usuario = user;
+        }
     }
 }

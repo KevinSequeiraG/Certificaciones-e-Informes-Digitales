@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Certificaciones_e_Informes_Digitales.BLL
 {
@@ -41,6 +42,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 {
                     //warn
                     throw new ApplicationException("Debe ingresar numero telefonico");
+                }
+                if (usuario.tipo == null)
+                {
+                    throw new ApplicationException("No se indicó el tipo de ususario");
                 }
 
                 DAL.UsuarioDAL.InsertarUsuario(usuario);
@@ -95,6 +100,52 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             {
                 throw new ApplicationException("Ocurrió un error al buscar el usuario \n" + ex.Message);
             }
+        }
+
+        public List<Entities.Usuario> VerUsuarios()
+        {
+            try
+            {
+                return DAL.UsuarioDAL.VerUsuarios();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar los usuarios \n" + ex.Message);
+            }
+        }
+
+        public List<Entities.Usuario> TraerUsuarioPorCorreo(string email)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    throw new ApplicationException("Debe ingresar una correo electronico.");
+                }
+                return DAL.UsuarioDAL.TraerUsuarioPorCorreo(email);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar los usuarios \n" + ex.Message);
+            }
+            
+        }
+
+        public void EliminarUsuario(string email)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    throw new ApplicationException("Debe ingresar una correo electronico.");
+                }
+                DAL.UsuarioDAL.EliminarUsuario(email);
+                MessageBox.Show("Usuario eliminado correctamente");
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar los usuarios \n" + ex.Message);
+            }            
         }
     }
 }

@@ -62,6 +62,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 logica.editarContrasenna(txtEmail.Text, contra, true);
 
                 MessageBox.Show("Se ha enviado un correo con una contraseña temporal \n\nFavor regrese e ingrese a su perfil nuevamente.");
+                Loguin ventana = new Loguin();
+                ventana.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -72,6 +75,16 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void frmRecuperarContra_Load(object sender, EventArgs e)
         {
             utilities = new Utilities();
+        }
+
+        private void picMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

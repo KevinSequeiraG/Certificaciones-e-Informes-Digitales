@@ -18,6 +18,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         public frmCompra()
         {
             InitializeComponent();
+            menuStrip1.Renderer = new MyRenderer();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,11 +36,18 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmCompra_Load(object sender, EventArgs e)
         {
+
         }
 
         private void frmCompra_Activated(object sender, EventArgs e)
         {
             lblCompra.BringToFront();
+
+            if (Util.UsuarioSingleton.GetInstance().changePassword)
+            {
+                frmNuevoPassword ventana = new frmNuevoPassword();
+                ventana.ShowDialog();
+            }
         }
 
         private void frmCompra_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,7 +77,30 @@ namespace Certificaciones_e_Informes_Digitales.UI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void cuentaToolStripMenuItem_BackColorChanged(object sender, EventArgs e)
+        {
+            cuentaToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loguin ventana = new Loguin();
+            ventana.Show();
+            this.Hide();
+        }
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+            {
+                Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+                Color c = e.Item.Selected ? Color.Gray : Color.Black;
+                using (SolidBrush brush = new SolidBrush(c))
+                    e.Graphics.FillRectangle(brush, rc);
+            }
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
         {
 
         }

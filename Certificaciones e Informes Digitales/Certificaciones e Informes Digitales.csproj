@@ -61,6 +61,7 @@
     <Compile Include="Entities\Tarjeta.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Enums\Genero.cs" />
+    <Compile Include="Enums\Gestiones.cs" />
     <Compile Include="Enums\Provincia.cs" />
     <Compile Include="Enums\TipoUsuario.cs" />
     <Compile Include="Persistencia\DataBase.cs" />
@@ -69,6 +70,12 @@
     <Compile Include="Persistencia\IDataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +87,24 @@
     </Compile>
     <Compile Include="UI\frmCrearUsuario.Designer.cs">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditarUser.Designer.cs">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmGestiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmGestiones.Designer.cs">
+      <DependentUpon>frmGestiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmGestionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmGestionUsuario.Designer.cs">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmNuevoPassword.cs">
       <SubType>Form</SubType>
@@ -112,11 +137,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCompra.resx">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCrearUsuario.resx">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditarUser.resx">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmGestiones.resx">
+      <DependentUpon>frmGestiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmGestionUsuario.resx">
+      <DependentUpon>frmGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmNuevoPassword.resx">
       <DependentUpon>frmNuevoPassword.cs</DependentUpon>

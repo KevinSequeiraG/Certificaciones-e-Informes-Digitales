@@ -186,6 +186,14 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 usuario.email = txtEmail.Text;
                 usuario.password = txtPass.Text;
                 usuario.changePassword = false;
+                if (rdbAdmin.Checked)
+                {
+                    usuario.tipo = Enums.TipoUsuario.administrador;
+                }
+                else
+                {
+                    usuario.tipo = Enums.TipoUsuario.cliente;
+                }
 
                 logica.Guardar(usuario);
 

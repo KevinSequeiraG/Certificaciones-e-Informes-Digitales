@@ -83,6 +83,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +125,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             // picMin
             // 
+            this.picMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMin.Image = global::Certificaciones_e_Informes_Digitales.Properties.Resources.Minimize_Icon;
             this.picMin.Location = new System.Drawing.Point(754, 6);
             this.picMin.Name = "picMin";
@@ -135,6 +137,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             // picClose
             // 
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.Image = global::Certificaciones_e_Informes_Digitales.Properties.Resources.Close_Icon;
             this.picClose.Location = new System.Drawing.Point(779, 6);
             this.picClose.Name = "picClose";

@@ -59,6 +59,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // picMin
             // 
             this.picMin.BackColor = System.Drawing.Color.Transparent;
+            this.picMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picMin.Image = global::Certificaciones_e_Informes_Digitales.Properties.Resources.Minimize_Icon;
             this.picMin.Location = new System.Drawing.Point(408, 3);
             this.picMin.Name = "picMin";
@@ -66,10 +67,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.picMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMin.TabIndex = 10;
             this.picMin.TabStop = false;
+            this.picMin.Click += new System.EventHandler(this.picMin_Click);
             // 
             // picClose
             // 
             this.picClose.BackColor = System.Drawing.Color.Transparent;
+            this.picClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picClose.Image = global::Certificaciones_e_Informes_Digitales.Properties.Resources.Close_Icon;
             this.picClose.Location = new System.Drawing.Point(429, 3);
             this.picClose.Name = "picClose";
@@ -77,10 +80,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picClose.TabIndex = 9;
             this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(29, 153);
@@ -94,6 +99,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // btnSiguiente
             // 
             this.btnSiguiente.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguiente.ForeColor = System.Drawing.Color.White;
             this.btnSiguiente.Location = new System.Drawing.Point(257, 153);
