@@ -38,7 +38,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cambiarContraseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCrearUser = new System.Windows.Forms.Label();
             this.pnlFrames = new System.Windows.Forms.Panel();
-            this.btnOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -49,7 +48,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cboObjetosGestion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboObjetosGestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboObjetosGestion.FormattingEnabled = true;
-            this.cboObjetosGestion.Location = new System.Drawing.Point(373, 70);
+            this.cboObjetosGestion.Location = new System.Drawing.Point(544, 67);
             this.cboObjetosGestion.Name = "cboObjetosGestion";
             this.cboObjetosGestion.Size = new System.Drawing.Size(205, 32);
             this.cboObjetosGestion.TabIndex = 0;
@@ -128,7 +127,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblCrearUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblCrearUser.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrearUser.ForeColor = System.Drawing.Color.White;
-            this.lblCrearUser.Location = new System.Drawing.Point(184, 71);
+            this.lblCrearUser.Location = new System.Drawing.Point(355, 68);
             this.lblCrearUser.Name = "lblCrearUser";
             this.lblCrearUser.Size = new System.Drawing.Size(148, 26);
             this.lblCrearUser.TabIndex = 40;
@@ -137,23 +136,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // pnlFrames
             // 
             this.pnlFrames.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFrames.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFrames.Location = new System.Drawing.Point(47, 128);
             this.pnlFrames.Name = "pnlFrames";
             this.pnlFrames.Size = new System.Drawing.Size(927, 392);
             this.pnlFrames.TabIndex = 41;
-            // 
-            // btnOk
-            // 
-            this.btnOk.BackColor = System.Drawing.Color.Maroon;
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(617, 61);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(124, 48);
-            this.btnOk.TabIndex = 42;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = false;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // frmGestiones
             // 
@@ -161,7 +148,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
             this.ClientSize = new System.Drawing.Size(1014, 568);
-            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.pnlFrames);
             this.Controls.Add(this.lblCrearUser);
             this.Controls.Add(this.picMin);
@@ -195,6 +181,5 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseToolStripMenuItem;
         private System.Windows.Forms.Label lblCrearUser;
         private System.Windows.Forms.Panel pnlFrames;
-        private System.Windows.Forms.Button btnOk;
     }
 }

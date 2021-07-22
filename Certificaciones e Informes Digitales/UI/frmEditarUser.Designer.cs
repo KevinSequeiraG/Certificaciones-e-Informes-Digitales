@@ -35,9 +35,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbCliente = new System.Windows.Forms.RadioButton();
             this.rdbAdmin = new System.Windows.Forms.RadioButton();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblEditarUser = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido1 = new System.Windows.Forms.Label();
             this.lblApellido2 = new System.Windows.Forms.Label();
@@ -123,18 +122,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtApellido1.TabIndex = 42;
             this.txtApellido1.Text = "Primer Apellido...";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.Firebrick;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.Silver;
-            this.txtNombre.Location = new System.Drawing.Point(61, -43);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(440, 31);
-            this.txtNombre.TabIndex = 41;
-            this.txtNombre.Text = "Nombre...";
-            // 
             // lblEditarUser
             // 
             this.lblEditarUser.AutoSize = true;
@@ -148,17 +135,17 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblEditarUser.TabIndex = 48;
             this.lblEditarUser.Text = "Editar Usuario";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Firebrick;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(68, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 31);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.Text = "Nombre...";
+            this.txtName.BackColor = System.Drawing.Color.Firebrick;
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.Silver;
+            this.txtName.Location = new System.Drawing.Point(68, 108);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(314, 31);
+            this.txtName.TabIndex = 49;
+            this.txtName.Text = "Nombre...";
             // 
             // lblNombre
             // 
@@ -231,6 +218,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnEditar.TabIndex = 55;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnCancelar
             // 
@@ -243,6 +231,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnCancelar.TabIndex = 56;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmEditarUser
             // 
@@ -257,7 +246,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Controls.Add(this.lblApellido2);
             this.Controls.Add(this.lblApellido1);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblEditarUser);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtNumeroTelefonico);
@@ -265,9 +254,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Controls.Add(this.rdbCliente);
             this.Controls.Add(this.rdbAdmin);
             this.Controls.Add(this.txtApellido1);
-            this.Controls.Add(this.txtNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditarUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditarUser";
+            this.Load += new System.EventHandler(this.frmEditarUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,9 +272,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.RadioButton rdbCliente;
         private System.Windows.Forms.RadioButton rdbAdmin;
         private System.Windows.Forms.TextBox txtApellido1;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblEditarUser;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido1;
         private System.Windows.Forms.Label lblApellido2;

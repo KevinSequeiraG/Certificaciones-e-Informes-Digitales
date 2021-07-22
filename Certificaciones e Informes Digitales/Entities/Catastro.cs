@@ -12,7 +12,7 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public string idPersona { get; set; }
         public string localizacion { get; set; }
         public string usoLocal { get; set; }
-        public int annoLocal { get; set; }
+        public int annoConst { get; set; }
         public int tamanno { get; set; }
 
     }

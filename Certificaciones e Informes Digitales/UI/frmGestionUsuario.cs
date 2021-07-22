@@ -13,33 +13,46 @@ namespace Certificaciones_e_Informes_Digitales.UI
     public partial class frmGestionUsuario : Form
     {
         BLL.UsuarioBLL logica;
-        static Entities.Usuario usuarioEscogido;
+        
         public frmGestionUsuario()
         {
             InitializeComponent();
             logica = new BLL.UsuarioBLL();
         }
-
+        internal static Entities.Usuario usuarioEscogido;
+        internal static string email;
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvUsuario.DataSource = logica.TraerUsuarioPorCorreo(txtCorreo.Text);
+            try
+            {
+                if (!string.IsNullOrEmpty(txtCorreo.Text))
+                {
+                    dgvUsuario.DataSource = logica.TraerUsuarioPorCorreo(txtCorreo.Text);
+                    if(dgvUsuario.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("No existe un usuario con ese correo electronico");
+                        dgvUsuario.DataSource = logica.VerUsuarios();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmGestionUsuario_Load(object sender, EventArgs e)
-        {
-            try
+            if (!string.IsNullOrEmpty(txtCorreo.Text))
             {
-                dgvUsuario.DataSource = logica.VerUsuarios();
+                email = txtCorreo.Text;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message); 
-            }
+            frmEditarUser ventana = new frmEditarUser();
+            ventana.Activate();
+            ventana.Show();
+
+            email = "";
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -77,6 +90,20 @@ namespace Certificaciones_e_Informes_Digitales.UI
             if (dgvUsuario.SelectedRows.Count > 0)
             {
                 usuarioEscogido = (Entities.Usuario)dgvUsuario.SelectedRows[0].DataBoundItem;
+            }
+        }
+
+        private void frmGestionUsuario_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvUsuario.DataSource = logica.VerUsuarios();
+                dgvUsuario.Columns[6].Visible = false;
+                dgvUsuario.Columns[4].Width = 200;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

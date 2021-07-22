@@ -18,6 +18,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
         }
+        internal static int GestionSeleccionada;
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -69,18 +71,23 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void cboObjetosGestion_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cboObjetosGestion.SelectedItem == "Usuarios")
+            GestionSeleccionada = cboObjetosGestion.SelectedIndex;
+            pnlFrames.Controls.Clear();
+            if (cboObjetosGestion.SelectedIndex == 0)//usuarios
             {
-                
+                frmGestionUsuario ventana = new frmGestionUsuario();
+                ventana.TopLevel = false;
+                pnlFrames.Controls.Add(ventana);
+                ventana.Show();
+            }
+            else //Cualquier otra Gestion
+            {
+                frmGestion ventana = new frmGestion();
+                ventana.TopLevel = false;
+                pnlFrames.Controls.Add(ventana);
+                ventana.Show();
             }
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            frmGestionUsuario ventana = new frmGestionUsuario();
-            ventana.TopLevel = false;
-            pnlFrames.Controls.Add(ventana);
-            ventana.Show();
-        }
     }
 }

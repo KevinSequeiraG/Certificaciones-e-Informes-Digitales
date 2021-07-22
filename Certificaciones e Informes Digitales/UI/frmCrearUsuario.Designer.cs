@@ -51,6 +51,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // panel1
             // 
             this.panel1.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
+            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.txtPass);
             this.panel1.Controls.Add(this.lblCrearUser);
             this.panel1.Controls.Add(this.btnCancela);
@@ -63,7 +64,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtApellido1);
-            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 636);
@@ -239,13 +239,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.Silver;
-            this.txtNombre.Location = new System.Drawing.Point(82, 109);
+            this.txtNombre.Location = new System.Drawing.Point(79, 107);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(440, 31);
-            this.txtNombre.TabIndex = 27;
-            this.txtNombre.Text = "Nombre...";
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
+            this.txtNombre.TabIndex = 41;
+            this.txtNombre.Text = "Primer Apellido...";
             // 
             // frmCrearUsuario
             // 
@@ -281,8 +279,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtApellido1;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblCrearUser;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }

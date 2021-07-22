@@ -122,7 +122,9 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 {
                     throw new ApplicationException("Debe ingresar una correo electronico.");
                 }
-                return DAL.UsuarioDAL.TraerUsuarioPorCorreo(email);
+                List < Entities.Usuario > lista = DAL.UsuarioDAL.TraerUsuarioPorCorreo(email);
+
+                return lista;
             }
             catch (Exception ex)
             {
@@ -146,6 +148,54 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             {
                 throw new ApplicationException("Ocurrió un error al buscar los usuarios \n" + ex.Message);
             }            
+        }
+
+        public void editarUsuario(string Nombre, string Apellido1, string Apellido2, int telefono, string email, string password, bool changePassword, Enums.TipoUsuario tipo)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Nombre))
+                {
+                    throw new ApplicationException("debe ingresar el nombre");
+                }
+                if (String.IsNullOrEmpty(Apellido1))
+                {
+                    //warn
+                    throw new ApplicationException("Debe ingresar su primer apellido");
+                }
+                if (String.IsNullOrEmpty(Apellido2))
+                {
+                    //warn
+                    throw new ApplicationException("Debe ingresar su segundo apellido");
+                }
+                if (String.IsNullOrEmpty(email))
+                {
+                    //warn
+                    throw new ApplicationException("Debe ingresar un correo electronico");
+                }
+                if (String.IsNullOrEmpty(password))
+                {
+                    //warn
+                    throw new ApplicationException("Debe ingresar una contraseña");
+                }
+                if (String.IsNullOrEmpty(telefono.ToString()))
+                {
+                    //warn
+                    throw new ApplicationException("Debe ingresar numero telefonico");
+                }
+                if (tipo == null)
+                {
+                    throw new ApplicationException("No se indicó el tipo de ususario");
+                }
+
+
+                DAL.UsuarioDAL.editarUsuario(Nombre, Apellido1, Apellido2, telefono, email,  password, changePassword, tipo);
+                MessageBox.Show("Usuario editado correctamente");
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+            }
         }
     }
 }

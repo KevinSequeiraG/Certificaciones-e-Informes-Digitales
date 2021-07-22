@@ -32,8 +32,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
@@ -55,6 +55,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.Firebrick;
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.White;
             this.txtCorreo.Location = new System.Drawing.Point(37, 63);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(350, 29);
@@ -73,6 +74,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.dgvUsuario.TabIndex = 2;
             this.dgvUsuario.SelectionChanged += new System.EventHandler(this.dgvUsuario_SelectionChanged);
             // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Maroon;
@@ -86,13 +94,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // btnEdit
             // 

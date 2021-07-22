@@ -47,7 +47,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BienInmuebleBLL.cs" />
+    <Compile Include="BLL\BienMueleBLL.cs" />
+    <Compile Include="BLL\CarritoBLL.cs" />
+    <Compile Include="BLL\CatastroBLL.cs" />
+    <Compile Include="BLL\CertificacionBLL.cs" />
+    <Compile Include="BLL\LineaDetalleBLL.cs" />
+    <Compile Include="BLL\NombramientoBLL.cs" />
+    <Compile Include="BLL\PersonaFisicaBLL.cs" />
+    <Compile Include="BLL\PersonaJuridicaBLL.cs" />
+    <Compile Include="BLL\TarjetaBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="DAL\BienInmuebleDAL.cs" />
+    <Compile Include="DAL\BienMuebleDAL.cs" />
+    <Compile Include="DAL\CarritoDAL.cs" />
+    <Compile Include="DAL\CatastroDAL.cs" />
+    <Compile Include="DAL\CertificacionDAL.cs" />
+    <Compile Include="DAL\LineaDetalleDAL.cs" />
+    <Compile Include="DAL\NombramientoDAL.cs" />
+    <Compile Include="DAL\PersonaFisicaDAL.cs" />
+    <Compile Include="DAL\PersonaJuridicaDAL.cs" />
+    <Compile Include="DAL\TarjetaDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Entities\BienesInmuebles.cs" />
     <Compile Include="Entities\BienesMuebles.cs" />
@@ -62,8 +82,10 @@
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Enums\Genero.cs" />
     <Compile Include="Enums\Gestiones.cs" />
+    <Compile Include="Enums\Moneda.cs" />
     <Compile Include="Enums\Provincia.cs" />
     <Compile Include="Enums\TipoUsuario.cs" />
+    <Compile Include="Enums\Usos.cs" />
     <Compile Include="Persistencia\DataBase.cs" />
     <Compile Include="Persistencia\FactoryConexion.cs" />
     <Compile Include="Persistencia\FactoryDataBase.cs" />
@@ -75,6 +97,42 @@
     </Compile>
     <Compile Include="UI\frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarBienInmueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarBienInmueble.Designer.cs">
+      <DependentUpon>frmAgregarBienInmueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarBienMueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarBienMueble.Designer.cs">
+      <DependentUpon>frmAgregarBienMueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarCatastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarCatastro.Designer.cs">
+      <DependentUpon>frmAgregarCatastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarCerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarCerts.Designer.cs">
+      <DependentUpon>frmAgregarCerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarPersonaJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarPersonaJ.Designer.cs">
+      <DependentUpon>frmAgregarPersonaJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarPersonasF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarPersonasF.Designer.cs">
+      <DependentUpon>frmAgregarPersonasF.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmCompra.cs">
       <SubType>Form</SubType>
@@ -99,6 +157,12 @@
     </Compile>
     <Compile Include="UI\frmGestiones.Designer.cs">
       <DependentUpon>frmGestiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmGestion.Designer.cs">
+      <DependentUpon>frmGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmGestionUsuario.cs">
       <SubType>Form</SubType>
@@ -140,6 +204,24 @@
     <EmbeddedResource Include="UI\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarBienInmueble.resx">
+      <DependentUpon>frmAgregarBienInmueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarBienMueble.resx">
+      <DependentUpon>frmAgregarBienMueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarCatastro.resx">
+      <DependentUpon>frmAgregarCatastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarCerts.resx">
+      <DependentUpon>frmAgregarCerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarPersonaJ.resx">
+      <DependentUpon>frmAgregarPersonaJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarPersonasF.resx">
+      <DependentUpon>frmAgregarPersonasF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCompra.resx">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmGestiones.resx">
       <DependentUpon>frmGestiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmGestion.resx">
+      <DependentUpon>frmGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmGestionUsuario.resx">
       <DependentUpon>frmGestionUsuario.cs</DependentUpon>

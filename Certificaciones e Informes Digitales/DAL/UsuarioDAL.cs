@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Certificaciones_e_Informes_Digitales.DAL
 {
@@ -14,7 +15,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
         public static void InsertarUsuario(Usuario usuario)
         {
             try
-            {                
+            {
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
                     string sql = @"SP_AgregarUser";
@@ -28,7 +29,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     comando.Parameters.AddWithValue("@password", usuario.password);
                     comando.Parameters.AddWithValue("@Change_password", usuario.changePassword);
                     comando.Parameters.AddWithValue("@Tipo", usuario.tipo);
-                    
+
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     db.ExecuteNonQuery(comando);
                 }
@@ -39,10 +40,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
             catch (Exception ex)
-            {                
+            {
                 Util.Log.LogGenericException(ex);
                 throw;
-            }           
+            }
         }
         public static void EditarContrasenna(string email, string password, bool cambioAutomatico)
         {
@@ -73,7 +74,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
             {
                 Util.Log.LogGenericException(ex);
                 throw;
-            }            
+            }
         }
 
         public static Entities.Usuario TraerUsuario(string email, string passw)
@@ -91,7 +92,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 
                     var reader = db.ExecuteReader(comando);
-                    
+
                     while (reader.Read())
                     {
                         Entities.Usuario user = new Usuario();
@@ -135,6 +136,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 
                     var reader = db.ExecuteReader(comando);
+
 
                     while (reader.Read())
                     {
@@ -193,7 +195,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         user.tipo = (Enums.TipoUsuario)(Convert.ToInt32(reader["Tipo"]));
                         lista.Add(user);
                     }
-                    return lista ;
+                    return lista;
                 }
             }
             catch (SqlException sqlEx)
@@ -221,6 +223,40 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 
+                    db.ExecuteNonQuery(comando);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+
+        public static void editarUsuario(string Nombre, string Apellido1, string Apellido2, int telefono, string email, string password, bool changePassword, Enums.TipoUsuario tipo)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_EditarUser";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@Nombre", Nombre);
+                    comando.Parameters.AddWithValue("@Apellido1", Apellido1);
+                    comando.Parameters.AddWithValue("@Apellido2", Apellido2);
+                    comando.Parameters.AddWithValue("@telefono", telefono);
+                    comando.Parameters.AddWithValue("@email", email);
+                    comando.Parameters.AddWithValue("@password", password);
+                    comando.Parameters.AddWithValue("@Change_password", changePassword);
+                    comando.Parameters.AddWithValue("@Tipo", tipo);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
                     db.ExecuteNonQuery(comando);
                 }
             }
