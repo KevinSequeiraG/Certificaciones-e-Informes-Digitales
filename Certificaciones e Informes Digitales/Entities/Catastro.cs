@@ -9,7 +9,8 @@ namespace Certificaciones_e_Informes_Digitales.Entities
     class Catastro
     {
         public int id { get; set; }
-        public string idPersona { get; set; }
+        public string idPersonaJ { get; set; }
+        public string idPersonaF { get; set; }
         public string localizacion { get; set; }
         public string usoLocal { get; set; }
         public int annoConst { get; set; }

@@ -23,7 +23,16 @@ namespace Certificaciones_e_Informes_Digitales.UI
             {
                 Entities.BienesInmuebles bien = new Entities.BienesInmuebles();
                 bien.id = Convert.ToInt32(mtbID.Text);
-                bien.idPersona = txtIDPersona.Text;
+                if (rdbPersonaF.Checked)
+                {
+                    bien.idPersonaF = txtIDPersona.Text;
+                    bien.idPersonaJ = "";  
+                }
+                else
+                {
+                    bien.idPersonaJ = txtIDPersona.Text;
+                    bien.idPersonaF = "";
+                }
                 bien.Mide = txtMide.Text;
                 bien.naturaleza = txtNaturaleza.Text;
                 bien.provincia = (Enums.Provincia)cboProvincia.SelectedItem;
@@ -47,6 +56,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void frmAgregarBienInmueble_Load(object sender, EventArgs e)
         {
             cboProvincia.DataSource = Enum.GetValues(typeof(Enums.Provincia));
+            rdbPersonaF.Checked = true;
         }
     }
 }

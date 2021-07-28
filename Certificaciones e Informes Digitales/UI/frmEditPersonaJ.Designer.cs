@@ -1,7 +1,7 @@
 ﻿
 namespace Certificaciones_e_Informes_Digitales.UI
 {
-    partial class frmAgregarPersonaJ
+    partial class frmEditPersonaJ
     {
         /// <summary>
         /// Required designer variable.
@@ -75,10 +75,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1.Controls.Add(this.lblID);
             this.panel1.Controls.Add(this.txtid);
             this.panel1.Controls.Add(this.txtIRazonSoc);
-            this.panel1.Location = new System.Drawing.Point(25, 118);
+            this.panel1.Location = new System.Drawing.Point(28, 112);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(391, 460);
-            this.panel1.TabIndex = 281;
+            this.panel1.TabIndex = 286;
             // 
             // TxtAsiento
             // 
@@ -280,10 +280,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(4, 601);
+            this.btnCancelar.Location = new System.Drawing.Point(7, 595);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 63);
-            this.btnCancelar.TabIndex = 280;
+            this.btnCancelar.TabIndex = 285;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -294,10 +294,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(297, 601);
+            this.btnAceptar.Location = new System.Drawing.Point(300, 595);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(121, 63);
-            this.btnAceptar.TabIndex = 279;
+            this.btnAceptar.TabIndex = 284;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -309,10 +309,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblFisica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFisica.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFisica.ForeColor = System.Drawing.Color.White;
-            this.lblFisica.Location = new System.Drawing.Point(123, 66);
+            this.lblFisica.Location = new System.Drawing.Point(126, 60);
             this.lblFisica.Name = "lblFisica";
             this.lblFisica.Size = new System.Drawing.Size(165, 34);
-            this.lblFisica.TabIndex = 278;
+            this.lblFisica.TabIndex = 283;
             this.lblFisica.Text = "Juridica";
             // 
             // lblAgregarPersona
@@ -322,13 +322,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAgregarPersona.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAgregarPersona.ForeColor = System.Drawing.Color.White;
-            this.lblAgregarPersona.Location = new System.Drawing.Point(44, 32);
+            this.lblAgregarPersona.Location = new System.Drawing.Point(69, 26);
             this.lblAgregarPersona.Name = "lblAgregarPersona";
-            this.lblAgregarPersona.Size = new System.Drawing.Size(325, 34);
-            this.lblAgregarPersona.TabIndex = 277;
-            this.lblAgregarPersona.Text = "Agregar Persona";
+            this.lblAgregarPersona.Size = new System.Drawing.Size(288, 34);
+            this.lblAgregarPersona.TabIndex = 282;
+            this.lblAgregarPersona.Text = "Editar Persona";
             // 
-            // frmAgregarPersonaJ
+            // frmEditPersonaJ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,9 +340,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Controls.Add(this.lblFisica);
             this.Controls.Add(this.lblAgregarPersona);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAgregarPersonaJ";
+            this.Name = "frmEditPersonaJ";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgregarPersonaJ";
+            this.Text = "frmEditPersonaJ";
+            this.Load += new System.EventHandler(this.frmEditPersonaJ_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -353,6 +354,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox TxtAsiento;
+        private System.Windows.Forms.Label lblAsiento;
+        private System.Windows.Forms.RadioButton rdbInactivo;
+        private System.Windows.Forms.RadioButton rdbActivo;
         private System.Windows.Forms.MonthCalendar clrFechaInsc;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.TextBox txtDomicilio;
@@ -361,6 +366,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.TextBox txtTomo;
         private System.Windows.Forms.Label lblTraccion;
         private System.Windows.Forms.Label lblFechaInsc;
+        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtid;
@@ -369,10 +375,5 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblFisica;
         private System.Windows.Forms.Label lblAgregarPersona;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.RadioButton rdbInactivo;
-        private System.Windows.Forms.RadioButton rdbActivo;
-        private System.Windows.Forms.TextBox TxtAsiento;
-        private System.Windows.Forms.Label lblAsiento;
     }
 }

@@ -46,6 +46,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.pnl_fondo.Name = "pnl_fondo";
             this.pnl_fondo.Size = new System.Drawing.Size(397, 185);
             this.pnl_fondo.TabIndex = 0;
+            this.pnl_fondo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_fondo_Paint);
             this.pnl_fondo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_fondo_MouseDown);
             // 
             // btnListo
@@ -86,9 +87,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(11, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 25);
+            this.label1.Size = new System.Drawing.Size(193, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Debe renovar su contraseña:";
+            this.label1.Text = "Nueva contraseña:";
             // 
             // frmNuevoPassword
             // 

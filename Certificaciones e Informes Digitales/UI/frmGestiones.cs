@@ -89,5 +89,17 @@ namespace Certificaciones_e_Informes_Digitales.UI
             }
         }
 
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loguin ventana = new Loguin();
+            ventana.Show();
+            this.Close();
+        }
+
+        private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNuevoPassword ventana = new frmNuevoPassword();
+            ventana.ShowDialog();
+        }
     }
 }

@@ -40,5 +40,142 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        public static void Editar(int id, int idCarrito, int idCert, int cant, string idPersona)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_EditarLineaDetalle";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@idCarrito", idCarrito);
+                    comando.Parameters.AddWithValue("@idCert", idCert);
+                    comando.Parameters.AddWithValue("@cant", cant);
+                    comando.Parameters.AddWithValue("@idPersona", idPersona);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    db.ExecuteNonQuery(comando);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+        public static void Eliminar(int id)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_EliminarLineaDeatalle";
+
+                    var comando = new SqlCommand(sql);
+
+                    comando.Parameters.AddWithValue("@id", id);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    db.ExecuteNonQuery(comando);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+        public static List<Entities.LineaDetalle> Ver()
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    List<Entities.LineaDetalle> lista = new List<Entities.LineaDetalle>();
+                    string sql = @"SP_VerLineaDetalle";
+
+                    var comando = new SqlCommand(sql);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+                    while (reader.Read())
+                    {
+                        Entities.LineaDetalle linea = new Entities.LineaDetalle();
+                        linea.id = Convert.ToInt32(reader["id"]);
+                        linea.idCarrito = Convert.ToInt32(reader["idCarrito"]);
+                        linea.idCert = Convert.ToInt32(reader["idCert"]);
+                        linea.cant = Convert.ToInt32(reader["cant"]);
+                        linea.idPersona = reader["idPersona"].ToString();
+                        lista.Add(linea);
+                    }
+                    return lista;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+        public static Entities.LineaDetalle VerPorID(int ID)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"VerLineaDetalleID";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@ID", ID);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+
+                    while (reader.Read())
+                    {
+                        Entities.LineaDetalle linea = new Entities.LineaDetalle();
+                        linea.id = Convert.ToInt32(reader["id"]);
+                        linea.idCarrito = Convert.ToInt32(reader["idCarrito"]);
+                        linea.idCert = Convert.ToInt32(reader["idCert"]);
+                        linea.cant = Convert.ToInt32(reader["cant"]);
+                        linea.idPersona = reader["idPersona"].ToString();
+                        return linea;
+                    }
+                    return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
     }
 }

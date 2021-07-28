@@ -10,7 +10,8 @@ namespace Certificaciones_e_Informes_Digitales.Entities
     class BienesMuebles
     {
         public int id { get; set; }
-        public string idPersona { get; set; }
+        public string idPersonaJ { get; set; }
+        public string idPersonaF { get; set; }
         public string marca { get; set; }
         public string Categoria { get; set; }
         public string serie { get; set; }

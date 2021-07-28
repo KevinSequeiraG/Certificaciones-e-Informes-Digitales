@@ -1,7 +1,7 @@
 ﻿
 namespace Certificaciones_e_Informes_Digitales.UI
 {
-    partial class frmAgregarBienMueble
+    partial class frmEditBienMueble
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMueble = new System.Windows.Forms.Label();
-            this.lblAgregarBien = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboMoneda = new System.Windows.Forms.ComboBox();
             this.lblMoneda = new System.Windows.Forms.Label();
@@ -59,74 +55,26 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtid = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtIDPersona = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblMueble = new System.Windows.Forms.Label();
+            this.lblAgregarBien = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rdbPersonaF = new System.Windows.Forms.RadioButton();
             this.rdbPersonaJ = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.rdbNoInscrito = new System.Windows.Forms.RadioButton();
             this.rdbInscrito = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblMueble
-            // 
-            this.lblMueble.AutoSize = true;
-            this.lblMueble.BackColor = System.Drawing.Color.Transparent;
-            this.lblMueble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblMueble.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMueble.ForeColor = System.Drawing.Color.White;
-            this.lblMueble.Location = new System.Drawing.Point(175, 55);
-            this.lblMueble.Name = "lblMueble";
-            this.lblMueble.Size = new System.Drawing.Size(141, 34);
-            this.lblMueble.TabIndex = 100;
-            this.lblMueble.Text = "Mueble";
-            // 
-            // lblAgregarBien
-            // 
-            this.lblAgregarBien.AutoSize = true;
-            this.lblAgregarBien.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgregarBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblAgregarBien.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgregarBien.ForeColor = System.Drawing.Color.White;
-            this.lblAgregarBien.Location = new System.Drawing.Point(128, 21);
-            this.lblAgregarBien.Name = "lblAgregarBien";
-            this.lblAgregarBien.Size = new System.Drawing.Size(254, 34);
-            this.lblAgregarBien.TabIndex = 99;
-            this.lblAgregarBien.Text = "Agregar Bien";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(22, 624);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 60);
-            this.btnCancelar.TabIndex = 109;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(361, 624);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(121, 60);
-            this.btnAceptar.TabIndex = 108;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cboMoneda);
             this.panel1.Controls.Add(this.lblMoneda);
@@ -153,10 +101,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1.Controls.Add(this.txtid);
             this.panel1.Controls.Add(this.txtMarca);
             this.panel1.Controls.Add(this.txtIDPersona);
-            this.panel1.Location = new System.Drawing.Point(22, 120);
+            this.panel1.Location = new System.Drawing.Point(14, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 469);
-            this.panel1.TabIndex = 224;
+            this.panel1.TabIndex = 229;
             // 
             // cboMoneda
             // 
@@ -445,13 +393,67 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtIDPersona.Size = new System.Drawing.Size(314, 31);
             this.txtIDPersona.TabIndex = 204;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(14, 612);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(121, 60);
+            this.btnCancelar.TabIndex = 228;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(353, 612);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(121, 60);
+            this.btnAceptar.TabIndex = 227;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // lblMueble
+            // 
+            this.lblMueble.AutoSize = true;
+            this.lblMueble.BackColor = System.Drawing.Color.Transparent;
+            this.lblMueble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblMueble.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMueble.ForeColor = System.Drawing.Color.White;
+            this.lblMueble.Location = new System.Drawing.Point(167, 43);
+            this.lblMueble.Name = "lblMueble";
+            this.lblMueble.Size = new System.Drawing.Size(141, 34);
+            this.lblMueble.TabIndex = 226;
+            this.lblMueble.Text = "Mueble";
+            // 
+            // lblAgregarBien
+            // 
+            this.lblAgregarBien.AutoSize = true;
+            this.lblAgregarBien.BackColor = System.Drawing.Color.Transparent;
+            this.lblAgregarBien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAgregarBien.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgregarBien.ForeColor = System.Drawing.Color.White;
+            this.lblAgregarBien.Location = new System.Drawing.Point(138, 9);
+            this.lblAgregarBien.Name = "lblAgregarBien";
+            this.lblAgregarBien.Size = new System.Drawing.Size(217, 34);
+            this.lblAgregarBien.TabIndex = 225;
+            this.lblAgregarBien.Text = "Editar Bien";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.rdbPersonaF);
             this.panel2.Controls.Add(this.rdbPersonaJ);
-            this.panel2.Location = new System.Drawing.Point(41, 148);
+            this.panel2.Location = new System.Drawing.Point(27, 148);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 33);
+            this.panel2.Size = new System.Drawing.Size(300, 28);
             this.panel2.TabIndex = 248;
             // 
             // rdbPersonaF
@@ -460,7 +462,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbPersonaF.BackColor = System.Drawing.Color.Transparent;
             this.rdbPersonaF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbPersonaF.ForeColor = System.Drawing.Color.White;
-            this.rdbPersonaF.Location = new System.Drawing.Point(153, 3);
+            this.rdbPersonaF.Location = new System.Drawing.Point(166, 3);
             this.rdbPersonaF.Name = "rdbPersonaF";
             this.rdbPersonaF.Size = new System.Drawing.Size(131, 24);
             this.rdbPersonaF.TabIndex = 249;
@@ -474,7 +476,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbPersonaJ.BackColor = System.Drawing.Color.Transparent;
             this.rdbPersonaJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbPersonaJ.ForeColor = System.Drawing.Color.White;
-            this.rdbPersonaJ.Location = new System.Drawing.Point(3, 3);
+            this.rdbPersonaJ.Location = new System.Drawing.Point(16, 3);
             this.rdbPersonaJ.Name = "rdbPersonaJ";
             this.rdbPersonaJ.Size = new System.Drawing.Size(144, 24);
             this.rdbPersonaJ.TabIndex = 248;
@@ -482,21 +484,21 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbPersonaJ.Text = "Persona Juridica";
             this.rdbPersonaJ.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel1
+            // panel3
             // 
-            this.flowLayoutPanel1.Controls.Add(this.rdbNoInscrito);
-            this.flowLayoutPanel1.Controls.Add(this.rdbInscrito);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(41, 831);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(314, 39);
-            this.flowLayoutPanel1.TabIndex = 250;
+            this.panel3.Controls.Add(this.rdbNoInscrito);
+            this.panel3.Controls.Add(this.rdbInscrito);
+            this.panel3.Location = new System.Drawing.Point(43, 831);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 38);
+            this.panel3.TabIndex = 249;
             // 
             // rdbNoInscrito
             // 
             this.rdbNoInscrito.AutoSize = true;
             this.rdbNoInscrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
             this.rdbNoInscrito.ForeColor = System.Drawing.Color.White;
-            this.rdbNoInscrito.Location = new System.Drawing.Point(3, 3);
+            this.rdbNoInscrito.Location = new System.Drawing.Point(189, 6);
             this.rdbNoInscrito.Name = "rdbNoInscrito";
             this.rdbNoInscrito.Size = new System.Drawing.Size(132, 29);
             this.rdbNoInscrito.TabIndex = 247;
@@ -509,7 +511,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbInscrito.AutoSize = true;
             this.rdbInscrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
             this.rdbInscrito.ForeColor = System.Drawing.Color.White;
-            this.rdbInscrito.Location = new System.Drawing.Point(141, 3);
+            this.rdbInscrito.Location = new System.Drawing.Point(3, 6);
             this.rdbInscrito.Name = "rdbInscrito";
             this.rdbInscrito.Size = new System.Drawing.Size(99, 29);
             this.rdbInscrito.TabIndex = 246;
@@ -517,29 +519,28 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.rdbInscrito.Text = "Inscrito";
             this.rdbInscrito.UseVisualStyleBackColor = true;
             // 
-            // frmAgregarBienMueble
+            // frmEditBienMueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
-            this.ClientSize = new System.Drawing.Size(505, 720);
+            this.ClientSize = new System.Drawing.Size(489, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblMueble);
             this.Controls.Add(this.lblAgregarBien);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAgregarBienMueble";
+            this.Name = "frmEditBienMueble";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgregarBienMueble";
-            this.Load += new System.EventHandler(this.frmAgregarBienMueble_Load);
+            this.Text = "frmEditBienMueble";
+            this.Load += new System.EventHandler(this.frmEditBienMueble_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,10 +548,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         #endregion
 
-        private System.Windows.Forms.Label lblMueble;
-        private System.Windows.Forms.Label lblAgregarBien;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboMoneda;
         private System.Windows.Forms.Label lblMoneda;
@@ -577,7 +574,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtIDPersona;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblMueble;
+        private System.Windows.Forms.Label lblAgregarBien;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rdbNoInscrito;
         private System.Windows.Forms.RadioButton rdbInscrito;
         private System.Windows.Forms.Panel panel2;

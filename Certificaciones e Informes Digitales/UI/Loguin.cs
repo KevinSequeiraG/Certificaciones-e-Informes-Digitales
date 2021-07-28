@@ -101,22 +101,35 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            BLL.UsuarioBLL usuarioBLL = new BLL.UsuarioBLL();
-            Entities.Usuario user = usuarioBLL.TraerUsuario(txtEmail.Text, txtPassw.Text);
-            Util.UsuarioSingleton.setUser(user);
-
-            if (user.tipo == Enums.TipoUsuario.cliente)
+            try
             {
-                frmCompra ventana = new frmCompra();
-                this.Hide();
-                ventana.Show();
+                BLL.UsuarioBLL usuarioBLL = new BLL.UsuarioBLL();
+                Entities.Usuario user = usuarioBLL.TraerUsuario(txtEmail.Text, txtPassw.Text);
+                Util.UsuarioSingleton.setUser(user);
+                if (user==null)
+                {
+                    throw new ApplicationException("No se ha encontrado un usuario con este correo o contraseña");
+                }
+                else
+                {
+                    if (user.tipo == Enums.TipoUsuario.cliente)
+                    {
+                        frmCompra ventana = new frmCompra();
+                        this.Hide();
+                        ventana.Show();
+                    }
+                    else
+                    {
+                        frmAdmin ventana = new frmAdmin();
+                        this.Hide();
+                        ventana.Show();
+                    }
+                }               
             }
-            else
+            catch (Exception ex)
             {
-                frmAdmin ventana = new frmAdmin();
-                this.Hide();
-                ventana.Show();
-            }
+                MessageBox.Show(ex.Message);
+            }           
 
         }
 

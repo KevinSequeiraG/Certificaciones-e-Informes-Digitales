@@ -23,7 +23,18 @@ namespace Certificaciones_e_Informes_Digitales.UI
             {
                 Entities.BienesMuebles bien = new Entities.BienesMuebles();
                 bien.id = Convert.ToInt32(txtid.Text);
-                bien.idPersona = txtIDPersona.Text;
+
+                if (rdbPersonaF.Checked)
+                {
+                    bien.idPersonaF = txtIDPersona.Text;
+                    bien.idPersonaJ = "";
+                }
+                else
+                {
+                    bien.idPersonaJ = txtIDPersona.Text;
+                    bien.idPersonaF = "";
+                }
+
                 bien.annoFabricacion =Convert.ToInt32(txtAnnoFab.Text);
                 bien.capacidad = Convert.ToInt32(txtCapacidad.Text);
                 bien.Categoria = txtCat.Text;
@@ -39,6 +50,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
                 BLL.BienMueleBLL.Guardar(bien);
                 MessageBox.Show("Bien Inmueble guardado correctamente");
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -152,6 +152,42 @@
     <Compile Include="UI\frmEditarUser.Designer.cs">
       <DependentUpon>frmEditarUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmEditBienInmueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditBienInmueble.Designer.cs">
+      <DependentUpon>frmEditBienInmueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditBienMueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditBienMueble.Designer.cs">
+      <DependentUpon>frmEditBienMueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditCatastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditCatastro.Designer.cs">
+      <DependentUpon>frmEditCatastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditCert.Designer.cs">
+      <DependentUpon>frmEditCert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditPersonaF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditPersonaF.Designer.cs">
+      <DependentUpon>frmEditPersonaF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditPersonaJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditPersonaJ.Designer.cs">
+      <DependentUpon>frmEditPersonaJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmGestiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +266,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmEditarUser.resx">
       <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditBienInmueble.resx">
+      <DependentUpon>frmEditBienInmueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditBienMueble.resx">
+      <DependentUpon>frmEditBienMueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditCatastro.resx">
+      <DependentUpon>frmEditCatastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditCert.resx">
+      <DependentUpon>frmEditCert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditPersonaF.resx">
+      <DependentUpon>frmEditPersonaF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditPersonaJ.resx">
+      <DependentUpon>frmEditPersonaJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmGestiones.resx">
       <DependentUpon>frmGestiones.cs</DependentUpon>

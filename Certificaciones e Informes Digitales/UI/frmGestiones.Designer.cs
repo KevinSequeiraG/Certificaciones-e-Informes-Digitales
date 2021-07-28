@@ -111,6 +111,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(244, 28);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // cambiarContraseToolStripMenuItem
             // 
@@ -119,6 +120,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cambiarContraseToolStripMenuItem.Name = "cambiarContraseToolStripMenuItem";
             this.cambiarContraseToolStripMenuItem.Size = new System.Drawing.Size(244, 28);
             this.cambiarContraseToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseToolStripMenuItem_Click);
             // 
             // lblCrearUser
             // 

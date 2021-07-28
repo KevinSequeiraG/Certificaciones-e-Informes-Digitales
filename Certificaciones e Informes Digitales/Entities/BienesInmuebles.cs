@@ -10,7 +10,8 @@ namespace Certificaciones_e_Informes_Digitales.Entities
     class BienesInmuebles
     {
         public int id { get; set; }
-        public string idPersona { get; set; }
+        public string idPersonaJ { get; set; }
+        public string idPersonaF { get; set; }
         public Provincia provincia { get; set; }
         public string Mide { get; set; }
         public double valorFiscal { get; set; }

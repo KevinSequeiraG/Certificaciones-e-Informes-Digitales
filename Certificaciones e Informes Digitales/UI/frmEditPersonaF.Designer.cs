@@ -1,7 +1,7 @@
 ﻿
 namespace Certificaciones_e_Informes_Digitales.UI
 {
-    partial class frmAgregarPersonasF
+    partial class frmEditPersonaF
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblFisica = new System.Windows.Forms.Label();
-            this.lblAgregarPersona = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBuscarFoto = new System.Windows.Forms.Button();
             this.pcbFoto = new System.Windows.Forms.PictureBox();
@@ -51,63 +47,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtid = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtINombre = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblFisica = new System.Windows.Forms.Label();
+            this.lblAgregarPersona = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(17, 596);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 63);
-            this.btnCancelar.TabIndex = 274;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(310, 596);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(121, 63);
-            this.btnAceptar.TabIndex = 273;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // lblFisica
-            // 
-            this.lblFisica.AutoSize = true;
-            this.lblFisica.BackColor = System.Drawing.Color.Transparent;
-            this.lblFisica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFisica.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFisica.ForeColor = System.Drawing.Color.White;
-            this.lblFisica.Location = new System.Drawing.Point(156, 61);
-            this.lblFisica.Name = "lblFisica";
-            this.lblFisica.Size = new System.Drawing.Size(112, 34);
-            this.lblFisica.TabIndex = 272;
-            this.lblFisica.Text = "Fisica";
-            // 
-            // lblAgregarPersona
-            // 
-            this.lblAgregarPersona.AutoSize = true;
-            this.lblAgregarPersona.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblAgregarPersona.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgregarPersona.ForeColor = System.Drawing.Color.White;
-            this.lblAgregarPersona.Location = new System.Drawing.Point(57, 27);
-            this.lblAgregarPersona.Name = "lblAgregarPersona";
-            this.lblAgregarPersona.Size = new System.Drawing.Size(325, 34);
-            this.lblAgregarPersona.TabIndex = 271;
-            this.lblAgregarPersona.Text = "Agregar Persona";
             // 
             // panel1
             // 
@@ -130,10 +76,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1.Controls.Add(this.txtid);
             this.panel1.Controls.Add(this.txtApellido1);
             this.panel1.Controls.Add(this.txtINombre);
-            this.panel1.Location = new System.Drawing.Point(38, 113);
+            this.panel1.Location = new System.Drawing.Point(40, 96);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 460);
-            this.panel1.TabIndex = 276;
+            this.panel1.TabIndex = 281;
             // 
             // btnBuscarFoto
             // 
@@ -147,7 +93,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnBuscarFoto.TabIndex = 294;
             this.btnBuscarFoto.Text = "Buscar Foto";
             this.btnBuscarFoto.UseVisualStyleBackColor = false;
-            this.btnBuscarFoto.Click += new System.EventHandler(this.btnBuscarFoto_Click);
             // 
             // pcbFoto
             // 
@@ -326,24 +271,76 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtINombre.Size = new System.Drawing.Size(314, 31);
             this.txtINombre.TabIndex = 276;
             // 
-            // frmAgregarPersonasF
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(19, 579);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(121, 63);
+            this.btnCancelar.TabIndex = 280;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(312, 579);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(121, 63);
+            this.btnAceptar.TabIndex = 279;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // lblFisica
+            // 
+            this.lblFisica.AutoSize = true;
+            this.lblFisica.BackColor = System.Drawing.Color.Transparent;
+            this.lblFisica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFisica.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFisica.ForeColor = System.Drawing.Color.White;
+            this.lblFisica.Location = new System.Drawing.Point(179, 48);
+            this.lblFisica.Name = "lblFisica";
+            this.lblFisica.Size = new System.Drawing.Size(112, 34);
+            this.lblFisica.TabIndex = 278;
+            this.lblFisica.Text = "Fisica";
+            // 
+            // lblAgregarPersona
+            // 
+            this.lblAgregarPersona.AutoSize = true;
+            this.lblAgregarPersona.BackColor = System.Drawing.Color.Transparent;
+            this.lblAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblAgregarPersona.Font = new System.Drawing.Font("Perpetua Titling MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgregarPersona.ForeColor = System.Drawing.Color.White;
+            this.lblAgregarPersona.Location = new System.Drawing.Point(104, 14);
+            this.lblAgregarPersona.Name = "lblAgregarPersona";
+            this.lblAgregarPersona.Size = new System.Drawing.Size(288, 34);
+            this.lblAgregarPersona.TabIndex = 277;
+            this.lblAgregarPersona.Text = "Editar Persona";
+            // 
+            // frmEditPersonaF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
-            this.ClientSize = new System.Drawing.Size(469, 691);
+            this.ClientSize = new System.Drawing.Size(453, 652);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblFisica);
             this.Controls.Add(this.lblAgregarPersona);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAgregarPersonasF";
+            this.Name = "frmEditPersonaF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgregarPersonasF";
-            this.Activated += new System.EventHandler(this.frmAgregarPersonasF_Activated);
-            this.Load += new System.EventHandler(this.frmAgregarPersonasF_Load);
+            this.Text = "frmEditPersonaF";
+            this.Load += new System.EventHandler(this.frmEditPersonaF_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFoto)).EndInit();
@@ -354,11 +351,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lblFisica;
-        private System.Windows.Forms.Label lblAgregarPersona;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnBuscarFoto;
+        private System.Windows.Forms.PictureBox pcbFoto;
+        private System.Windows.Forms.ComboBox cboGenero;
         private System.Windows.Forms.MonthCalendar CldFechaNac;
         private System.Windows.Forms.Label lblAnnoFab;
         private System.Windows.Forms.Label lblEmail;
@@ -373,8 +369,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtINombre;
-        private System.Windows.Forms.ComboBox cboGenero;
-        private System.Windows.Forms.PictureBox pcbFoto;
-        private System.Windows.Forms.Button btnBuscarFoto;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label lblFisica;
+        private System.Windows.Forms.Label lblAgregarPersona;
     }
 }

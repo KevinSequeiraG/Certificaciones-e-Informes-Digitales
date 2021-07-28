@@ -13,7 +13,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
 {
     class Utilities
     {
-        public List<string> lstTiposCert()
+        public static List<string> lstTiposCert()
         {
             List<string> lista = new List<string>();
             lista.Add("Catastro");

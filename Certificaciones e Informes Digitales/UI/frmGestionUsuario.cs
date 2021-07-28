@@ -33,6 +33,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                         MessageBox.Show("No existe un usuario con ese correo electronico");
                         dgvUsuario.DataSource = logica.VerUsuarios();
                     }
+                    txtCorreo.Text = "";
                 }
             }
             catch (Exception ex)
