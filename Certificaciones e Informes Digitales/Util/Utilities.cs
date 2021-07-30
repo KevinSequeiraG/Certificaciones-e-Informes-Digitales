@@ -23,7 +23,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
             return lista;
         }
 
-        public List<string> lstProvincias()
+        public static List<string> lstProvincias()
         {
             List<string> lista = new List<string>();
             foreach (Provincia item in Enum.GetValues(typeof(Provincia)))

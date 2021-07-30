@@ -173,5 +173,43 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        public static List<Entities.Certificacion> VerPorTipo(string tipo)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    List<Entities.Certificacion> lista = new List<Entities.Certificacion>();
+                    string sql = @"SP_VerCertTipo";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@Tipo", tipo);
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+                    while (reader.Read())
+                    {
+                        Entities.Certificacion cert = new Entities.Certificacion();
+                        cert.id = Convert.ToInt32(reader["id"]);
+                        cert.tipo = reader["Tipo"].ToString();
+                        cert.detalle = reader["Detalle"].ToString();
+                        cert.precio = Convert.ToDouble(reader["Precio"]);
+                        lista.Add(cert);
+                    }
+                    return lista;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
     }
 }

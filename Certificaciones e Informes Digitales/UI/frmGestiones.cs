@@ -42,10 +42,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             Application.Exit();
         }
 
-        private void frmGestiones_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void frmGestiones_MouseDown(object sender, MouseEventArgs e)
         {

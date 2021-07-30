@@ -30,19 +30,28 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCarrito = new System.Windows.Forms.Button();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picMin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
             this.lblTipoProd = new System.Windows.Forms.Label();
             this.lblCompra = new System.Windows.Forms.Label();
-            this.cmbTipos = new System.Windows.Forms.ComboBox();
+            this.cboTipos = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -52,18 +61,89 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
+            this.panel1.Controls.Add(this.btnCarrito);
+            this.panel1.Controls.Add(this.dgvProductos);
             this.panel1.Controls.Add(this.picMin);
             this.panel1.Controls.Add(this.picClose);
             this.panel1.Controls.Add(this.btnComprar);
             this.panel1.Controls.Add(this.lblTipoProd);
             this.panel1.Controls.Add(this.lblCompra);
-            this.panel1.Controls.Add(this.cmbTipos);
+            this.panel1.Controls.Add(this.cboTipos);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(767, 620);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // btnCarrito
+            // 
+            this.btnCarrito.BackColor = System.Drawing.Color.Maroon;
+            this.btnCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarrito.ForeColor = System.Drawing.Color.White;
+            this.btnCarrito.Location = new System.Drawing.Point(238, 524);
+            this.btnCarrito.Name = "btnCarrito";
+            this.btnCarrito.Size = new System.Drawing.Size(122, 61);
+            this.btnCarrito.TabIndex = 11;
+            this.btnCarrito.Text = "Carrito";
+            this.btnCarrito.UseVisualStyleBackColor = false;
+            // 
+            // dgvProductos
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Agregar,
+            this.Tipo,
+            this.ID,
+            this.Detalle});
+            this.dgvProductos.Location = new System.Drawing.Point(34, 206);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(700, 293);
+            this.dgvProductos.TabIndex = 10;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            this.dgvProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvProductos_CellPainting);
+            // 
+            // Agregar
+            // 
+            this.Agregar.HeaderText = "Agregar";
+            this.Agregar.Name = "Agregar";
+            this.Agregar.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Detalle
+            // 
+            this.Detalle.DataPropertyName = "Detalle";
+            this.Detalle.HeaderText = "Detalle";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.ReadOnly = true;
             // 
             // picMin
             // 
@@ -97,7 +177,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnComprar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprar.ForeColor = System.Drawing.Color.White;
-            this.btnComprar.Location = new System.Drawing.Point(324, 529);
+            this.btnComprar.Location = new System.Drawing.Point(438, 524);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(122, 61);
             this.btnComprar.TabIndex = 4;
@@ -129,14 +209,16 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.lblCompra.TabIndex = 2;
             this.lblCompra.Text = "Compra tus certificaciones";
             // 
-            // cmbTipos
+            // cboTipos
             // 
-            this.cmbTipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipos.FormattingEnabled = true;
-            this.cmbTipos.Location = new System.Drawing.Point(386, 145);
-            this.cmbTipos.Name = "cmbTipos";
-            this.cmbTipos.Size = new System.Drawing.Size(174, 32);
-            this.cmbTipos.TabIndex = 1;
+            this.cboTipos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipos.FormattingEnabled = true;
+            this.cboTipos.Location = new System.Drawing.Point(386, 145);
+            this.cboTipos.Name = "cboTipos";
+            this.cboTipos.Size = new System.Drawing.Size(174, 32);
+            this.cboTipos.TabIndex = 1;
+            this.cboTipos.SelectedIndexChanged += new System.EventHandler(this.cmbTipos_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -178,6 +260,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cambiarContraseToolStripMenuItem.Name = "cambiarContraseToolStripMenuItem";
             this.cambiarContraseToolStripMenuItem.Size = new System.Drawing.Size(244, 28);
             this.cambiarContraseToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -201,6 +284,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCompra_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -212,7 +296,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbTipos;
+        private System.Windows.Forms.ComboBox cboTipos;
         private System.Windows.Forms.Label lblCompra;
         private System.Windows.Forms.Label lblTipoProd;
         private System.Windows.Forms.Button btnComprar;
@@ -223,5 +307,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.DataGridViewButtonColumn Agregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
+        private System.Windows.Forms.Button btnCarrito;
     }
 }

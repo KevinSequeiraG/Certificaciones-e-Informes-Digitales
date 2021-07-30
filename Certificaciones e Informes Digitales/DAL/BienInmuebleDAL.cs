@@ -57,7 +57,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-        public static void Editar(int id, string idPersonaJ, String idPersonaF, Enums.Provincia provincia, string mide, double valorFiscal, string naturaleza)
+        public static void Editar(int id, string idPersonaJ, string idPersonaF, string provincia, string mide, double valorFiscal, string naturaleza)
         {
             try
             {
@@ -150,7 +150,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         bien.id = Convert.ToInt32(reader["id"]);
                         bien.idPersonaJ = reader["idPersonaJ"].ToString();
                         bien.idPersonaF = reader["idPersonaF"].ToString();
-                        bien.provincia = (Enums.Provincia)Convert.ToInt32(reader["Provincia"]);
+                        bien.provincia = reader["Provincia"].ToString();
                         bien.Mide = reader["Mide"].ToString();
                         bien.valorFiscal = Convert.ToDouble(reader["ValorFiscal"]);
                         bien.naturaleza = reader["Naturaleza"].ToString();
@@ -193,7 +193,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         bien.id = Convert.ToInt32(reader["id"]);
                         bien.idPersonaJ = reader["idPersonaJ"].ToString();
                         bien.idPersonaF = reader["idPersonaF"].ToString();
-                        bien.provincia = (Enums.Provincia)Convert.ToInt32(reader["Provincia"]);
+                        bien.provincia = reader["Provincia"].ToString();
                         bien.Mide = (reader["Mide"].ToString());
                         bien.valorFiscal = Convert.ToDouble(reader["ValorFiscal"]);
                         bien.naturaleza = reader["Naturaleza"].ToString();

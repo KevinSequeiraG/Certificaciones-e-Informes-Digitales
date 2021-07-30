@@ -19,11 +19,23 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_AgregarLineaDetalle";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@id", linea.id);
                     comando.Parameters.AddWithValue("@idCarrito", linea.idCarrito);
                     comando.Parameters.AddWithValue("@idCert", linea.idCert);
-                    comando.Parameters.AddWithValue("@cant", linea.cant);
-                    comando.Parameters.AddWithValue("@idPersona", linea.idPersona);
+                    comando.Parameters.AddWithValue("@cant", linea.cant); 
+                    if (linea.idPersonaF == "")
+                    {
+                        var personaF = DBNull.Value;
+                        string personaJ = linea.idPersonaJ;
+                        comando.Parameters.AddWithValue("@idPersonaJ", personaJ);
+                        comando.Parameters.AddWithValue("@idPersonaF", personaF);
+                    }
+                    if (linea.idPersonaJ == "")
+                    {
+                        var personaJ = DBNull.Value;
+                        string personaF = linea.idPersonaF;
+                        comando.Parameters.AddWithValue("@idPersonaJ", personaJ);
+                        comando.Parameters.AddWithValue("@idPersonaF", personaF);
+                    }
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     db.ExecuteNonQuery(comando);
@@ -49,7 +61,6 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_EditarLineaDetalle";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@id", id);
                     comando.Parameters.AddWithValue("@idCarrito", idCarrito);
                     comando.Parameters.AddWithValue("@idCert", idCert);
                     comando.Parameters.AddWithValue("@cant", cant);
@@ -120,7 +131,8 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         linea.idCarrito = Convert.ToInt32(reader["idCarrito"]);
                         linea.idCert = Convert.ToInt32(reader["idCert"]);
                         linea.cant = Convert.ToInt32(reader["cant"]);
-                        linea.idPersona = reader["idPersona"].ToString();
+                        linea.idPersonaJ = reader["idPersonaJ"].ToString();
+                        linea.idPersonaF = reader["idPersonaF"].ToString();
                         lista.Add(linea);
                     }
                     return lista;
@@ -160,7 +172,8 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         linea.idCarrito = Convert.ToInt32(reader["idCarrito"]);
                         linea.idCert = Convert.ToInt32(reader["idCert"]);
                         linea.cant = Convert.ToInt32(reader["cant"]);
-                        linea.idPersona = reader["idPersona"].ToString();
+                        linea.idPersonaJ = reader["idPersonaJ"].ToString();
+                        linea.idPersonaF = reader["idPersonaF"].ToString();
                         return linea;
                     }
                     return null;

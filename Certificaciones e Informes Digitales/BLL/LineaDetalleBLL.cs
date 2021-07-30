@@ -9,15 +9,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class LineaDetalleBLL
     {
-        public static void Guardar(Entities.LineaDetalle linea)
+        public void Guardar(Entities.LineaDetalle linea)
         {
             try
             {
-                if (linea.id == null)
-                {
-                    //warn
-                    throw new ApplicationException("Debe ingresar el ID del linea");
-                }
                 if (linea.idCarrito == null)
                 {
                     //warn
@@ -32,11 +27,6 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 {
                     //warn
                     throw new ApplicationException("Debe indicar la cantidad de certificaciones");
-                }
-                if (linea.idPersona == null)
-                {
-                    //warn
-                    throw new ApplicationException("Debe ingresar el ID de la persona");
                 }
 
                 DAL.LineaDetalleDAL.Guardar(linea);

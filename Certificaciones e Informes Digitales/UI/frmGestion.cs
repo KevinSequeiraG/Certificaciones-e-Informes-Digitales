@@ -149,6 +149,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 frmAgregarCatastro ventana = new frmAgregarCatastro();
                 ventana.ShowDialog();
             }
+            actualizaTabla();
         }
 
         private void frmGestion_Activated(object sender, EventArgs e)

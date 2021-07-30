@@ -44,11 +44,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // 
             // cboTipo
             // 
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(71, 162);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(121, 33);
+            this.cboTipo.Size = new System.Drawing.Size(208, 33);
             this.cboTipo.TabIndex = 105;
             // 
             // txtPrecio

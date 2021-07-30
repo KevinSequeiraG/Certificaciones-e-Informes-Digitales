@@ -9,16 +9,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class CarritoBLL
     {
-        public static void Guardar(Entities.Carrito carro)
+        public void Guardar(Entities.Carrito carro)
         {
             try
             {
-                if (carro.id == null)
-                {
-                    //warn
-                    throw new ApplicationException("Debe ingresar el ID del carro");
-                }
-                if (carro.usuario==null)
+                if (carro.usuario == null)
                 {
                     //warn
                     throw new ApplicationException("Debe ingresar el usuario que es dueño del carrito");
@@ -37,7 +32,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 {
                     //warn
                     throw new ApplicationException("Debe ingresar el total de impuestos");
-                }               
+                }
 
                 DAL.CarritoDAL.Guardar(carro);
             }
@@ -117,6 +112,17 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             try
             {
                 return DAL.CarritoDAL.VerPorID(ID);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+            }
+        }
+        public  Entities.Carrito VerUltimoCarrito(string email)
+        {
+            try
+            {
+                return DAL.CarritoDAL.VerUltimoCarrito(email);
             }
             catch (Exception ex)
             {

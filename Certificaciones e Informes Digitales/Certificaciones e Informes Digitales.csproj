@@ -134,6 +134,12 @@
     <Compile Include="UI\frmAgregarPersonasF.Designer.cs">
       <DependentUpon>frmAgregarPersonasF.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmCarrito.Designer.cs">
+      <DependentUpon>frmCarrito.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     <EmbeddedResource Include="UI\frmAgregarPersonasF.resx">
       <DependentUpon>frmAgregarPersonasF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmCarrito.resx">
+      <DependentUpon>frmCarrito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmCompra.resx">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,7 +325,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\fondoLoguin.jpg" />
   </ItemGroup>
@@ -331,6 +339,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondoCompra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\carrrito.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

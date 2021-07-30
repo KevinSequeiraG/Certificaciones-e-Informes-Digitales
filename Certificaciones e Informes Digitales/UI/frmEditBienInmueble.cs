@@ -30,13 +30,14 @@ namespace Certificaciones_e_Informes_Digitales.UI
             {
                 personaJ = txtIDPersona.Text;
             }
-            logica.Editar(Convert.ToInt32(mtbID.Text),personaJ, personaF,  (Enums.Provincia)cboProvincia.SelectedItem, txtMide.Text, Convert.ToDouble(txtValorFiscal.Text), txtNaturaleza.Text);
+            logica.Editar(Convert.ToInt32(mtbID.Text),personaJ, personaF, cboProvincia.SelectedItem.ToString(), txtMide.Text, Convert.ToDouble(txtValorFiscal.Text), txtNaturaleza.Text);
+            this.Close();
         }
 
         private void frmEditBienInmueble_Load(object sender, EventArgs e)
         {
             this.ActiveControl = lblIDPersona;
-            cboProvincia.DataSource = Enum.GetValues(typeof(Enums.Provincia));
+            cboProvincia.DataSource = Util.Utilities.lstProvincias();
             logica = new BLL.BienInmuebleBLL();
             Entities.BienesInmuebles bien = logica.VerPorID(frmGestion.ID);
             mtbID.Text = bien.id.ToString();
@@ -52,7 +53,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             }
             txtMide.Text = bien.Mide;
             txtNaturaleza.Text= bien.naturaleza;
-            cboProvincia.SelectedIndex = (int)bien.provincia;
+            cboProvincia.SelectedItem = bien.provincia;
             txtValorFiscal.Text = bien.valorFiscal.ToString();
         }
 

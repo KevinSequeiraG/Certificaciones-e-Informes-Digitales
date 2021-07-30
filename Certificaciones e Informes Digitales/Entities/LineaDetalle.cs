@@ -12,6 +12,7 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public int idCarrito { get; set; }
         public int idCert { get; set; }
         public int cant { get; set; }
-        public string idPersona { get; set; }
+        public string idPersonaJ { get; set; }
+        public string idPersonaF { get; set; }
     }
 }

@@ -160,7 +160,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Name = "frmGestiones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGestiones";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmGestiones_FormClosed);
             this.Load += new System.EventHandler(this.frmGestiones_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmGestiones_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();

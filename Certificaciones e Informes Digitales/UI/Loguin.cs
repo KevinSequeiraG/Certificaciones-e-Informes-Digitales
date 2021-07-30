@@ -109,6 +109,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 if (user==null)
                 {
                     throw new ApplicationException("No se ha encontrado un usuario con este correo o contraseña");
+                    txtEmail.Text = "Correo Eléctronico...";
+                    txtPassw.Text = "Contraseña...";
                 }
                 else
                 {

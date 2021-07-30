@@ -63,6 +63,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(44, 654);
@@ -76,6 +77,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Location = new System.Drawing.Point(372, 654);
@@ -232,7 +234,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // cboProvincia
             // 
             this.cboProvincia.BackColor = System.Drawing.Color.Firebrick;
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
+            this.cboProvincia.ForeColor = System.Drawing.Color.White;
             this.cboProvincia.FormattingEnabled = true;
             this.cboProvincia.Location = new System.Drawing.Point(94, 351);
             this.cboProvincia.Name = "cboProvincia";

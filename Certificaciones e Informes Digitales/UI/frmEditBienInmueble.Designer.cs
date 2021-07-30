@@ -52,6 +52,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // cboProvincia
             // 
             this.cboProvincia.BackColor = System.Drawing.Color.Firebrick;
+            this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic);
             this.cboProvincia.ForeColor = System.Drawing.Color.White;
             this.cboProvincia.FormattingEnabled = true;

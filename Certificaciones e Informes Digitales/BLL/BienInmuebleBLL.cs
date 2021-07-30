@@ -43,7 +43,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al guardar el bien \n" + ex.Message);
             }
         }
-        public void Editar(int id, string idPersonaJ, string idPersonaF, Enums.Provincia provincia, string mide, double valorFiscal, string naturaleza)
+        public void Editar(int id, string idPersonaJ, string idPersonaF, string provincia, string mide, double valorFiscal, string naturaleza)
         {
             try
             {

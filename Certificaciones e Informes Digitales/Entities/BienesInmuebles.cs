@@ -12,7 +12,7 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public int id { get; set; }
         public string idPersonaJ { get; set; }
         public string idPersonaF { get; set; }
-        public Provincia provincia { get; set; }
+        public string provincia { get; set; }
         public string Mide { get; set; }
         public double valorFiscal { get; set; }
         public string naturaleza { get; set; }

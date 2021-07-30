@@ -19,8 +19,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_AgregarCarrito";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@id", carro.id);
-                    comando.Parameters.AddWithValue("@usuario", carro.usuario);
+                    comando.Parameters.AddWithValue("@usuario", carro.usuario.email);
                     comando.Parameters.AddWithValue("@total", carro.total);
                     comando.Parameters.AddWithValue("@subtotal", carro.subtotal);
                     comando.Parameters.AddWithValue("@impuestos", carro.impuestos);
@@ -113,11 +112,13 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 
                     var reader = db.ExecuteReader(comando);
 
+                    BLL.UsuarioBLL logicaUsuario = new BLL.UsuarioBLL();
+
                     while (reader.Read())
                     {
                         Entities.Carrito carro = new Entities.Carrito();
                         carro.id = Convert.ToInt32(reader["id"]);
-                        carro.usuario = (Entities.Usuario)reader["usuario"];
+                        carro.usuario = logicaUsuario.TraerUsuarioPorCorreo(reader["usuario"].ToString())[0];
                         carro.total = Convert.ToDouble(reader["total"]);
                         carro.subtotal = Convert.ToDouble(reader["subtotal"]);
                         carro.impuestos = Convert.ToDouble(reader["impuestos"]);
@@ -158,6 +159,50 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         Entities.Carrito carro = new Entities.Carrito();
                         carro.id = Convert.ToInt32(reader["id"]);
                         carro.usuario = (Entities.Usuario)reader["usuario"];
+                        carro.total = Convert.ToDouble(reader["total"]);
+                        carro.subtotal = Convert.ToDouble(reader["subtotal"]);
+                        carro.impuestos = Convert.ToDouble(reader["impuestos"]);
+                        return carro;
+                    }
+                    return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+
+        public static Entities.Carrito VerUltimoCarrito(string email)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_UltimoCarroUser";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@email", email);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+
+                    while (reader.Read())
+                    {
+                        Entities.Carrito carro = new Entities.Carrito();
+                        carro.id = Convert.ToInt32(reader["id"]);
+
+                        BLL.UsuarioBLL logicaUser = new BLL.UsuarioBLL();
+
+                        carro.usuario = logicaUser.TraerUsuarioPorCorreo(reader["usuario"].ToString())[0];
                         carro.total = Convert.ToDouble(reader["total"]);
                         carro.subtotal = Convert.ToDouble(reader["subtotal"]);
                         carro.impuestos = Convert.ToDouble(reader["impuestos"]);

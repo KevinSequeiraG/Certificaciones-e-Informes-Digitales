@@ -35,11 +35,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 }
                 bien.Mide = txtMide.Text;
                 bien.naturaleza = txtNaturaleza.Text;
-                bien.provincia = (Enums.Provincia)cboProvincia.SelectedItem;
+                bien.provincia = cboProvincia.SelectedItem.ToString();
                 bien.valorFiscal = Convert.ToDouble(txtValorFiscal.Text);
 
                 BLL.BienInmuebleBLL.Guardar(bien);
                 MessageBox.Show("Bien Inmueble guardado correctamente");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -55,7 +56,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmAgregarBienInmueble_Load(object sender, EventArgs e)
         {
-            cboProvincia.DataSource = Enum.GetValues(typeof(Enums.Provincia));
+            cboProvincia.DataSource = Util.Utilities.lstProvincias();
             rdbPersonaF.Checked = true;
         }
     }

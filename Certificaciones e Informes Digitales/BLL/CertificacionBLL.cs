@@ -112,5 +112,16 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar la certificacion \n" + ex.Message);
             }
         }
+        public List<Entities.Certificacion> VerPorTipo(string tipo)
+        {
+            try
+            {
+                return DAL.CertificacionDAL.VerPorTipo(tipo);
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("Ocurrio un error al cargar la lista de " + tipo);
+            }
+        }
     }
 }
