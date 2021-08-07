@@ -32,6 +32,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCarrito = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -88,6 +89,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnCarrito.TabIndex = 11;
             this.btnCarrito.Text = "Carrito";
             this.btnCarrito.UseVisualStyleBackColor = false;
+            this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
             // 
             // dgvProductos
             // 
@@ -107,6 +109,14 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Tipo,
             this.ID,
             this.Detalle});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProductos.Location = new System.Drawing.Point(34, 206);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
@@ -279,7 +289,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCompra";
             this.Activated += new System.EventHandler(this.frmCompra_Activated);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCompra_FormClosed);
             this.Load += new System.EventHandler(this.frmCompra_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCompra_MouseDown);
             this.panel1.ResumeLayout(false);

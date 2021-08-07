@@ -30,6 +30,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lblCrearUser = new System.Windows.Forms.Label();
             this.btnCancela = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -69,6 +69,18 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1.Size = new System.Drawing.Size(626, 636);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.Firebrick;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.Silver;
+            this.txtNombre.Location = new System.Drawing.Point(79, 107);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(440, 31);
+            this.txtNombre.TabIndex = 41;
+            this.txtNombre.Text = "Nombre...";
             // 
             // txtPass
             // 
@@ -232,18 +244,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.txtApellido1.Text = "Primer Apellido...";
             this.txtApellido1.Enter += new System.EventHandler(this.txtApellido1_Enter);
             this.txtApellido1.Leave += new System.EventHandler(this.txtApellido1_Leave);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.Firebrick;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.Silver;
-            this.txtNombre.Location = new System.Drawing.Point(79, 107);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(440, 31);
-            this.txtNombre.TabIndex = 41;
-            this.txtNombre.Text = "Primer Apellido...";
             // 
             // frmCrearUsuario
             // 

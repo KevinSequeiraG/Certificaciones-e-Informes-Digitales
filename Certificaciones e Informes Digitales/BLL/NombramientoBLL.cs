@@ -9,7 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class NombramientoBLL
     {
-        public static void Guardar(Entities.Nombramiento nombramiento)
+        public void Guardar(Entities.Nombramiento nombramiento)
         {
             try
             {
@@ -143,5 +143,18 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar el nombramiento \n" + ex.Message);
             }
         }
+        public List<Entities.Nombramiento> VerPorIDPersona(string ID)
+        {
+            try
+            {
+                return DAL.NombramientoDAL.VerPorIDPersona(ID);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el nombramiento \n" + ex.Message);
+            }
+        }
+
+
     }
 }

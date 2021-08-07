@@ -159,6 +159,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void actualizaTabla()
         {
+            btnNombramiento.Visible = false;
             if (frmGestiones.GestionSeleccionada == 1 || frmGestiones.GestionSeleccionada == 2)
             {
                 lblID.Text = "Id de Persona:";
@@ -172,6 +173,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 {
                     BLL.PersonaJuridicaBLL logica = new BLL.PersonaJuridicaBLL();
                     dgvGestion.DataSource = logica.Ver();
+                    dgvGestion.Columns[1].Width = 200;
+                    dgvGestion.Columns[7].Width = 400;
+                    btnNombramiento.Visible = true;
                 }
             }
             else if (frmGestiones.GestionSeleccionada == 3)
@@ -266,6 +270,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                     logica.Eliminar(Convert.ToInt32(dgvGestion.SelectedRows[0].Cells[0].Value));
                 }
             }
+            actualizaTabla();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -311,11 +316,19 @@ namespace Certificaciones_e_Informes_Digitales.UI
                     frmEditCatastro ventana = new frmEditCatastro();
                     ventana.ShowDialog();
                 }
+                actualizaTabla();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnNombramiento_Click(object sender, EventArgs e)
+        {
+            frmNombramiento ventana = new frmNombramiento();
+            IdP = dgvGestion.SelectedRows[0].Cells[0].Value.ToString();
+            ventana.Show();
         }
     }
 }

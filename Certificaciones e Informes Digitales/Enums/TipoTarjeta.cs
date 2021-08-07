@@ -8,6 +8,6 @@ namespace Certificaciones_e_Informes_Digitales.Enums
 {
     enum TipoTarjeta
     {
-        debito, credito
+        Credito, Debito
     }
 }

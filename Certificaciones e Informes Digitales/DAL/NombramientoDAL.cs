@@ -148,7 +148,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
             try
             {
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
-                {
+                {   
                     string sql = @"VerNombramientoID";
 
                     var comando = new SqlCommand(sql);
@@ -172,6 +172,50 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         return nombramiento;
                     }
                     return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+        public static List<Entities.Nombramiento> VerPorIDPersona (string ID)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    List<Entities.Nombramiento> lista = new List<Entities.Nombramiento>();
+
+                    string sql = @"VerNombramientoIDPersona";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@ID", ID);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+
+                    while (reader.Read())
+                    {
+                        Entities.Nombramiento nombramiento = new Entities.Nombramiento();
+                        nombramiento.id = Convert.ToInt32(reader["id"]);
+                        nombramiento.Nombre = reader["Nombre"].ToString();
+                        nombramiento.Cargo = reader["Cargo"].ToString();
+                        nombramiento.FechaInsc = Convert.ToDateTime(reader["FechaInsc"]);
+                        nombramiento.VigenciaIni = Convert.ToDateTime(reader["VigenciaIni"]);
+                        nombramiento.VigenciaVenc = Convert.ToDateTime(reader["VigenciaVenc"]);
+                        nombramiento.idPersonaJuridica = reader["idPersonaJuridica"].ToString();
+                        lista.Add(nombramiento);
+                    }
+                    return lista ;
                 }
             }
             catch (SqlException sqlEx)

@@ -12,6 +12,6 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public string idUser { get; set; }
         public DateTime fechaVenc { get; set; }
         public int cvv { get; set; }
-        public string tipo { get; set; }
+        public Enums.TipoTarjeta tipo { get; set; }
     }
 }

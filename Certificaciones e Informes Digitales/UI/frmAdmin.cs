@@ -97,5 +97,22 @@ namespace Certificaciones_e_Informes_Digitales.UI
         {
             btnComprador.BackColor = Color.Transparent;
         }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            Reportes.frmVentasCertsFecha ventana = new Reportes.frmVentasCertsFecha();
+            ventana.Show();
+            Reportes.frmRepComprasTotales ventana1 = new Reportes.frmRepComprasTotales();
+            ventana1.Show();
+            Reportes.frmRepVentaCertsMes ventana2 = new Reportes.frmRepVentaCertsMes();
+            ventana2.Show();
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loguin ventana = new Loguin();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

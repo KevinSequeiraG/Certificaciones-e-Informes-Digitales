@@ -134,6 +134,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(244, 28);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // cambiarContraseToolStripMenuItem
             // 
@@ -160,6 +161,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Text = "frmAdmin";
             this.Activated += new System.EventHandler(this.frmAdmin_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAdmin_FormClosed);
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmAdmin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

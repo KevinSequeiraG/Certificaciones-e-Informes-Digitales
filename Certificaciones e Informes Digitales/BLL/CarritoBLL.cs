@@ -129,5 +129,38 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
             }
         }
+        public List<Entities.LineaDetalle> VerInfoCarrito(int id)
+        {
+            try
+            {
+                return DAL.CarritoDAL.VerInfoCarrito(id);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+            }
+        }
+        public double CalcularTotal(int idCarro)
+        {
+            try
+            {
+                return DAL.CarritoDAL.CalcularTotal(idCarro);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+            }
+        }
+        public static List<Entities.Carrito> VerComprasDelMes()
+        {
+            try
+            {
+                return DAL.CarritoDAL.VerComprasDelMes();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+            }
+        }
     }
 }

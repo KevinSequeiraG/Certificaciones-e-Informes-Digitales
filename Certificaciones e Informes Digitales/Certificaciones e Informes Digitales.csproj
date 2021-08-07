@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -69,6 +87,11 @@
     <Compile Include="DAL\PersonaJuridicaDAL.cs" />
     <Compile Include="DAL\TarjetaDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
+    <Compile Include="dpVentasCertsFecha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dpVentasCertsFecha.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\BienesInmuebles.cs" />
     <Compile Include="Entities\BienesMuebles.cs" />
     <Compile Include="Entities\Catastro.cs" />
@@ -84,6 +107,7 @@
     <Compile Include="Enums\Gestiones.cs" />
     <Compile Include="Enums\Moneda.cs" />
     <Compile Include="Enums\Provincia.cs" />
+    <Compile Include="Enums\TipoTarjeta.cs" />
     <Compile Include="Enums\TipoUsuario.cs" />
     <Compile Include="Enums\Usos.cs" />
     <Compile Include="Persistencia\DataBase.cs" />
@@ -92,6 +116,7 @@
     <Compile Include="Persistencia\IDataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UI\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +146,36 @@
     </Compile>
     <Compile Include="UI\frmAgregarCerts.Designer.cs">
       <DependentUpon>frmAgregarCerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarNombramiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarNombramiento.Designer.cs">
+      <DependentUpon>frmAgregarNombramiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAgregarTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAgregarTarjeta.Designer.cs">
+      <DependentUpon>frmAgregarTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmEditNombramiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmEditNombramiento.Designer.cs">
+      <DependentUpon>frmEditNombramiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmFactura.Designer.cs">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmNombramiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmNombramiento.Designer.cs">
+      <DependentUpon>frmNombramiento.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmAgregarPersonaJ.cs">
       <SubType>Form</SubType>
@@ -218,11 +273,23 @@
     <Compile Include="UI\frmNuevoPassword.Designer.cs">
       <DependentUpon>frmNuevoPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmPersonaCert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmPersonaCert.Designer.cs">
+      <DependentUpon>frmPersonaCert.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmRecuperarContra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmRecuperarContra.Designer.cs">
       <DependentUpon>frmRecuperarContra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTarjetaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTarjetaPago.Designer.cs">
+      <DependentUpon>frmTarjetaPago.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Loguin.cs">
       <SubType>Form</SubType>
@@ -230,6 +297,25 @@
     <Compile Include="UI\Loguin.Designer.cs">
       <DependentUpon>Loguin.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\frmRepComprasTotales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmRepComprasTotales.Designer.cs">
+      <DependentUpon>frmRepComprasTotales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\frmRepVentaCertsMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmRepVentaCertsMes.Designer.cs">
+      <DependentUpon>frmRepVentaCertsMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\frmVentasCertsFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmVentasCertsFecha.Designer.cs">
+      <DependentUpon>frmVentasCertsFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CarritoSingleton.cs" />
     <Compile Include="Util\Log.cs" />
     <Compile Include="Util\UsuarioSingleton.cs" />
     <Compile Include="Util\Utilities.cs" />
@@ -257,6 +343,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmAgregarCerts.resx">
       <DependentUpon>frmAgregarCerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarNombramiento.resx">
+      <DependentUpon>frmAgregarNombramiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmAgregarTarjeta.resx">
+      <DependentUpon>frmAgregarTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmEditNombramiento.resx">
+      <DependentUpon>frmEditNombramiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmFactura.resx">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmNombramiento.resx">
+      <DependentUpon>frmNombramiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmAgregarPersonaJ.resx">
       <DependentUpon>frmAgregarPersonaJ.cs</DependentUpon>
@@ -306,12 +407,43 @@
     <EmbeddedResource Include="UI\frmNuevoPassword.resx">
       <DependentUpon>frmNuevoPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmPersonaCert.resx">
+      <DependentUpon>frmPersonaCert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmRecuperarContra.resx">
       <DependentUpon>frmRecuperarContra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTarjetaPago.resx">
+      <DependentUpon>frmTarjetaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Loguin.resx">
       <DependentUpon>Loguin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmRepComprasTotales.resx">
+      <DependentUpon>frmRepComprasTotales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmRepVentaCertsMes.resx">
+      <DependentUpon>frmRepVentaCertsMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmVentasCertsFecha.resx">
+      <DependentUpon>frmVentasCertsFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\repComprasTotales.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\repVentasCertsMes.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\repVentasCertsFecha.rdlc" />
+    <None Include="dpVentasCertsFecha.xsc">
+      <DependentUpon>dpVentasCertsFecha.xsd</DependentUpon>
+    </None>
+    <None Include="dpVentasCertsFecha.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dpVentasCertsFecha.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dpVentasCertsFecha.xss">
+      <DependentUpon>dpVentasCertsFecha.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Carrito.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -342,6 +474,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\carrrito.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

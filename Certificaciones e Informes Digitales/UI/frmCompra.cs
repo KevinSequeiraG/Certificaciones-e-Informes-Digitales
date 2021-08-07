@@ -15,7 +15,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
 {
     public partial class frmCompra : Form
     {
-        Entities.Carrito carro;
+        internal static string IDpersonaF;
+        internal static string IDpersonaJ;
         public frmCompra()
         {
             InitializeComponent();
@@ -38,14 +39,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void frmCompra_Load(object sender, EventArgs e)
         {
             cboTipos.DataSource = Util.Utilities.lstTiposCert();
-            BLL.CarritoBLL logica = new BLL.CarritoBLL();
-            carro = new Entities.Carrito();
-            carro.usuario = Util.UsuarioSingleton.GetInstance();
-            carro.total = 0;
-            carro.subtotal = 0;
-            carro.impuestos = 0;
-            logica.Guardar(carro);
-            carro = logica.VerUltimoCarrito(Util.UsuarioSingleton.GetInstance().email);
         }
 
         private void frmCompra_Activated(object sender, EventArgs e)
@@ -111,7 +104,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-
+            frmTarjetaPago ventana = new frmTarjetaPago();
+            ventana.Show();
+            this.Close();
         }
 
         private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,22 +154,39 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            try
             {
-                BLL.LineaDetalleBLL logicaLinea = new BLL.LineaDetalleBLL();
-                Entities.LineaDetalle linea = new Entities.LineaDetalle();
+                if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+                {
+                    frmPersonaCert ventana = new frmPersonaCert();
+                    ventana.ShowDialog();
 
-                linea.idPersonaF = "1";
-                linea.idPersonaJ = "";
+                    BLL.LineaDetalleBLL logicaLinea = new BLL.LineaDetalleBLL();
+                    Entities.LineaDetalle linea = new Entities.LineaDetalle();
 
-                linea.idCarrito = carro.id;
+                    linea.idPersonaF = IDpersonaF;
+                    linea.idPersonaJ = IDpersonaJ;
 
-                linea.idCert = Convert.ToInt32(dgvProductos["ID", e.RowIndex].Value.ToString());
-                linea.cant = 1;
+                    linea.idCarrito = Util.CarritoSingleton.GetInstance().id;
 
-                logicaLinea.Guardar(linea);
-                MessageBox.Show("'Se agrega al carro'");
+                    linea.idCert = Convert.ToInt32(dgvProductos["ID", e.RowIndex].Value.ToString());
+                    linea.cant = 1;
+
+                    logicaLinea.Guardar(linea);
+                    MessageBox.Show("Se agrega la certificacion al carrito");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
+        private void btnCarrito_Click(object sender, EventArgs e)
+        {
+            frmCarrito ventana = new frmCarrito();
+            ventana.Show();
+            this.Hide();
         }
     }
 }

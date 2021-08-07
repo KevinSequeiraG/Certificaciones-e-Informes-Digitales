@@ -12,6 +12,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 {
     public partial class frmAgregarPersonaJ : Form
     {
+        internal static string idP;
         public frmAgregarPersonaJ()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 Entities.PersonaJuridica persona = new Entities.PersonaJuridica();
                 BLL.PersonaJuridicaBLL logica = new BLL.PersonaJuridicaBLL();
 
+                idP = txtid.Text;
                 persona.id = txtid.Text;
                 persona.razonSocial = txtIRazonSoc.Text;
                 persona.estado = rdbActivo.Checked ? true : false;
@@ -35,6 +37,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
                 logica.Guardar(persona);
                 MessageBox.Show("Persona agregada correctamente");
+
+                frmAgregarNombramiento ventanaN = new frmAgregarNombramiento();
+                ventanaN.ShowDialog();
                 this.Close();
             }
             catch (Exception ex)

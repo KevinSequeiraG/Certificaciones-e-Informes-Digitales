@@ -121,7 +121,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         tarjeta.idUser = reader["Nombre"].ToString();
                         tarjeta.fechaVenc = Convert.ToDateTime(reader["Apellido1"]);
                         tarjeta.cvv = Convert.ToInt32(reader["Apellido2"]);
-                        tarjeta.tipo = reader["FechaNacimiento"].ToString();
+                        tarjeta.tipo = (Enums.TipoTarjeta)Convert.ToInt32(reader["FechaNacimiento"].ToString());
                         lista.Add(tarjeta);
                     }
                     return lista;
@@ -161,10 +161,52 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         tarjeta.idUser = reader["Nombre"].ToString();
                         tarjeta.fechaVenc = Convert.ToDateTime(reader["Apellido1"]);
                         tarjeta.cvv = Convert.ToInt32(reader["Apellido2"]);
-                        tarjeta.tipo = reader["FechaNacimiento"].ToString();
+                        tarjeta.tipo = (Enums.TipoTarjeta)Convert.ToInt32(reader["FechaNacimiento"].ToString());
                         return tarjeta;
                     }
                     return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+
+        public static List<Entities.Tarjeta> VerTarjetasUsuario(string userEmail)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    List<Entities.Tarjeta> lista = new List<Entities.Tarjeta>();
+                    string sql = @"SP_VerTarjetaUsuario";
+
+                    var comando = new SqlCommand(sql);
+                    comando.Parameters.AddWithValue("@email", userEmail);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+
+                    while (reader.Read())
+                    {
+                        Entities.Tarjeta tarjeta = new Entities.Tarjeta();
+                        tarjeta.id = Convert.ToInt32(reader["id"]);
+                        tarjeta.idUser = reader["idUser"].ToString();
+                        tarjeta.fechaVenc = Convert.ToDateTime(reader["fechaVenc"]);
+                        tarjeta.cvv = Convert.ToInt32(reader["cvv"]);
+                        tarjeta.tipo =(Enums.TipoTarjeta)Convert.ToInt32(reader["tipo"].ToString());
+                        lista.Add(tarjeta);
+                    }
+                    return lista;
                 }
             }
             catch (SqlException sqlEx)

@@ -298,7 +298,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(121, 63);
             this.btnAceptar.TabIndex = 279;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Siguiente";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 

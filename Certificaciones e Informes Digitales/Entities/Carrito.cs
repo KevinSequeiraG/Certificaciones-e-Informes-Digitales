@@ -13,5 +13,7 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public double total { get; set; }
         public double subtotal { get; set; }
         public double impuestos { get; set; }
+        public DateTime fecha { get; set; }
+        public string Correo_Usuario { get; set; }
     }
 }

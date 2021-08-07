@@ -9,7 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class TarjetaBLL
     {
-        public static void Guardar(Entities.Tarjeta tarjeta)
+        public void Guardar(Entities.Tarjeta tarjeta)
         {
             try
             {
@@ -123,5 +123,18 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar la tarjeta\n" + ex.Message);
             }
         }
+        public List<Entities.Tarjeta> VerTarjetasUsuario(string userEmail)
+        {
+            try
+            {
+                return DAL.TarjetaDAL.VerTarjetasUsuario(userEmail);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar las tarjetas \n" + ex.Message);
+            }
+        }
+
+
     }
 }

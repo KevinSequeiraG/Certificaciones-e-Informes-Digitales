@@ -14,5 +14,8 @@ namespace Certificaciones_e_Informes_Digitales.Entities
         public int cant { get; set; }
         public string idPersonaJ { get; set; }
         public string idPersonaF { get; set; }
+        public string TipoCert { get; set; }
+        public string DetalleCert { get; set; }
+        public double PrecioCert { get; set; }
     }
 }

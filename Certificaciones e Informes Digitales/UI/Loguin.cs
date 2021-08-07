@@ -116,9 +116,19 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 {
                     if (user.tipo == Enums.TipoUsuario.cliente)
                     {
+                        BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
                         frmCompra ventana = new frmCompra();
                         this.Hide();
                         ventana.Show();
+                        Entities.Carrito carro = new Entities.Carrito();
+                        carro.usuario = Util.UsuarioSingleton.GetInstance();
+                        carro.total = 0;
+                        carro.subtotal = 0;
+                        carro.impuestos = 0;
+                        carro.fecha = DateTime.Now;
+                        logicaCarro.Guardar(carro);
+                        carro = logicaCarro.VerUltimoCarrito(Util.UsuarioSingleton.GetInstance().email);//se llama de nuevo para conseguir el id del carro
+                        Util.CarritoSingleton.setCarro(carro);
                     }
                     else
                     {
