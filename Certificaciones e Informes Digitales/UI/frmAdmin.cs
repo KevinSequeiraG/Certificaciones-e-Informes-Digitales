@@ -100,12 +100,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            Reportes.frmVentasCertsFecha ventana = new Reportes.frmVentasCertsFecha();
-            ventana.Show();
-            Reportes.frmRepComprasTotales ventana1 = new Reportes.frmRepComprasTotales();
-            ventana1.Show();
-            Reportes.frmRepVentaCertsMes ventana2 = new Reportes.frmRepVentaCertsMes();
-            ventana2.Show();
+            
         }
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +108,33 @@ namespace Certificaciones_e_Informes_Digitales.UI
             Loguin ventana = new Loguin();
             ventana.Show();
             this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportes ventana = new frmReportes();
+            ventana.Show();
+            this.Hide();
+            Reportes.frmCertPersoneriaJuridica logica = new Reportes.frmCertPersoneriaJuridica();
+            logica.Show();
+            logica.Hide();
+            Reportes.frmCertBienInmueblePersonaF ve = new Reportes.frmCertBienInmueblePersonaF();
+            ve.Show();
+        }
+
+        private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReportes_MouseEnter(object sender, EventArgs e)
+        {
+            btnReportes.BackColor = Color.IndianRed;
+        }
+
+        private void btnReportes_MouseLeave(object sender, EventArgs e)
+        {
+            btnReportes.BackColor = Color.Transparent;
         }
     }
 }

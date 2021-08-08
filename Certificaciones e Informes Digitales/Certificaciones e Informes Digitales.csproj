@@ -92,6 +92,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dpVentasCertsFecha.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsPersonaJConNombramiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPersonaJConNombramiento.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\BienesInmuebles.cs" />
     <Compile Include="Entities\BienesMuebles.cs" />
     <Compile Include="Entities\Catastro.cs" />
@@ -285,6 +290,12 @@
     <Compile Include="UI\frmRecuperarContra.Designer.cs">
       <DependentUpon>frmRecuperarContra.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmTarjetaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +307,18 @@
     </Compile>
     <Compile Include="UI\Loguin.Designer.cs">
       <DependentUpon>Loguin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertBienInmueblePersonaF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertBienInmueblePersonaF.Designer.cs">
+      <DependentUpon>frmCertBienInmueblePersonaF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertPersoneriaJuridica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertPersoneriaJuridica.Designer.cs">
+      <DependentUpon>frmCertPersoneriaJuridica.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\frmRepComprasTotales.cs">
       <SubType>Form</SubType>
@@ -413,11 +436,24 @@
     <EmbeddedResource Include="UI\frmRecuperarContra.resx">
       <DependentUpon>frmRecuperarContra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmTarjetaPago.resx">
       <DependentUpon>frmTarjetaPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Loguin.resx">
       <DependentUpon>Loguin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\CertBienInmueble.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\docCertPersoneriaJuridica.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmCertBienInmueblePersonaF.resx">
+      <DependentUpon>frmCertBienInmueblePersonaF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmCertPersoneriaJuridica.resx">
+      <DependentUpon>frmCertPersoneriaJuridica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\frmRepComprasTotales.resx">
       <DependentUpon>frmRepComprasTotales.cs</DependentUpon>
@@ -442,8 +478,23 @@
     <None Include="dpVentasCertsFecha.xss">
       <DependentUpon>dpVentasCertsFecha.xsd</DependentUpon>
     </None>
+    <None Include="dsPersonaJConNombramiento.xsc">
+      <DependentUpon>dsPersonaJConNombramiento.xsd</DependentUpon>
+    </None>
+    <None Include="dsPersonaJConNombramiento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPersonaJConNombramiento.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPersonaJConNombramiento.xss">
+      <DependentUpon>dsPersonaJConNombramiento.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Carrito.datasource" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Nombramiento.datasource" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.PersonaFisica.datasource" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -473,6 +524,12 @@
     <None Include="Resources\fondoCompra.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\carrrito.png" />
+    <Content Include="Properties\Close_Icon.png" />
+    <Content Include="Properties\fondoCompra.jpg" />
+    <Content Include="Properties\FondoCrearUser.jpg" />
+    <Content Include="Properties\fondoLoguin.jpg" />
+    <Content Include="Properties\Minimize_Icon.png" />
     <Content Include="Resources\carrrito.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

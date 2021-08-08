@@ -1,6 +1,8 @@
 ﻿using Certificaciones_e_Informes_Digitales.Enums;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -59,7 +61,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
                 }
                 if (item == Gestiones.PersonasJuridicas)
                 {
-                    lista.Add("Personas Jurídicas");                   
+                    lista.Add("Personas Jurídicas");
                 }
                 if (item != Gestiones.BienesInmuebles && item != Gestiones.BienesMuebles && item != Gestiones.PersonasFisicas && item != Gestiones.PersonasJuridicas)
                 {
@@ -73,7 +75,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
             MailMessage mensaje = new MailMessage();
             mensaje.IsBodyHtml = true;
             mensaje.Subject = "Contranseña Temporal";
-            mensaje.Body = "La contraseña temporal para acceder a su cuenta es: "+contra;
+            mensaje.Body = "La contraseña temporal para acceder a su cuenta es: " + contra;
             mensaje.From = new MailAddress("ksgsendemails@gmail.com");
             mensaje.To.Add(correoAenviar);
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
@@ -106,6 +108,35 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return contraseña;
         }
-    }
+        public static List<string> lstRReportes()
+        {
+            List<string> lista = new List<string>();
+            lista.Add("Certificaciones por rango de fechas");
+            lista.Add("Certificaciones vendidas en el último mes");
+            lista.Add("Total de compras del último mes");
+            return lista;
+        }
 
+        public static void EnviarPDFCorreo(string correoAEnviar, byte[] bytes)
+        {
+            using (var viewer = new LocalReport())
+            {
+                var correo = new MailMessage { From = new MailAddress("ksgsendemails@gmail.com", "Kevin Sequeira Garita") };
+
+                correo.To.Add(new MailAddress(correoAEnviar, ""));
+                correo.Subject = "Reporte como Correo";
+                correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Reporte.pdf"));
+
+                using (var smtp = new SmtpClient("smtp.gmail.com"))
+                {
+                    smtp.Port = 587;
+                    smtp.Credentials = new System.Net.NetworkCredential("ksgsendemails@gmail.com", "ksg12345");
+                    smtp.EnableSsl = true;
+                    smtp.Send(correo);
+                }
+
+                Console.WriteLine("Correo enviado");
+            }
+        }
+    }
 }

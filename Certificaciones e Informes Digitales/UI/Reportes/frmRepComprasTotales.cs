@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
         {
             CarritoBindingSource.DataSource = BLL.CarritoBLL.VerComprasDelMes();
             this.reportViewer1.RefreshReport();
+
         }
     }
 }
