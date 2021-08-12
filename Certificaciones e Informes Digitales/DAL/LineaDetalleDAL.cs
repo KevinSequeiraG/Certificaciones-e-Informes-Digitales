@@ -36,6 +36,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         comando.Parameters.AddWithValue("@idPersonaJ", personaJ);
                         comando.Parameters.AddWithValue("@idPersonaF", personaF);
                     }
+                    comando.Parameters.AddWithValue("@idBien", linea.idBien);
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     db.ExecuteNonQuery(comando);
@@ -133,6 +134,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         linea.cant = Convert.ToInt32(reader["cant"]);
                         linea.idPersonaJ = reader["idPersonaJ"].ToString();
                         linea.idPersonaF = reader["idPersonaF"].ToString();
+                        linea.idBien = Convert.ToInt32(reader["idBien"]);
                         lista.Add(linea);
                     }
                     return lista;
@@ -174,6 +176,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         linea.cant = Convert.ToInt32(reader["cant"]);
                         linea.idPersonaJ = reader["idPersonaJ"].ToString();
                         linea.idPersonaF = reader["idPersonaF"].ToString();
+                        linea.idBien = Convert.ToInt32(reader["idBien"]);
                         return linea;
                     }
                     return null;

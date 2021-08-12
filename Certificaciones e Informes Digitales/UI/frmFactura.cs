@@ -22,7 +22,17 @@ namespace Certificaciones_e_Informes_Digitales.UI
             BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
             dgvCarrito.AutoGenerateColumns = false;
             dgvCarrito.DataSource = logicaCarro.VerInfoCarrito(Util.CarritoSingleton.GetInstance().id);
-            txtTot.Text = logicaCarro.CalcularTotal(Util.CarritoSingleton.GetInstance().id).ToString();
+            txtTot.Text = Util.CarritoSingleton.GetInstance().subtotal.ToString();
+            txtImpuestos.Text = Util.CarritoSingleton.GetInstance().impuestos.ToString();
+            txtTotalConImpuestos.Text = Util.CarritoSingleton.GetInstance().total.ToString();
+            Util.Utilities.EnviarCertificaciones(logicaCarro.VerInfoCarrito(Util.CarritoSingleton.GetInstance().id));
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmUsuario ventana = new frmUsuario();
+            ventana.Show();
+            this.Hide();
         }
     }
 }

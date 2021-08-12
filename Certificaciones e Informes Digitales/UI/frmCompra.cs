@@ -17,6 +17,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
     {
         internal static string IDpersonaF;
         internal static string IDpersonaJ;
+        internal static bool certPersonaJ;
+        internal static bool certBienMueble;
+        internal static bool certBienInmueble;
+        internal static int IDBien;
         public frmCompra()
         {
             InitializeComponent();
@@ -44,12 +48,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void frmCompra_Activated(object sender, EventArgs e)
         {
             lblCompra.BringToFront();
-
-            if (Util.UsuarioSingleton.GetInstance().changePassword)
-            {
-                frmNuevoPassword ventana = new frmNuevoPassword();
-                ventana.ShowDialog();
-            }
         }
 
         private void frmCompra_FormClosed(object sender, FormClosedEventArgs e)
@@ -125,14 +123,23 @@ namespace Certificaciones_e_Informes_Digitales.UI
             else if (cboTipos.SelectedIndex == 1)
             {
                 dgvProductos.DataSource = logica.VerPorTipo("Personas Juridicas");
+                certPersonaJ = true;
+                certBienInmueble = false;
+                certBienMueble = false;
             }
             else if (cboTipos.SelectedIndex == 2)
             {
                 dgvProductos.DataSource = logica.VerPorTipo("Bienes Muebles");
+                certBienMueble = true;
+                certBienInmueble = false;
+                certPersonaJ = false;
             }
             else if (cboTipos.SelectedIndex == 3)
             {
                 dgvProductos.DataSource = logica.VerPorTipo("Bienes Inmuebles");
+                certBienInmueble = true;
+                certBienMueble = false;
+                certPersonaJ = false;
             }
         }
 
@@ -161,19 +168,58 @@ namespace Certificaciones_e_Informes_Digitales.UI
                     frmPersonaCert ventana = new frmPersonaCert();
                     ventana.ShowDialog();
 
+                    if (certBienInmueble || certBienMueble)
+                    {
+                        frmBienDestinado ventanaBien = new frmBienDestinado();
+                        ventanaBien.ShowDialog();
+                    }
+
                     BLL.LineaDetalleBLL logicaLinea = new BLL.LineaDetalleBLL();
                     Entities.LineaDetalle linea = new Entities.LineaDetalle();
 
                     linea.idPersonaF = IDpersonaF;
                     linea.idPersonaJ = IDpersonaJ;
-
                     linea.idCarrito = Util.CarritoSingleton.GetInstance().id;
-
                     linea.idCert = Convert.ToInt32(dgvProductos["ID", e.RowIndex].Value.ToString());
                     linea.cant = 1;
 
-                    logicaLinea.Guardar(linea);
-                    MessageBox.Show("Se agrega la certificacion al carrito");
+                    if (certBienMueble)
+                    {
+                        BLL.BienMueleBLL logicaBienMueble = new BLL.BienMueleBLL();
+                        Entities.BienesMuebles bienM = new Entities.BienesMuebles();
+                        bienM = logicaBienMueble.VerPorID(IDBien);
+                        if (bienM != null && (bienM.idPersonaF == linea.idPersonaF && bienM.idPersonaJ == linea.idPersonaJ))
+                        {
+                            linea.idBien = IDBien;
+                            logicaLinea.Guardar(linea);
+                            MessageBox.Show("Se agrega la certificacion al carrito");
+                        }
+                        else
+                        {
+                            throw new ApplicationException("El ID ingresado para el Bien no pertenece a la persona requerida");
+                        }
+                    }
+                    else if (certBienInmueble)
+                    {
+                        BLL.BienInmuebleBLL logicaBienMueble = new BLL.BienInmuebleBLL();
+                        Entities.BienesInmuebles bienI = new Entities.BienesInmuebles();
+                        bienI = logicaBienMueble.VerPorID(IDBien);
+                        if (bienI != null && (bienI.idPersonaF == linea.idPersonaF && bienI.idPersonaJ == linea.idPersonaJ))
+                        {
+                            linea.idBien = IDBien;
+                            logicaLinea.Guardar(linea);
+                            MessageBox.Show("Se agrega la certificacion al carrito");
+                        }
+                        else
+                        {
+                            throw new ApplicationException("El ID ingresado para el Bien no pertenece a la persona requerida");
+                        }
+                    }
+                    else
+                    {
+                        logicaLinea.Guardar(linea);
+                        MessageBox.Show("Se agrega la certificacion al carrito");
+                    }
                 }
             }
             catch (Exception ex)

@@ -57,6 +57,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
+            BLL.CarritoBLL logicaParaTotales = new BLL.CarritoBLL();
+            Util.CarritoSingleton.GetInstance().subtotal = logicaParaTotales.CalcularTotal(Util.CarritoSingleton.GetInstance().id);
+            Util.CarritoSingleton.GetInstance().impuestos = logicaParaTotales.CalcularTotal(Util.CarritoSingleton.GetInstance().id) * 0.13;
+            Util.CarritoSingleton.GetInstance().total = logicaParaTotales.CalculaTotalConImpuestos(Util.CarritoSingleton.GetInstance().id);
+            logicaParaTotales.Editar(Util.CarritoSingleton.GetInstance().id, Util.CarritoSingleton.GetInstance().usuario, Util.CarritoSingleton.GetInstance().total, Util.CarritoSingleton.GetInstance().subtotal, Util.CarritoSingleton.GetInstance().impuestos);
             frmFactura ventana = new frmFactura();
             ventana.Show();
             this.Hide();

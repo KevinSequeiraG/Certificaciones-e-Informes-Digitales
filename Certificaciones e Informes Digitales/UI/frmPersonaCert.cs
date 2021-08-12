@@ -40,11 +40,17 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmPersonaCert_Load(object sender, EventArgs e)
         {
-            rdbPersonaF.Checked = true;
+            rdbPersonaJ.Checked = true;
+            if (frmCompra.certPersonaJ)
+            {
+                rdbPersonaF.Checked = false;
+                rdbPersonaF.Visible = false;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            throw new ApplicationException("No se ha seleccionado la persona a la que va dirigida la certificacion");
             this.Close();
         }
     }

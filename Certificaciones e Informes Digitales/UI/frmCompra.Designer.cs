@@ -36,10 +36,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCarrito = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picMin = new System.Windows.Forms.PictureBox();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
@@ -51,6 +47,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarContraseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Agregar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
@@ -125,35 +125,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.dgvProductos.TabIndex = 10;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             this.dgvProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvProductos_CellPainting);
-            // 
-            // Agregar
-            // 
-            this.Agregar.HeaderText = "Agregar";
-            this.Agregar.Name = "Agregar";
-            this.Agregar.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Visible = false;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Detalle
-            // 
-            this.Detalle.DataPropertyName = "Detalle";
-            this.Detalle.HeaderText = "Detalle";
-            this.Detalle.Name = "Detalle";
-            this.Detalle.ReadOnly = true;
             // 
             // picMin
             // 
@@ -277,6 +248,36 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // Agregar
+            // 
+            this.Agregar.HeaderText = "Agregar";
+            this.Agregar.Name = "Agregar";
+            this.Agregar.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Visible = false;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Detalle
+            // 
+            this.Detalle.DataPropertyName = "Detalle";
+            this.Detalle.HeaderText = "Detalle";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.ReadOnly = true;
+            this.Detalle.Width = 185;
+            // 
             // frmCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,10 +318,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.Button btnCarrito;
         private System.Windows.Forms.DataGridViewButtonColumn Agregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
-        private System.Windows.Forms.Button btnCarrito;
     }
 }

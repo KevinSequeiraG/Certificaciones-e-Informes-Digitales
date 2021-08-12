@@ -10,48 +10,42 @@ using System.Windows.Forms;
 
 namespace Certificaciones_e_Informes_Digitales.UI.Reportes
 {
-    public partial class frmCertBienInmueblePersonaF : Form
+    public partial class frmCertBienMueble : Form
     {
         private string idPersona;
         private int idBien;
         private bool tipoPersona;
-        string DetalleCert;
-        public frmCertBienInmueblePersonaF()
+
+        public frmCertBienMueble()
         {
             InitializeComponent();
         }
-        public frmCertBienInmueblePersonaF(bool tipoPersona, string idPersona, int idBien, string DetalleCert)
+        public frmCertBienMueble(bool tipoPersona, string idPersona, int idBien)
         {
             InitializeComponent();
             this.idPersona = idPersona;
             this.idBien = idBien;
             this.tipoPersona = tipoPersona;
-            this.DetalleCert = DetalleCert;
-
         }
 
-        private void frmCertBienInmueblePersonaF_Load(object sender, EventArgs e)
+        private void frmCertBienMueble_Load(object sender, EventArgs e)
         {
-            BLL.BienInmuebleBLL logica = new BLL.BienInmuebleBLL();
-            BLL.HistorialBLL logicaHistorial = new BLL.HistorialBLL();
-            BienesInmueblesBindingSource.DataSource = logica.VerPorID(idBien);
+            BLL.BienMueleBLL logica = new BLL.BienMueleBLL();
+            BienesMueblesBindingSource.DataSource = logica.VerPorID(idBien);
 
             if (tipoPersona)
             {
                 BLL.PersonaFisicaBLL personalog = new BLL.PersonaFisicaBLL();
                 PersonaFisicaBindingSource.DataSource = personalog.VerPorID(idPersona);
             }
-            if (!tipoPersona)
+            else
             {
                 BLL.PersonaJuridicaBLL personaj = new BLL.PersonaJuridicaBLL();
                 PersonaJuridicaBindingSource.DataSource = personaj.VerPorID(idPersona);
-            }
-
-            this.reportViewer1.RefreshReport();
-
+            }           
+            this.reportViewer1.RefreshReport(); 
+            
             byte[] bytes = reportViewer1.LocalReport.Render("PDF");
-
-            logicaHistorial.Guardar(bytes, Util.UsuarioSingleton.GetInstance().email, DateTime.Now, DetalleCert);
 
             Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, bytes);
         }

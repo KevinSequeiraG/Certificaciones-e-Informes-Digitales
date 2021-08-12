@@ -10,6 +10,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Certificaciones_e_Informes_Digitales.Util
 {
@@ -125,7 +126,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
 
                 correo.To.Add(new MailAddress(correoAEnviar, ""));
                 correo.Subject = "Reporte como Correo";
-                correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Reporte.pdf"));
+                correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Registro Nacional.pdf"));
 
                 using (var smtp = new SmtpClient("smtp.gmail.com"))
                 {
@@ -134,8 +135,38 @@ namespace Certificaciones_e_Informes_Digitales.Util
                     smtp.EnableSsl = true;
                     smtp.Send(correo);
                 }
+            }
+        }
+        public static void EnviarCertificaciones(List<Entities.LineaDetalle> lineaDetalle)
+        {
+            try
+            {
+                foreach (Entities.LineaDetalle item in lineaDetalle)
+                {
+                    switch (item.idCert)
+                    {
+                        case 1:
+                            UI.Reportes.frmCertBienMueble logica = new UI.Reportes.frmCertBienMueble((item.idPersonaF != ""?true:false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien);
+                            logica.Show();
+                            logica.Hide();
+                            break;
+                        case 2:
+                            UI.Reportes.frmCertBienInmueblePersonaF logicaBienI = new UI.Reportes.frmCertBienInmueblePersonaF((item.idPersonaF != "" ? true : false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien, item.DetalleCert);
+                            logicaBienI.Show();
+                            logicaBienI.Hide();
+                            break;
+                        case 3:
+                            UI.Reportes.frmCertPersoneriaJuridica logicaPersona = new UI.Reportes.frmCertPersoneriaJuridica(item.idPersonaJ);
+                            logicaPersona.Show();
+                            logicaPersona.Hide();
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
 
-                Console.WriteLine("Correo enviado");
+                throw;
             }
         }
     }

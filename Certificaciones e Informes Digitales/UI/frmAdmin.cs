@@ -120,6 +120,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
             logica.Hide();
             Reportes.frmCertBienInmueblePersonaF ve = new Reportes.frmCertBienInmueblePersonaF();
             ve.Show();
+            Reportes.frmCertBienMueble ven = new Reportes.frmCertBienMueble();
+            ven.Show();
         }
 
         private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)

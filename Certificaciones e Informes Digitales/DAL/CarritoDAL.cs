@@ -50,7 +50,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 
                     var comando = new SqlCommand(sql);
                     comando.Parameters.AddWithValue("@id", id);
-                    comando.Parameters.AddWithValue("@usuario", usuario);
+                    comando.Parameters.AddWithValue("@usuario", usuario.email);
                     comando.Parameters.AddWithValue("@total", total);
                     comando.Parameters.AddWithValue("@subTotal", subTotal);
                     comando.Parameters.AddWithValue("@impuestos", impuestos);
@@ -254,6 +254,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         linea.idPersonaF = reader["idPersonaF"].ToString();
                         linea.idCert = Convert.ToInt32(reader["idCert"]);
                         linea.cant = Convert.ToInt32(reader["cant"]);
+                        linea.idBien = Convert.ToInt32(reader["idBien"]);
 
                         BLL.CertificacionBLL logicaCert = new BLL.CertificacionBLL();
                         Entities.Certificacion cert = logicaCert.VerPorID(linea.idCert);
@@ -356,6 +357,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 Util.Log.LogGenericException(ex);
                 throw;
             }
+        }
+
+        public static double CalculaTotalConImpuestos(int idCarro)
+        {
+            return CalcularTotal(idCarro) + (CalcularTotal(idCarro) * 0.13);
         }
     }
 }

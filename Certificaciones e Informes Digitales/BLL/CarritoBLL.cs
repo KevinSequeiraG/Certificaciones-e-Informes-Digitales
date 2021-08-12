@@ -162,5 +162,16 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
             }
         }
+        public double CalculaTotalConImpuestos(int idCarro)
+        {
+            try
+            {
+                return DAL.CarritoDAL.CalculaTotalConImpuestos(idCarro);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al Calcular el total del Carrito mas impuestos por ID \n" + ex.Message);
+            }
+        }
     }
 }
