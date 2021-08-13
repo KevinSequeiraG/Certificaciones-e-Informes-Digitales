@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class CatastroDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar un catastro en la base de datos
+        /// </summary>
+        /// <param name="catastro">catastro a guardar</param>
         public static void Guardar(Entities.Catastro catastro)
         {
             try
@@ -19,7 +23,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_AgregarCatastro";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@id", catastro.id); 
+                    comando.Parameters.AddWithValue("@id", catastro.id);
                     if (catastro.idPersonaF == "")
                     {
                         var personaF = DBNull.Value;
@@ -54,6 +58,16 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar un catastro en la base de datos
+        /// </summary>
+        /// <param name="id">id del catastro</param>
+        /// <param name="idPersonaJ">id de la persona Juridica</param>
+        /// <param name="idPersonaF">id de la persona Fisica</param>
+        /// <param name="localizacion">localizacion del catastro</param>
+        /// <param name="usoLocal">uso local del catastro</param>
+        /// <param name="annoConst">año de construccion del catastro</param>
+        /// <param name="tamanno">Tamaño del catastro</param>
         public static void Editar(int id, string idPersonaJ, string idPersonaF, string localizacion, string usoLocal, int annoConst, int tamanno)
         {
             try
@@ -63,7 +77,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_EditarCatastro";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@id", id); 
+                    comando.Parameters.AddWithValue("@id", id);
                     if (idPersonaF == "")
                     {
                         var personaF = DBNull.Value;
@@ -98,6 +112,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar un catastro
+        /// </summary>
+        /// <param name="id">id del catastro a eliminar</param>
         public static void Eliminar(int id)
         {
             try
@@ -126,6 +144,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que retorna lista de catastros que se encuentran en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.Catastro> Ver()
         {
             try
@@ -167,6 +189,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que retorna un catastro por el id
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public static Entities.Catastro VerPorID(int ID)
         {
             try

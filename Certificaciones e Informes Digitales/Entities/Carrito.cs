@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa un Carrito
+    /// </summary>
     class Carrito
     {
         public int id { get; set; }

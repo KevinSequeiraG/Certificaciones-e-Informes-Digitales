@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa una Linea de detalle
+    /// </summary>
     class LineaDetalle
     {
         public int id { get; set; }

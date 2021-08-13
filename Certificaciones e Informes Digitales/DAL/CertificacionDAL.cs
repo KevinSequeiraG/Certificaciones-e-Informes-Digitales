@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class CertificacionDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar una certificacion en la base de datos
+        /// </summary>
+        /// <param name="certificacion">certificacion a guardar</param>
         public static void Guardar(Entities.Certificacion certificacion)
         {
             try
@@ -39,6 +43,13 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una certificacion en la base de datos
+        /// </summary>
+        /// <param name="id">id de la certificacion</param>
+        /// <param name="tipo">tipo de certificacion</param>
+        /// <param name="detalle">detalle de certificacion</param>
+        /// <param name="precio">precio de certificacion</param>
         public static void Editar(int id, string tipo, string detalle, double precio)
         {
             try
@@ -68,6 +79,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una certificacion
+        /// </summary>
+        /// <param name="id">id de certificacion</param>
         public static void Eliminar(int id)
         {
             try
@@ -96,6 +111,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todas las certificaciones de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.Certificacion> Ver()
         {
             try
@@ -134,6 +153,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver por id una certificacion
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public static Entities.Certificacion VerPorID(int ID)
         {
             try
@@ -173,6 +197,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver las certificaciones por tipo
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <returns></returns>
         public static List<Entities.Certificacion> VerPorTipo(string tipo)
         {
             try

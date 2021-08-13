@@ -1,0 +1,2216 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Certificaciones e Informes Digitales</name>
+    </assembly>
+    <members>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienInmuebleBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles)">
+            <summary>
+            Funcion para guardar un Bien Inmueble en la Base de Datos
+            </summary>
+            <param name="bien">Bien que se va a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienInmuebleBLL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.Double,System.String)">
+            <summary>
+            Funcion para editar un bien Inmueble en la base de datos
+            </summary>
+            <param name="id">ID Del bien Inmueble</param>
+            <param name="idPersonaJ">ID de la persona Juridica</param>
+            <param name="idPersonaF">ID de la persona Fisica</param>
+            <param name="provincia">Provincia en la que se situa el bien</param>
+            <param name="mide">Tamaño del bien</param>
+            <param name="valorFiscal">Valor Fiscal que recibe el Bien</param>
+            <param name="naturaleza">Naturaleza del Bien</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienInmuebleBLL.Eliminar(System.Int32)">
+            <summary>
+            Funcion para eliminar un Bien Inmueble de la base de datos
+            </summary>
+            <param name="id">id del bien a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienInmuebleBLL.Ver">
+            <summary>
+            Funcion que devuelve una lista con todos los bienes inmuebles que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienInmuebleBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un bien Inmueble por ID
+            </summary>
+            <param name="ID">id del bien</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienMueleBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.BienesMuebles)">
+            <summary>
+            Funcion que permite guardar en la base de datos un Bien Mueble
+            </summary>
+            <param name="bien">Bien que se va a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienMueleBLL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,Certificaciones_e_Informes_Digitales.Enums.Usos,System.String,System.Int32,System.Double,System.Boolean,Certificaciones_e_Informes_Digitales.Enums.Moneda)">
+            <summary>
+            Funcion para editar un bien mueble en la base de datos
+            </summary>
+            <param name="id">ID Del bien mueble</param>
+            <param name="idPersonaJ">ID de la persona Juridica</param>
+            <param name="idPersonaF">ID de la persona Fisica</param>
+            <param name="marca">Marca del bien</param>
+            <param name="Categoria">Categoria del bien</param>
+            <param name="serie">serie del bien</param>
+            <param name="traccion">traccion del bien</param>
+            <param name="annoFabricacion">Año de fabricacion del bien</param>
+            <param name="uso">Uso del bien</param>
+            <param name="Color">Color del bien</param>
+            <param name="capacidad">Capacidad del Bien</param>
+            <param name="valorHacienda">Valor de haciendo del bien</param>
+            <param name="estado">Estado del bien</param>
+            <param name="moneda">Moneda del bien</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienMueleBLL.Eliminar(System.Int32)">
+            <summary>
+            Funcion para eliminar un bien mueble de la base de datos
+            </summary>
+            <param name="id">id del bien mueble</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienMueleBLL.Ver">
+            <summary>
+            Funcion que permite ver todos los bienes muebles que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.BienMueleBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un bien mueble por id
+            </summary>
+            <param name="ID">id del bien mueble</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Carrito)">
+            <summary>
+            Funcion que permite guardar un carrito en la base de datos
+            </summary>
+            <param name="carro">carro que se va a guardar en la base de datos</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.Editar(System.Int32,Certificaciones_e_Informes_Digitales.Entities.Usuario,System.Double,System.Double,System.Double)">
+            <summary>
+            Funcion para editar un carrito en la base de datos
+            </summary>
+            <param name="id">id del carrito</param>
+            <param name="usuario">usuario al que pertenece el carro</param>
+            <param name="total">total del carrito</param>
+            <param name="subTotal">subtotal del carrito</param>
+            <param name="impuestos">impuestos del carrito</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.Eliminar(System.Int64)">
+            <summary>
+            Funcion para eliminar un carrito de la base de datos
+            </summary>
+            <param name="id">id del carrito</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.Ver">
+            <summary>
+            Funcion que retorna una lista de todos los carros que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un carrito por id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.VerUltimoCarrito(System.String)">
+            <summary>
+            Funcion que permite ver el ultimo carrito ingresado de una persona
+            </summary>
+            <param name="email">correo de la persona</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.VerInfoCarrito(System.Int32)">
+            <summary>
+            Funcion que permite ver todo lo que contiene un carrito, como las lineas de detalle
+            </summary>
+            <param name="id">id del carrito</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.CalcularTotal(System.Int32)">
+            <summary>
+            Funcion que permite calcular el subtotal de un carrito
+            </summary>
+            <param name="idCarro">id del carrito a calcular</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.VerComprasDelMes">
+            <summary>
+            Funcion que retorna una lista de carritos del ultimo mes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CarritoBLL.CalculaTotalConImpuestos(System.Int32)">
+            <summary>
+            Funcion que calcula el total del carrito con impuestos incluidos
+            </summary>
+            <param name="idCarro">id del carro a calcular</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CatastroBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Catastro)">
+            <summary>
+            Funcion que permite guardar un catastro en la base de datos
+            </summary>
+            <param name="catastro">catastro a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CatastroBLL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Funcion que permite editar un catastro en la base de datos
+            </summary>
+            <param name="id">id del catastro</param>
+            <param name="idPersonaJ">id de la persona Juridica</param>
+            <param name="idPersonaF">id de la persona Fisica</param>
+            <param name="localizacion">localizacion del catastro</param>
+            <param name="usoLocal">uso local del catastro</param>
+            <param name="annoConst">año de construccion del catastro</param>
+            <param name="tamanno">Tamaño del catastro</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CatastroBLL.Eliminar(System.Int32)">
+            <summary>
+            Funcion que permite eliminar un catastro
+            </summary>
+            <param name="id">id del catastro a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CatastroBLL.Ver">
+            <summary>
+            Funcion que retorna lista de catastros que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CatastroBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que retorna un catastro por el id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Certificacion)">
+            <summary>
+            Funcion que permite guardar una certificacion en la base de datos
+            </summary>
+            <param name="certificacion">certificacion a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.Editar(System.Int32,System.String,System.String,System.Double)">
+            <summary>
+            Funcion que permite editar una certificacion en la base de datos
+            </summary>
+            <param name="id">id de la certificacion</param>
+            <param name="tipo">tipo de certificacion</param>
+            <param name="detalle">detalle de certificacion</param>
+            <param name="precio">precio de certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.Eliminar(System.Int32)">
+            <summary>
+            Funcion que permite eliminar una certificacion
+            </summary>
+            <param name="id">id de certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.Ver">
+            <summary>
+            Funcion que permite ver todas las certificaciones de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver por id una certificacion
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.CertificacionBLL.VerPorTipo(System.String)">
+            <summary>
+            Funcion que permite ver las certificaciones por tipo
+            </summary>
+            <param name="tipo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.HistorialBLL.Guardar(System.String,System.DateTime,System.String)">
+            <summary>
+            Funcion que permite ingresar en el historial del usuario una certificacion
+            </summary>
+            <param name="email">correo del usuario</param>
+            <param name="fecha">fecha de la compra</param>
+            <param name="detalleCert">detalle de la certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.HistorialBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver por id la informacion de una certificacion vendida
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.HistorialBLL.VerHistorialUsuario(System.String)">
+            <summary>
+            funcion que permite ver el historial de un usuario
+            </summary>
+            <param name="idUser">correo del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.HistorialBLL.VerUltimoHistorial(System.String)">
+            <summary>
+            Funcion que permite ver el ultimo historial por el correo de usuario
+            </summary>
+            <param name="correoUsario">correo del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.HistorialBLL.AgregarPdfAHist(System.Int32,System.Byte[])">
+            <summary>
+            Funcion que permite agregar un pdf a un historial
+            </summary>
+            <param name="idHist"></param>
+            <param name="pdf"></param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.LineaDetalleBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.LineaDetalle)">
+            <summary>
+            Funcion que permite guardar una linea detalle en la base de datos
+            </summary>
+            <param name="linea">linea detalle a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.LineaDetalleBLL.Editar(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Funcion que permite editar una linea detalle
+            </summary>
+            <param name="id">id de la linea detalle</param>
+            <param name="idCarrito">id del carro a la que pertenece la linea detalle</param>
+            <param name="idCert">id de la certificacion que se compro</param>
+            <param name="cant">cantidad de certificaciones compradas</param>
+            <param name="idPersona">id de la persona a la que pertenece la certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.LineaDetalleBLL.Eliminar(System.Int32,System.Int32)">
+            <summary>
+            Funcion que permite eliminar una linea detalle
+            </summary>
+            <param name="idCarro">id del carro a la que pertenece la linea detalle</param>
+            <param name="idCert">id de la certificacion que se compro</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.LineaDetalleBLL.Ver">
+            <summary>
+            Funcion que permite ver todas las lineas de detalle en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.LineaDetalleBLL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver una linea detalle por id
+            </summary>
+            <param name="ID">id de la linea de detalle</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Nombramiento)">
+            <summary>
+            Funcion que permite guardar un nombramiento en la base de datos
+            </summary>
+            <param name="nombramiento">nombramiento a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.Editar(System.Int32,System.String,System.String,System.DateTime,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Funcion que permite editar un nombramiento
+            </summary>
+            <param name="id">id de nombramiento</param>
+            <param name="Nombre">Nombre de la persona que pertenece al nombramiento</param>
+            <param name="cargo">Cargo de la persona que pertenece al nombramiento</param>
+            <param name="FechaInsc">Fecha de incripcion de la persona que pertenece al nombramiento</param>
+            <param name="VigenciaIni">Vigencia de inicio de la persona que pertenece al nombramiento</param>
+            <param name="VigenciaVenc">Vigencia de vencimiento de la persona que pertenece al nombramiento</param>
+            <param name="idPersonaJuridica">Id de la persona juridica a la que pertenece la persona</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.Eliminar(System.Int64)">
+            <summary>
+            Funcion que permite eliminar una persona de un nombramiento
+            </summary>
+            <param name="id">id del nombramiento</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.Ver">
+            <summary>
+            Funcion que permite ver todos los nombramientos de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.VerPorID(System.Int32)">
+            <summary>
+            Permite ver el nombramiento por id
+            </summary>
+            <param name="ID">id del nombramiento que se desea ver</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.NombramientoBLL.VerPorIDPersona(System.String)">
+            <summary>
+            Funcion que permite ver un nombramiento por id de persona
+            </summary>
+            <param name="ID">id de persona</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaFisicaBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.PersonaFisica)">
+            <summary>
+            Funcion que permite guardar una persona fisica en la base de datos
+            </summary>
+            <param name="pf">Persona Fisica a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaFisicaBLL.Editar(System.String,System.String,System.String,System.String,System.DateTime,Certificaciones_e_Informes_Digitales.Enums.Genero,System.Byte[],System.String)">
+            <summary>
+            Funcion que permite editar una persona fisica
+            </summary>
+            <param name="id">id de persona fisica</param>
+            <param name="Nombre">Nombre de persona fisica</param>
+            <param name="Apellido1">Primer apellido de persona fisica</param>
+            <param name="Apellido2">Segundo apellido de persona fisica</param>
+            <param name="FechaNacimiento">Fecha de nacimiento</param>
+            <param name="genero">Genero</param>
+            <param name="Foto">Foto de persona</param>
+            <param name="email">Correo</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaFisicaBLL.Eliminar(System.String)">
+            <summary>
+            Permite eliminar una persona Fisica de la base de datos
+            </summary>
+            <param name="id">id de persona fisica</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaFisicaBLL.Ver">
+            <summary>
+            Funcion que permite ver una lista de todas las personas fisicas en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaFisicaBLL.VerPorID(System.String)">
+            <summary>
+            Funcion que permite ver una persona fisica por id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaJuridicaBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica)">
+            <summary>
+            Funcion que permite guardar una persona juridica
+            </summary>
+            <param name="pj">persona juridica a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaJuridicaBLL.Editar(System.String,System.String,System.Boolean,System.DateTime,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Funcion que permite editar una persona juridica
+            </summary>
+            <param name="id">id de persona</param>
+            <param name="razonSocial">razon social</param>
+            <param name="estado">Estado de persona juridica</param>
+            <param name="fechaInsc">Fecha de inscripcion</param>
+            <param name="tomo">Tomo</param>
+            <param name="asiento">Asiento</param>
+            <param name="domicilio">Domicilio</param>
+            <param name="objeto">Objeto de persona juridica</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaJuridicaBLL.Eliminar(System.String)">
+            <summary>
+            Funcion que permite eliminar una persona juridica de la base de datos
+            </summary>
+            <param name="id">id de la persona</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaJuridicaBLL.Ver">
+            <summary>
+            Retorna una lista de todas las personas juridicas que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.PersonaJuridicaBLL.VerPorID(System.String)">
+            <summary>
+            Funcion que retorna una persona juridica por id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Tarjeta)">
+            <summary>
+            Funcion que permite guardar una tarjeta en la base de datos
+            </summary>
+            <param name="tarjeta">tarjeta a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.Editar(System.Int32,System.String,System.DateTime,System.Int32,System.String)">
+            <summary>
+            Funcion que permite editar una tarjeta
+            </summary>
+            <param name="id">id de tarjeta</param>
+            <param name="idUser">correo de usuario</param>
+            <param name="fechaVenc">Fecha vencimiento de tarjeta</param>
+            <param name="cvv">Codigo de seguridad de tarjeta</param>
+            <param name="tipo">tipo de tarjeta</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.Eliminar(System.Int64)">
+            <summary>
+            Funcion que eliminar una tarjeta de la base de datos
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.Ver">
+            <summary>
+            Retorna lista de tarjetas de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.VerPorID(System.Int32)">
+            <summary>
+            Retorna tarjeta por id
+            </summary>
+            <param name="ID">id de tarjeta</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.TarjetaBLL.VerTarjetasUsuario(System.String)">
+            <summary>
+            Retorna todas las tarjetas de un usuario
+            </summary>
+            <param name="userEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Usuario)">
+            <summary>
+            Funcion que permite guardar un usuario
+            </summary>
+            <param name="usuario">usuario a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.editarContrasenna(System.String,System.String,System.Boolean)">
+            <summary>
+            Funcion que permite editar la contraseña de un usuario
+            </summary>
+            <param name="email">coreo de usuario</param>
+            <param name="password">constraseña nueva</param>
+            <param name="cambioAutomatico">Permite al sistema conocer si el usuario debe o no hacer un cambio de contraseña al ingresar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.TraerUsuario(System.String,System.String)">
+            <summary>
+            Funcion que permite ver usuario
+            </summary>
+            <param name="email">correo de usuario</param>
+            <param name="passw">contraseña de usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.VerUsuarios">
+            <summary>
+            Funcion que permite ver todos los usuarios de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.TraerUsuarioPorCorreo(System.String)">
+            <summary>
+            Retorna un usario por correo electronico
+            </summary>
+            <param name="email">correo de usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.EliminarUsuario(System.String)">
+            <summary>
+            Permite eliminar un usuario
+            </summary>
+            <param name="email">correo de usuario a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.BLL.UsuarioBLL.editarUsuario(System.String,System.String,System.String,System.Int32,System.String,System.String,System.Boolean,Certificaciones_e_Informes_Digitales.Enums.TipoUsuario)">
+            <summary>
+            Funcion que permite editar un usuario
+            </summary>
+            <param name="Nombre">Nomre de usuario</param>
+            <param name="Apellido1">Primer apellido de usuario</param>
+            <param name="Apellido2">Segundo apellido de usuario</param>
+            <param name="telefono">telefono de usuario</param>
+            <param name="email">correo de usuario</param>
+            <param name="password">Contraseña de usuario</param>
+            <param name="changePassword">Permite conocer al sistema si el usuario debe hacer cambio de contraseña o no</param>
+            <param name="tipo">tipo de usuario</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienInmuebleDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles)">
+            <summary>
+            Funcion para guardar un Bien Inmueble en la Base de Datos
+            </summary>
+            <param name="bien">Bien que se va a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienInmuebleDAL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.Double,System.String)">
+            <summary>
+            Funcion para editar un bien Inmueble en la base de datos
+            </summary>
+            <param name="id">ID Del bien Inmueble</param>
+            <param name="idPersonaJ">ID de la persona Juridica</param>
+            <param name="idPersonaF">ID de la persona Fisica</param>
+            <param name="provincia">Provincia en la que se situa el bien</param>
+            <param name="mide">Tamaño del bien</param>
+            <param name="valorFiscal">Valor Fiscal que recibe el Bien</param>
+            <param name="naturaleza">Naturaleza del Bien</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienInmuebleDAL.Eliminar(System.Int32)">
+            <summary>
+            Funcion para eliminar un Bien Inmueble de la base de datos
+            </summary>
+            <param name="id">id del bien a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienInmuebleDAL.Ver">
+            <summary>
+            Funcion que devuelve una lista con todos los bienes inmuebles que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienInmuebleDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un bien Inmueble por ID
+            </summary>
+            <param name="ID">id del bien</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienMuebleDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.BienesMuebles)">
+            <summary>
+            Funcion que permite guardar en la base de datos un Bien Mueble
+            </summary>
+            <param name="bien">Bien que se va a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienMuebleDAL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,Certificaciones_e_Informes_Digitales.Enums.Usos,System.String,System.Int32,System.Double,System.Boolean,Certificaciones_e_Informes_Digitales.Enums.Moneda)">
+            <summary>
+            Funcion para editar un bien mueble en la base de datos
+            </summary>
+            <param name="id">ID Del bien mueble</param>
+            <param name="idPersonaJ">ID de la persona Juridica</param>
+            <param name="idPersonaF">ID de la persona Fisica</param>
+            <param name="marca">Marca del bien</param>
+            <param name="Categoria">Categoria del bien</param>
+            <param name="serie">serie del bien</param>
+            <param name="traccion">traccion del bien</param>
+            <param name="annoFabricacion">Año de fabricacion del bien</param>
+            <param name="uso">Uso del bien</param>
+            <param name="Color">Color del bien</param>
+            <param name="capacidad">Capacidad del Bien</param>
+            <param name="valorHacienda">Valor de haciendo del bien</param>
+            <param name="estado">Estado del bien</param>
+            <param name="moneda">Moneda del bien</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienMuebleDAL.Eliminar(System.Int32)">
+            <summary>
+            Funcion para eliminar un bien mueble de la base de datos
+            </summary>
+            <param name="id">id del bien mueble</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienMuebleDAL.Ver">
+            <summary>
+            Funcion que permite ver todos los bienes muebles que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.BienMuebleDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un bien mueble por id
+            </summary>
+            <param name="ID">id del bien mueble</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Carrito)">
+            <summary>
+            Funcion que permite guardar un carrito en la base de datos
+            </summary>
+            <param name="carro">carro que se va a guardar en la base de datos</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.Editar(System.Int32,Certificaciones_e_Informes_Digitales.Entities.Usuario,System.Double,System.Double,System.Double)">
+            <summary>
+            Funcion para editar un carrito en la base de datos
+            </summary>
+            <param name="id">id del carrito</param>
+            <param name="usuario">usuario al que pertenece el carro</param>
+            <param name="total">total del carrito</param>
+            <param name="subTotal">subtotal del carrito</param>
+            <param name="impuestos">impuestos del carrito</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.Eliminar(System.Int64)">
+            <summary>
+            Funcion para eliminar un carrito de la base de datos
+            </summary>
+            <param name="id">id del carrito</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.Ver">
+            <summary>
+            Funcion que retorna una lista de todos los carros que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver un carrito por id
+            </summary>
+            <param name="ID">id de carrito</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.VerUltimoCarrito(System.String)">
+            <summary>
+            Funcion que permite ver el ultimo carrito ingresado de una persona
+            </summary>
+            <param name="email">correo de la persona</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.VerInfoCarrito(System.Int32)">
+            <summary>
+            Funcion que permite ver todo lo que contiene un carrito, como las lineas de detalle
+            </summary>
+            <param name="id">id del carrito</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.CalcularTotal(System.Int32)">
+            <summary>
+            Funcion que permite calcular el subtotal de un carrito
+            </summary>
+            <param name="idCarro">id del carrito a calcular</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.VerComprasDelMes">
+            <summary>
+            Funcion que retorna una lista de carritos del ultimo mes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.CalculaTotalConImpuestos(System.Int32)">
+            <summary>
+            Funcion que calcula el total del carrito con impuestos incluidos
+            </summary>
+            <param name="idCarro">id del carro a calcular</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Catastro)">
+            <summary>
+            Funcion que permite guardar un catastro en la base de datos
+            </summary>
+            <param name="catastro">catastro a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.Editar(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Funcion que permite editar un catastro en la base de datos
+            </summary>
+            <param name="id">id del catastro</param>
+            <param name="idPersonaJ">id de la persona Juridica</param>
+            <param name="idPersonaF">id de la persona Fisica</param>
+            <param name="localizacion">localizacion del catastro</param>
+            <param name="usoLocal">uso local del catastro</param>
+            <param name="annoConst">año de construccion del catastro</param>
+            <param name="tamanno">Tamaño del catastro</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.Eliminar(System.Int32)">
+            <summary>
+            Funcion que permite eliminar un catastro
+            </summary>
+            <param name="id">id del catastro a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.Ver">
+            <summary>
+            Funcion que retorna lista de catastros que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que retorna un catastro por el id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Certificacion)">
+            <summary>
+            Funcion que permite guardar una certificacion en la base de datos
+            </summary>
+            <param name="certificacion">certificacion a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.Editar(System.Int32,System.String,System.String,System.Double)">
+            <summary>
+            Funcion que permite editar una certificacion en la base de datos
+            </summary>
+            <param name="id">id de la certificacion</param>
+            <param name="tipo">tipo de certificacion</param>
+            <param name="detalle">detalle de certificacion</param>
+            <param name="precio">precio de certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.Eliminar(System.Int32)">
+            <summary>
+            Funcion que permite eliminar una certificacion
+            </summary>
+            <param name="id">id de certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.Ver">
+            <summary>
+            Funcion que permite ver todas las certificaciones de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver por id una certificacion
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CertificacionDAL.VerPorTipo(System.String)">
+            <summary>
+            Funcion que permite ver las certificaciones por tipo
+            </summary>
+            <param name="tipo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.HistorialDAL.Guardar(System.String,System.DateTime,System.String)">
+            <summary>
+            Funcion que permite ingresar en el historial del usuario una certificacion
+            </summary>
+            <param name="email">correo del usuario</param>
+            <param name="fecha">fecha de la compra</param>
+            <param name="detalleCert">detalle de la certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.HistorialDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver por id la informacion de una certificacion vendida
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.HistorialDAL.VerHistorialUsuario(System.String)">
+            <summary>
+            funcion que permite ver el historial de un usuario
+            </summary>
+            <param name="idUser">correo del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.HistorialDAL.VerUltimoHistorial(System.String)">
+            <summary>
+            Funcion que permite ver el ultimo historial por el correo de usuario
+            </summary>
+            <param name="correoUsario">correo del usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.HistorialDAL.AgregarPdfAHist(System.Int32,System.Byte[])">
+            <summary>
+            Funcion que permite agregar un pdf a un historial
+            </summary>
+            <param name="idHist"></param>
+            <param name="pdf"></param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.LineaDetalleDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.LineaDetalle)">
+            <summary>
+            Funcion que permite guardar una linea detalle en la base de datos
+            </summary>
+            <param name="linea">linea detalle a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.LineaDetalleDAL.Editar(System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Funcion que permite editar una linea detalle
+            </summary>
+            <param name="id">id de la linea detalle</param>
+            <param name="idCarrito">id del carro a la que pertenece la linea detalle</param>
+            <param name="idCert">id de la certificacion que se compro</param>
+            <param name="cant">cantidad de certificaciones compradas</param>
+            <param name="idPersona">id de la persona a la que pertenece la certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.LineaDetalleDAL.Eliminar(System.Int32,System.Int32)">
+            <summary>
+            Funcion que permite eliminar una linea detalle
+            </summary>
+            <param name="idCarro">id del carro a la que pertenece la linea detalle</param>
+            <param name="idCert">id de la certificacion que se compro</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.LineaDetalleDAL.Ver">
+            <summary>
+            Funcion que permite ver todas las lineas de detalle en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.LineaDetalleDAL.VerPorID(System.Int32)">
+            <summary>
+            Funcion que permite ver una linea detalle por id
+            </summary>
+            <param name="ID">id de la linea de detalle</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Nombramiento)">
+            <summary>
+            Funcion que permite guardar un nombramiento en la base de datos
+            </summary>
+            <param name="nombramiento">nombramiento a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.Editar(System.Int32,System.String,System.String,System.DateTime,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Funcion que permite editar un nombramiento
+            </summary>
+            <param name="id">id de nombramiento</param>
+            <param name="Nombre">Nombre de la persona que pertenece al nombramiento</param>
+            <param name="cargo">Cargo de la persona que pertenece al nombramiento</param>
+            <param name="FechaInsc">Fecha de incripcion de la persona que pertenece al nombramiento</param>
+            <param name="VigenciaIni">Vigencia de inicio de la persona que pertenece al nombramiento</param>
+            <param name="VigenciaVenc">Vigencia de vencimiento de la persona que pertenece al nombramiento</param>
+            <param name="idPersonaJuridica">Id de la persona juridica a la que pertenece la persona</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.Eliminar(System.Int64)">
+            <summary>
+            Funcion que permite eliminar una persona de un nombramiento
+            </summary>
+            <param name="id">id del nombramiento</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.Ver">
+            <summary>
+            Funcion que permite ver todos los nombramientos de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.VerPorID(System.Int32)">
+            <summary>
+            Permite ver el nombramiento por id
+            </summary>
+            <param name="ID">id del nombramiento que se desea ver</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.NombramientoDAL.VerPorIDPersona(System.String)">
+            <summary>
+            Funcion que permite ver un nombramiento por id de persona
+            </summary>
+            <param name="ID">id de persona</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaFisicaDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.PersonaFisica)">
+            <summary>
+            Funcion que permite guardar una persona fisica en la base de datos
+            </summary>
+            <param name="pf">Persona Fisica a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaFisicaDAL.Editar(System.String,System.String,System.String,System.String,System.DateTime,Certificaciones_e_Informes_Digitales.Enums.Genero,System.Byte[],System.String)">
+            <summary>
+            Funcion que permite editar una persona fisica
+            </summary>
+            <param name="id">id de persona fisica</param>
+            <param name="Nombre">Nombre de persona fisica</param>
+            <param name="Apellido1">Primer apellido de persona fisica</param>
+            <param name="Apellido2">Segundo apellido de persona fisica</param>
+            <param name="FechaNacimiento">Fecha de nacimiento</param>
+            <param name="genero">Genero</param>
+            <param name="Foto">Foto de persona</param>
+            <param name="email">Correo</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaFisicaDAL.Eliminar(System.String)">
+            <summary>
+            Permite eliminar una persona Fisica de la base de datos
+            </summary>
+            <param name="id">id de persona fisica</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaFisicaDAL.Ver">
+            <summary>
+            Funcion que permite ver una lista de todas las personas fisicas en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaFisicaDAL.VerPorID(System.String)">
+            <summary>
+            Funcion que permite ver una persona fisica por id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaJuridicaDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica)">
+            <summary>
+            Funcion que permite guardar una persona juridica
+            </summary>
+            <param name="pj">persona juridica a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaJuridicaDAL.Editar(System.String,System.String,System.Boolean,System.DateTime,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Funcion que permite editar una persona juridica
+            </summary>
+            <param name="id">id de persona</param>
+            <param name="razonSocial">razon social</param>
+            <param name="estado">Estado de persona juridica</param>
+            <param name="fechaInsc">Fecha de inscripcion</param>
+            <param name="tomo">Tomo</param>
+            <param name="asiento">Asiento</param>
+            <param name="domicilio">Domicilio</param>
+            <param name="objeto">Objeto de persona juridica</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaJuridicaDAL.Eliminar(System.String)">
+            <summary>
+            Funcion que permite eliminar una persona juridica de la base de datos
+            </summary>
+            <param name="id">id de la persona</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaJuridicaDAL.Ver">
+            <summary>
+            Retorna una lista de todas las personas juridicas que se encuentran en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.PersonaJuridicaDAL.VerPorID(System.String)">
+            <summary>
+            Funcion que retorna una persona juridica por id
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Tarjeta)">
+            <summary>
+            Funcion que permite guardar una tarjeta en la base de datos
+            </summary>
+            <param name="tarjeta">tarjeta a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.Editar(System.Int32,System.String,System.DateTime,System.Int32,System.String)">
+            <summary>
+            Funcion que permite editar una tarjeta
+            </summary>
+            <param name="id">id de tarjeta</param>
+            <param name="idUser">correo de usuario</param>
+            <param name="fechaVenc">Fecha vencimiento de tarjeta</param>
+            <param name="cvv">Codigo de seguridad de tarjeta</param>
+            <param name="tipo">tipo de tarjeta</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.Eliminar(System.Int64)">
+            <summary>
+            Funcion que eliminar una tarjeta de la base de datos
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.Ver">
+            <summary>
+            Retorna lista de tarjetas de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.VerPorID(System.Int32)">
+            <summary>
+            Retorna tarjeta por id
+            </summary>
+            <param name="ID">id de tarjeta</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.TarjetaDAL.VerTarjetasUsuario(System.String)">
+            <summary>
+            Retorna todas las tarjetas de un usuario
+            </summary>
+            <param name="userEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.InsertarUsuario(Certificaciones_e_Informes_Digitales.Entities.Usuario)">
+            <summary>
+            Funcion que permite guardar un usuario
+            </summary>
+            <param name="usuario">usuario a guardar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.EditarContrasenna(System.String,System.String,System.Boolean)">
+            <summary>
+            Funcion que permite editar la contraseña de un usuario
+            </summary>
+            <param name="email">coreo de usuario</param>
+            <param name="password">constraseña nueva</param>
+            <param name="cambioAutomatico">Permite al sistema conocer si el usuario debe o no hacer un cambio de contraseña al ingresar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.TraerUsuario(System.String,System.String)">
+            <summary>
+            Funcion que permite ver usuario
+            </summary>
+            <param name="email">correo de usuario</param>
+            <param name="passw">contraseña de usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.TraerUsuarioPorCorreo(System.String)">
+            <summary>
+            Funcion que permite ver todos los usuarios de la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.VerUsuarios">
+            <summary>
+            Retorna un usario por correo electronico
+            </summary>
+            <param name="email">correo de usuario</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.EliminarUsuario(System.String)">
+            <summary>
+            Permite eliminar un usuario
+            </summary>
+            <param name="email">correo de usuario a eliminar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.UsuarioDAL.editarUsuario(System.String,System.String,System.String,System.Int32,System.String,System.String,System.Boolean,Certificaciones_e_Informes_Digitales.Enums.TipoUsuario)">
+            <summary>
+            Funcion que permite editar un usuario
+            </summary>
+            <param name="Nombre">Nomre de usuario</param>
+            <param name="Apellido1">Primer apellido de usuario</param>
+            <param name="Apellido2">Segundo apellido de usuario</param>
+            <param name="telefono">telefono de usuario</param>
+            <param name="email">correo de usuario</param>
+            <param name="password">Contraseña de usuario</param>
+            <param name="changePassword">Permite conocer al sistema si el usuario debe hacer cambio de contraseña o no</param>
+            <param name="tipo">tipo de usuario</param>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFecha">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFecha.SP_VerVentasCertsDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFecha.SP_VerVentasCertsRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFecha.SP_VerVentasCertsRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.SP_VerVentasCertsTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.UpdateUpdatedRows(Certificaciones_e_Informes_Digitales.dpVentasCertsFecha,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.UpdateInsertedRows(Certificaciones_e_Informes_Digitales.dpVentasCertsFecha,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.UpdateDeletedRows(Certificaciones_e_Informes_Digitales.dpVentasCertsFecha,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.UpdateAll(Certificaciones_e_Informes_Digitales.dpVentasCertsFecha)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dpVentasCertsFechaTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento.SP_PersonaJConNombramientoDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento.SP_PersonaJConNombramientoRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento.SP_PersonaJConNombramientoRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.SP_PersonaJConNombramientoTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.UpdateUpdatedRows(Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.UpdateInsertedRows(Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.UpdateDeletedRows(Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.UpdateAll(Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles">
+            <summary>
+            Representa un Bien Mueble
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.BienesMuebles">
+            <summary>
+            Representa un Bien Mueble
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Catastro">
+            <summary>
+            Representa un Catastro
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Certificacion">
+            <summary>
+            Representa una Certificacion
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Historial">
+            <summary>
+            Representa un Historial
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.LineaDetalle">
+            <summary>
+            Representa una Linea de detalle
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Nombramiento">
+            <summary>
+            Representa un Nombramiento
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Carrito">
+            <summary>
+            Representa un Carrito
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.PersonaFisica">
+            <summary>
+            Representa una persona Fisica
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica">
+            <summary>
+            Representa una persona juridica
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Tarjeta">
+            <summary>
+            Representa una tarjeta
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Entities.Usuario">
+            <summary>
+            Representa un usuario
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.Genero">
+            <summary>
+            Listado para generos
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.Gestiones">
+            <summary>
+            Listado para Gestiones
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.Moneda">
+            <summary>
+            Listado para tipos de monedas moneda
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.Provincia">
+            <summary>
+            Listado para las provincias de Costa Rica
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.TipoTarjeta">
+            <summary>
+            Listado para tipos de tarjetas
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.TipoUsuario">
+            <summary>
+            Listado para tipos de usuario
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Enums.Usos">
+            <summary>
+            Listado para distintos usos
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAdmin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAdmin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAdmin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienInmueble.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienInmueble.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienInmueble.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienMueble.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienMueble.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarBienMueble.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarCatastro.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarCatastro.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarCatastro.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarCerts.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarCerts.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarCerts.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarNombramiento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarNombramiento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarNombramiento.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarTarjeta.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarTarjeta.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarTarjeta.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmBienDestinado.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmBienDestinado.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmBienDestinado.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditNombramiento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditNombramiento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditNombramiento.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmFactura.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmFactura.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmFactura.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmHistorial.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmHistorial.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmHistorial.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmNombramiento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmNombramiento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmNombramiento.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonaJ.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonaJ.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonaJ.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonasF.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonasF.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmAgregarPersonasF.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmCarrito.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCarrito.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCarrito.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmCompra.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCompra.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCompra.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmCrearUsuario.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCrearUsuario.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmCrearUsuario.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditarUser.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditarUser.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditarUser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditBienInmueble.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditBienInmueble.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditBienInmueble.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditBienMueble.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditBienMueble.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditBienMueble.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditCatastro.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditCatastro.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditCatastro.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditCert.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditCert.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditCert.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaF.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaF.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaF.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaJ.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaJ.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmEditPersonaJ.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmGestiones.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestiones.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestiones.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmGestion.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestion.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmGestionUsuario.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestionUsuario.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmGestionUsuario.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmNuevoPassword.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmNuevoPassword.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmNuevoPassword.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmPersonaCert.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmPersonaCert.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmPersonaCert.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmQR.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmQR.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmQR.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmRecuperarContra.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmRecuperarContra.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmRecuperarContra.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmReportes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmReportes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmReportes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmTarjetaPago.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmTarjetaPago.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmTarjetaPago.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmUsuario.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmUsuario.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmUsuario.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.frmVerificacionCertis.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmVerificacionCertis.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.frmVerificacionCertis.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Loguin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Loguin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Loguin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienInmueblePersonaF.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienInmueblePersonaF.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienInmueblePersonaF.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienMueble.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienMueble.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertBienMueble.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertCatastro.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertCatastro.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertCatastro.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertPersoneriaJuridica.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertPersoneriaJuridica.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmCertPersoneriaJuridica.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepComprasTotales.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepComprasTotales.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepComprasTotales.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepVentaCertsMes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepVentaCertsMes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmRepVentaCertsMes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Certificaciones_e_Informes_Digitales.UI.Reportes.frmVentasCertsFecha.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmVentasCertsFecha.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.UI.Reportes.frmVentasCertsFecha.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Util.CarritoSingleton">
+            <summary>
+            Representa la creacion de un solo carrito
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.CarritoSingleton.GetInstance">
+            <summary>
+            Funcion que permite obtener el carro o bien crearlo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.CarritoSingleton.setCarro(Certificaciones_e_Informes_Digitales.Entities.Carrito)">
+            <summary>
+            Funcion que permite instanciar un carro
+            </summary>
+            <param name="carrito">Carro a instanciar</param>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Util.UsuarioSingleton">
+            <summary>
+            Representa una unica instanciacion de un usuario
+            </summary>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.UsuarioSingleton.GetInstance">
+            <summary>
+            Funcion que permite obtener el usuario o bien crearlo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.UsuarioSingleton.setUser(Certificaciones_e_Informes_Digitales.Entities.Usuario)">
+            <summary>
+            Funcion que permite instanciar un usuario
+            </summary>
+            <param name="user">usuario a instanciar</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.lstTiposCert">
+            <summary>
+            Funcion para generar lista de todos los tipos de Certificacion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.lstProvincias">
+            <summary>
+            Funcion para generar lista de todas las provincias de Costa Rica
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.lstGestiones">
+            <summary>
+            Funcion para generar lista de las posibles gestiones del administrador
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.correoRecuperacion(System.String,System.String)">
+            <summary>
+            Funcion que envia correo con contraseña nueva para usuario especifico
+            </summary>
+            <param name="correoAenviar">Correo el cual sufrira el cambio de contraseña</param>
+            <param name="contra">Nueva contraseña temporal</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.contrasennaTemp">
+            <summary>
+            Genera un string aleatorio para una contraseña temporal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.lstRReportes">
+            <summary>
+            Funcion que genera una lista de los tipos de resportes disponibles para el administrador
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.EnviarPDFCorreo(System.String,System.Byte[],System.Int32)">
+            <summary>
+            Funcion que permite enviar los certificados por correo
+            </summary>
+            <param name="correoAEnviar">Correo destinado</param>
+            <param name="bytes">PDF convertido a bytes[]</param>
+            <param name="idCertPDF">id de la certificacion</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.EnviarCertificaciones(System.Collections.Generic.List{Certificaciones_e_Informes_Digitales.Entities.LineaDetalle})">
+            <summary>
+            Funcion abre los frames ya que los loads de estos tienen las funciones necesarias para enviar la certificacion
+            </summary>
+            <param name="lineaDetalle">Lista de lineas de detalle</param>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.VerQR(System.String)">
+            <summary>
+            Funcion que genera Codigo QR de un string
+            </summary>
+            <param name="CodigoCert">Codigo a convertir en QR</param>
+            <returns></returns>
+        </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.Util.Utilities.ImageToByteArray(System.Drawing.Image)">
+            <summary>
+            Convierte una imagen en un array de Bytes
+            </summary>
+            <param name="img">Imagen a convertir</param>
+            <returns></returns>
+        </member>
+        <member name="T:Certificaciones_e_Informes_Digitales.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.carrrito">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.Close_Icon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.fondoCompra">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.fondoLoguin">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.Minimize_Icon">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Certificaciones_e_Informes_Digitales.Properties.Resources.qr">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="M:DataBase.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+            Ejecuta un Command y devuelve un Reader
+            </summary>
+            <param name="pCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DataBase.ExecuteReader(System.Data.IDbCommand,System.String)">
+            <summary>
+             Devuelve un DataSet a partir de un Command que hace un Select
+            </summary>
+            <param name="pCommand">Command con el Select</param>
+            <param name="pTabla">Nombre de la Tabla</param>
+            <returns></returns>
+        </member>
+        <member name="M:DataBase.ExecuteNonQuery(System.Data.IDbCommand,System.Data.IsolationLevel)">
+            <summary>
+            Utilizado para Insert, Update y Delete
+            </summary>
+            <param name="pCommand">Command</param>
+            <param name="pIsolationLevel">Isolation Level ReadCommitted | ReadUncommitted | Serializable | Chaos </param>
+            <returns>Registros afectados</returns>
+        </member>
+        <member name="M:DataBase.ExecuteNonQuery(System.Data.IDbCommand)">
+            <summary>
+            Ejecuta una Sentencia SQL pero sin transaccion, se utiliza para Alter, Create, Drop entre otros
+            </summary>
+            <param name="pCommand">Command</param>
+            <returns>Filas afectadas</returns>
+        </member>
+        <member name="M:DataBase.ExecuteScalar(System.Data.IDbCommand)">
+            <summary>
+            Ejecuta un Escalar Count, AVG, MIN, Max
+            </summary>
+            <param name="pCommand">Command</param>
+            <returns>valor de resultado del escalar</returns>
+        </member>
+        <member name="M:DataBase.ExecuteNonQuery(System.Data.IDbCommand@,System.Data.IsolationLevel)">
+            <summary>
+            Utilizado para Insert, Update y Delete, retorna el objeto Command Afectado que algunas vez se puede leer respuestas de los Stored Procedures
+            </summary>
+            <param name="pCommand">Command</param>
+            <param name="pIsolationLevel">Isolation Level ReadCommitted | ReadUncommitted | Serializable | Chaos </param>
+            <returns>Registros afectados</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DataBase.ExecuteNonQuery(System.Collections.Generic.List{System.Data.IDbCommand},System.Data.IsolationLevel)" -->
+        <member name="M:DataBase.Dispose">
+            <summary>
+            Destruye la conexion
+            </summary>
+        </member>
+        <member name="T:SqlServerTypes.Utilities">
+            <summary>
+            Utility methods related to CLR Types for SQL Server 
+            </summary>
+        </member>
+        <member name="M:SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)">
+            <summary>
+            Loads the required native assemblies for the current architecture (x86 or x64)
+            </summary>
+            <param name="rootApplicationPath">
+            Root path of the current application. Use Server.MapPath(".") for ASP.NET applications
+            and AppDomain.CurrentDomain.BaseDirectory for desktop applications.
+            </param>
+        </member>
+    </members>
+</doc>

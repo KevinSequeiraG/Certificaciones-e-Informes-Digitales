@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa un Historial
+    /// </summary>
     class Historial
     {
         public int id { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa un Catastro
+    /// </summary>
     class Catastro
     {
         public int id { get; set; }

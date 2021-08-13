@@ -11,6 +11,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class BienInmuebleDAL
     {
+        /// <summary>
+        /// Funcion para guardar un Bien Inmueble en la Base de Datos
+        /// </summary>
+        /// <param name="bien">Bien que se va a guardar</param>
         public static void Guardar(Entities.BienesInmuebles bien)
         {
             try
@@ -57,6 +61,16 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion para editar un bien Inmueble en la base de datos
+        /// </summary>
+        /// <param name="id">ID Del bien Inmueble</param>
+        /// <param name="idPersonaJ">ID de la persona Juridica</param>
+        /// <param name="idPersonaF">ID de la persona Fisica</param>
+        /// <param name="provincia">Provincia en la que se situa el bien</param>
+        /// <param name="mide">Tamaño del bien</param>
+        /// <param name="valorFiscal">Valor Fiscal que recibe el Bien</param>
+        /// <param name="naturaleza">Naturaleza del Bien</param>
         public static void Editar(int id, string idPersonaJ, string idPersonaF, string provincia, string mide, double valorFiscal, string naturaleza)
         {
             try
@@ -101,6 +115,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion para eliminar un Bien Inmueble de la base de datos
+        /// </summary>
+        /// <param name="id">id del bien a eliminar</param>
         public static void Eliminar(int id)
         {
             try
@@ -129,6 +147,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que devuelve una lista con todos los bienes inmuebles que se encuentran en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<BienesInmuebles> Ver()
         {
             try
@@ -170,7 +192,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Funcion que permite ver un bien Inmueble por ID
+        /// </summary>
+        /// <param name="ID">id del bien</param>
+        /// <returns></returns>
         public static Entities.BienesInmuebles VerPorID(int ID)
         {
             try

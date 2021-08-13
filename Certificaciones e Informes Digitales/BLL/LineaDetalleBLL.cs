@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
     class LineaDetalleBLL
     {
         private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+        /// <summary>
+        /// Funcion que permite guardar una linea detalle en la base de datos
+        /// </summary>
+        /// <param name="linea">linea detalle a guardar</param>
         public void Guardar(Entities.LineaDetalle linea)
         {
             try
@@ -38,6 +42,14 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una linea detalle
+        /// </summary>
+        /// <param name="id">id de la linea detalle</param>
+        /// <param name="idCarrito">id del carro a la que pertenece la linea detalle</param>
+        /// <param name="idCert">id de la certificacion que se compro</param>
+        /// <param name="cant">cantidad de certificaciones compradas</param>
+        /// <param name="idPersona">id de la persona a la que pertenece la certificacion</param>
         public void Editar(int id, int idCarrito, int idCert, int cant, string idPersona)
         {
             try
@@ -78,6 +90,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una linea detalle
+        /// </summary>
+        /// <param name="idCarro">id del carro a la que pertenece la linea detalle</param>
+        /// <param name="idCert">id de la certificacion que se compro</param>
         public void Eliminar(int idCarro, int idCert)
         {
             try
@@ -95,6 +112,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todas las lineas de detalle en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public List<Entities.LineaDetalle> Ver()
         {
             try
@@ -107,6 +128,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver una linea detalle por id
+        /// </summary>
+        /// <param name="ID">id de la linea de detalle</param>
+        /// <returns></returns>
         public Entities.LineaDetalle VerPorID(int ID)
         {
             try

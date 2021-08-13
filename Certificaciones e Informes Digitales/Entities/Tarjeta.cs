@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa una tarjeta
+    /// </summary>
     class Tarjeta
     {
         public int id { get; set; }

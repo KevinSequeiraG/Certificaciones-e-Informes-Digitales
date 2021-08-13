@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class PersonaFisicaDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar una persona fisica en la base de datos
+        /// </summary>
+        /// <param name="pf">Persona Fisica a guardar</param>
         public static void Guardar(Entities.PersonaFisica pf)
         {
             try
@@ -43,6 +47,17 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una persona fisica
+        /// </summary>
+        /// <param name="id">id de persona fisica</param>
+        /// <param name="Nombre">Nombre de persona fisica</param>
+        /// <param name="Apellido1">Primer apellido de persona fisica</param>
+        /// <param name="Apellido2">Segundo apellido de persona fisica</param>
+        /// <param name="FechaNacimiento">Fecha de nacimiento</param>
+        /// <param name="genero">Genero</param>
+        /// <param name="Foto">Foto de persona</param>
+        /// <param name="email">Correo</param>
         public static void Editar(string id, string Nombre, string Apellido1, string Apellido2, DateTime FechaNacimiento, Enums.Genero genero, byte[] Foto, string email)
         {
             try
@@ -75,6 +90,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Permite eliminar una persona Fisica de la base de datos
+        /// </summary>
+        /// <param name="id">id de persona fisica</param>
         public static void Eliminar(string id)
         {
             try
@@ -103,6 +122,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver una lista de todas las personas fisicas en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.PersonaFisica> Ver()
         {
             try
@@ -145,6 +168,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver una persona fisica por id
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public static Entities.PersonaFisica VerPorID(string ID)
         {
             try

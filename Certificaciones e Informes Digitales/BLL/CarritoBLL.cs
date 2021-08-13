@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
     class CarritoBLL
     {
         private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+        /// <summary>
+        /// Funcion que permite guardar un carrito en la base de datos
+        /// </summary>
+        /// <param name="carro">carro que se va a guardar en la base de datos</param>
         public void Guardar(Entities.Carrito carro)
         {
             try
@@ -43,6 +47,14 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion para editar un carrito en la base de datos
+        /// </summary>
+        /// <param name="id">id del carrito</param>
+        /// <param name="usuario">usuario al que pertenece el carro</param>
+        /// <param name="total">total del carrito</param>
+        /// <param name="subTotal">subtotal del carrito</param>
+        /// <param name="impuestos">impuestos del carrito</param>
         public void Editar(int id, Entities.Usuario usuario, double total, double subTotal, double impuestos)
         {
             try
@@ -83,6 +95,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion para eliminar un carrito de la base de datos
+        /// </summary>
+        /// <param name="id">id del carrito</param>
         public void Eliminar(Int64 id)
         {
             try
@@ -100,6 +116,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que retorna una lista de todos los carros que se encuentran en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public List<Entities.Carrito> Ver()
         {
             try
@@ -112,6 +132,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver un carrito por id
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public Entities.Carrito VerPorID(int ID)
         {
             try
@@ -124,6 +149,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver el ultimo carrito ingresado de una persona
+        /// </summary>
+        /// <param name="email">correo de la persona</param>
+        /// <returns></returns>
         public  Entities.Carrito VerUltimoCarrito(string email)
         {
             try
@@ -136,6 +166,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todo lo que contiene un carrito, como las lineas de detalle
+        /// </summary>
+        /// <param name="id">id del carrito</param>
+        /// <returns></returns>
         public List<Entities.LineaDetalle> VerInfoCarrito(int id)
         {
             try
@@ -148,6 +183,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite calcular el subtotal de un carrito
+        /// </summary>
+        /// <param name="idCarro">id del carrito a calcular</param>
+        /// <returns></returns>
         public double CalcularTotal(int idCarro)
         {
             try
@@ -160,6 +200,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que retorna una lista de carritos del ultimo mes
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.Carrito> VerComprasDelMes()
         {
             try
@@ -172,6 +216,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que calcula el total del carrito con impuestos incluidos
+        /// </summary>
+        /// <param name="idCarro">id del carro a calcular</param>
+        /// <returns></returns>
         public double CalculaTotalConImpuestos(int idCarro)
         {
             try

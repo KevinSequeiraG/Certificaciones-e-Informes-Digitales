@@ -12,6 +12,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class UsuarioDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar un usuario
+        /// </summary>
+        /// <param name="usuario">usuario a guardar</param>
         public static void InsertarUsuario(Usuario usuario)
         {
             try
@@ -45,6 +49,12 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar la contraseña de un usuario
+        /// </summary>
+        /// <param name="email">coreo de usuario</param>
+        /// <param name="password">constraseña nueva</param>
+        /// <param name="cambioAutomatico">Permite al sistema conocer si el usuario debe o no hacer un cambio de contraseña al ingresar</param>
         public static void EditarContrasenna(string email, string password, bool cambioAutomatico)
         {
             try
@@ -76,7 +86,12 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Funcion que permite ver usuario
+        /// </summary>
+        /// <param name="email">correo de usuario</param>
+        /// <param name="passw">contraseña de usuario</param>
+        /// <returns></returns>
         public static Entities.Usuario TraerUsuario(string email, string passw)
         {
             try
@@ -120,7 +135,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Funcion que permite ver todos los usuarios de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Usuario> TraerUsuarioPorCorreo(string email)
         {
             try
@@ -166,7 +184,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Retorna un usario por correo electronico
+        /// </summary>
+        /// <param name="email">correo de usuario</param>
+        /// <returns></returns>
         public static List<Usuario> VerUsuarios()
         {
             try
@@ -209,6 +231,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Permite eliminar un usuario
+        /// </summary>
+        /// <param name="email">correo de usuario a eliminar</param>
         public static void EliminarUsuario(string email)
         {
             try
@@ -237,7 +263,17 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Funcion que permite editar un usuario
+        /// </summary>
+        /// <param name="Nombre">Nomre de usuario</param>
+        /// <param name="Apellido1">Primer apellido de usuario</param>
+        /// <param name="Apellido2">Segundo apellido de usuario</param>
+        /// <param name="telefono">telefono de usuario</param>
+        /// <param name="email">correo de usuario</param>
+        /// <param name="password">Contraseña de usuario</param>
+        /// <param name="changePassword">Permite conocer al sistema si el usuario debe hacer cambio de contraseña o no</param>
+        /// <param name="tipo">tipo de usuario</param>
         public static void editarUsuario(string Nombre, string Apellido1, string Apellido2, int telefono, string email, string password, bool changePassword, Enums.TipoUsuario tipo)
         {
             try

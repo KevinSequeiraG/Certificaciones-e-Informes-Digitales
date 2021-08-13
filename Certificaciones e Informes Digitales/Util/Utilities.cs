@@ -20,6 +20,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
 {
     class Utilities
     {
+        /// <summary>
+        /// Funcion para generar lista de todos los tipos de Certificacion
+        /// </summary>
+        /// <returns></returns>
         public static List<string> lstTiposCert()
         {
             List<string> lista = new List<string>();
@@ -29,7 +33,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
             lista.Add("Bienes Inmuebles");
             return lista;
         }
-
+        /// <summary>
+        /// Funcion para generar lista de todas las provincias de Costa Rica
+        /// </summary>
+        /// <returns></returns>
         public static List<string> lstProvincias()
         {
             List<string> lista = new List<string>();
@@ -46,7 +53,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return lista;
         }
-
+        /// <summary>
+        /// Funcion para generar lista de las posibles gestiones del administrador
+        /// </summary>
+        /// <returns></returns>
         public List<string> lstGestiones()
         {
             List<string> lista = new List<string>();
@@ -75,6 +85,11 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return lista;
         }
+        /// <summary>
+        /// Funcion que envia correo con contraseña nueva para usuario especifico
+        /// </summary>
+        /// <param name="correoAenviar">Correo el cual sufrira el cambio de contraseña</param>
+        /// <param name="contra">Nueva contraseña temporal</param>
         public void correoRecuperacion(string correoAenviar, string contra)
         {
             MailMessage mensaje = new MailMessage();
@@ -89,7 +104,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
             smtp.EnableSsl = true;
             smtp.Send(mensaje);
         }
-
+        /// <summary>
+        /// Genera un string aleatorio para una contraseña temporal
+        /// </summary>
+        /// <returns></returns>
         public string contrasennaTemp()
         {
             string contraseña = string.Empty;
@@ -113,6 +131,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
             }
             return contraseña;
         }
+        /// <summary>
+        /// Funcion que genera una lista de los tipos de resportes disponibles para el administrador
+        /// </summary>
+        /// <returns></returns>
         public static List<string> lstRReportes()
         {
             List<string> lista = new List<string>();
@@ -121,7 +143,12 @@ namespace Certificaciones_e_Informes_Digitales.Util
             lista.Add("Total de compras del último mes");
             return lista;
         }
-
+        /// <summary>
+        /// Funcion que permite enviar los certificados por correo
+        /// </summary>
+        /// <param name="correoAEnviar">Correo destinado</param>
+        /// <param name="bytes">PDF convertido a bytes[]</param>
+        /// <param name="idCertPDF">id de la certificacion</param>
         public static void EnviarPDFCorreo(string correoAEnviar, byte[] bytes, int idCertPDF)
         {
             using (var viewer = new LocalReport())
@@ -142,6 +169,10 @@ namespace Certificaciones_e_Informes_Digitales.Util
                 }
             }
         }
+        /// <summary>
+        /// Funcion abre los frames ya que los loads de estos tienen las funciones necesarias para enviar la certificacion
+        /// </summary>
+        /// <param name="lineaDetalle">Lista de lineas de detalle</param>
         public static void EnviarCertificaciones(List<Entities.LineaDetalle> lineaDetalle)
         {
             try
@@ -191,6 +222,11 @@ namespace Certificaciones_e_Informes_Digitales.Util
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que genera Codigo QR de un string
+        /// </summary>
+        /// <param name="CodigoCert">Codigo a convertir en QR</param>
+        /// <returns></returns>
         public static Bitmap VerQR(string CodigoCert)
         {
             QrEncoder qrEncoder = new QrEncoder();
@@ -203,6 +239,11 @@ namespace Certificaciones_e_Informes_Digitales.Util
             var imagen = new Bitmap(imageTemporal, new Size(new Point(200, 200)));
             return imagen;
         }
+        /// <summary>
+        /// Convierte una imagen en un array de Bytes
+        /// </summary>
+        /// <param name="img">Imagen a convertir</param>
+        /// <returns></returns>
         public static Byte[] ImageToByteArray(Image img)
         {
             using (var stream = new MemoryStream())

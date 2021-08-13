@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa una persona Fisica
+    /// </summary>
     class PersonaFisica
     {
         public string id { get; set; }

@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
     class CertificacionBLL
     {
         private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+        /// <summary>
+        /// Funcion que permite guardar una certificacion en la base de datos
+        /// </summary>
+        /// <param name="certificacion">certificacion a guardar</param>
         public void Guardar(Entities.Certificacion certificacion)
         {
             try
@@ -43,6 +47,13 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una certificacion en la base de datos
+        /// </summary>
+        /// <param name="id">id de la certificacion</param>
+        /// <param name="tipo">tipo de certificacion</param>
+        /// <param name="detalle">detalle de certificacion</param>
+        /// <param name="precio">precio de certificacion</param>
         public void Editar(int id, string tipo, string detalle, double precio)
         {
             try
@@ -77,6 +88,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una certificacion
+        /// </summary>
+        /// <param name="id">id de certificacion</param>
         public void Eliminar(int id)
         {
             try
@@ -94,6 +109,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todas las certificaciones de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public List<Entities.Certificacion> Ver()
         {
             try
@@ -106,6 +125,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver por id una certificacion
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public Entities.Certificacion VerPorID(int ID)
         {
             try
@@ -118,6 +142,11 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 _MyLogControlEventos.Error(ex.Message);
             }
         }
+        /// <summary>
+        /// Funcion que permite ver las certificaciones por tipo
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <returns></returns>
         public List<Entities.Certificacion> VerPorTipo(string tipo)
         {
             try

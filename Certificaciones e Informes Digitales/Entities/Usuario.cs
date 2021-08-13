@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa un usuario
+    /// </summary>
     class Usuario
     {
         public string Nombre { get; set; }

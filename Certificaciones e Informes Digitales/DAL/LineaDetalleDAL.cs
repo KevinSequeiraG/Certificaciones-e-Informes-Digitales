@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class LineaDetalleDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar una linea detalle en la base de datos
+        /// </summary>
+        /// <param name="linea">linea detalle a guardar</param>
         public static void Guardar(Entities.LineaDetalle linea)
         {
             try
@@ -53,6 +57,14 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una linea detalle
+        /// </summary>
+        /// <param name="id">id de la linea detalle</param>
+        /// <param name="idCarrito">id del carro a la que pertenece la linea detalle</param>
+        /// <param name="idCert">id de la certificacion que se compro</param>
+        /// <param name="cant">cantidad de certificaciones compradas</param>
+        /// <param name="idPersona">id de la persona a la que pertenece la certificacion</param>
         public static void Editar(int id, int idCarrito, int idCert, int cant, string idPersona)
         {
             try
@@ -82,6 +94,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una linea detalle
+        /// </summary>
+        /// <param name="idCarro">id del carro a la que pertenece la linea detalle</param>
+        /// <param name="idCert">id de la certificacion que se compro</param>
         public static void Eliminar(int idCarro, int idCert)
         {
             try
@@ -111,6 +128,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todas las lineas de detalle en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.LineaDetalle> Ver()
         {
             try
@@ -152,6 +173,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver una linea detalle por id
+        /// </summary>
+        /// <param name="ID">id de la linea de detalle</param>
+        /// <returns></returns>
         public static Entities.LineaDetalle VerPorID(int ID)
         {
             try

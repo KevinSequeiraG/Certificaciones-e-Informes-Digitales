@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Enums
 {
+    /// <summary>
+    /// Listado para tipos de usuario
+    /// </summary>
     enum TipoUsuario
     {
         administrador, cliente

@@ -10,6 +10,12 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class HistorialDAL
     {
+        /// <summary>
+        /// Funcion que permite ingresar en el historial del usuario una certificacion
+        /// </summary>
+        /// <param name="email">correo del usuario</param>
+        /// <param name="fecha">fecha de la compra</param>
+        /// <param name="detalleCert">detalle de la certificacion</param>
         public static void Guardar(string idUser, DateTime fecha, string detalleCert)
         {
             try
@@ -37,6 +43,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver por id la informacion de una certificacion vendida
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Entities.Historial VerPorID(int id)
         {
             try
@@ -76,6 +87,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// funcion que permite ver el historial de un usuario
+        /// </summary>
+        /// <param name="idUser">correo del usuario</param>
+        /// <returns></returns>
         public static List<Entities.Historial> VerHistorialUsuario(string idUser)
         {
             try
@@ -117,8 +133,12 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
-        public static Entities.Historial VerUltimoHistorial()
+        /// <summary>
+        /// Funcion que permite ver el ultimo historial por el correo de usuario
+        /// </summary>
+        /// <param name="correoUsario">correo del usuario</param>
+        /// <returns></returns>
+        public static Entities.Historial VerUltimoHistorial(string correoUsario)
         {
             try
             {
@@ -127,6 +147,8 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"sp_VerUltimoHistorial";
 
                     var comando = new SqlCommand(sql);
+
+                    comando.Parameters.AddWithValue("@ID", correoUsario);
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -156,6 +178,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite agregar un pdf a un historial
+        /// </summary>
+        /// <param name="idHist"></param>
+        /// <param name="pdf"></param>
         public static void AgregarPdfAHist(int idHist, byte[] pdf)
         {
             try

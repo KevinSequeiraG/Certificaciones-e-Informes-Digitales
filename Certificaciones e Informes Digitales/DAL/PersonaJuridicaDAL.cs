@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class PersonaJuridicaDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar una persona juridica
+        /// </summary>
+        /// <param name="pj">persona juridica a guardar</param>
         public static void Guardar(Entities.PersonaJuridica pj)
         {
             try
@@ -43,6 +47,17 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una persona juridica
+        /// </summary>
+        /// <param name="id">id de persona</param>
+        /// <param name="razonSocial">razon social</param>
+        /// <param name="estado">Estado de persona juridica</param>
+        /// <param name="fechaInsc">Fecha de inscripcion</param>
+        /// <param name="tomo">Tomo</param>
+        /// <param name="asiento">Asiento</param>
+        /// <param name="domicilio">Domicilio</param>
+        /// <param name="objeto">Objeto de persona juridica</param>
         public static void Editar(string id, string razonSocial, bool estado, DateTime fechaInsc, int tomo, int asiento, string domicilio, string objeto)
         {
             try
@@ -75,6 +90,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una persona juridica de la base de datos
+        /// </summary>
+        /// <param name="id">id de la persona</param>
         public static void Eliminar(string id)
         {
             try
@@ -103,6 +122,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Retorna una lista de todas las personas juridicas que se encuentran en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.PersonaJuridica> Ver()
         {
             try
@@ -145,6 +168,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que retorna una persona juridica por id
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public static Entities.PersonaJuridica VerPorID(string ID)
         {
             try

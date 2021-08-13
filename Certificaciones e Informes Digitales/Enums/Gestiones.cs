@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Enums
 {
+    /// <summary>
+    /// Listado para Gestiones
+    /// </summary>
     enum Gestiones
     {
         Usuarios, PersonasFisicas, PersonasJuridicas, Certificaciones, BienesInmuebles, BienesMuebles, Catastros

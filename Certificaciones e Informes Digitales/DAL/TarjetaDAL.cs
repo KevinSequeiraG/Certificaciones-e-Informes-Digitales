@@ -11,6 +11,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class TarjetaDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar una tarjeta en la base de datos
+        /// </summary>
+        /// <param name="tarjeta">tarjeta a guardar</param>
         public static void Guardar(Entities.Tarjeta tarjeta)
         {
             try
@@ -41,6 +45,14 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar una tarjeta
+        /// </summary>
+        /// <param name="id">id de tarjeta</param>
+        /// <param name="idUser">correo de usuario</param>
+        /// <param name="fechaVenc">Fecha vencimiento de tarjeta</param>
+        /// <param name="cvv">Codigo de seguridad de tarjeta</param>
+        /// <param name="tipo">tipo de tarjeta</param>
         public static void Editar(int id, string idUser, DateTime fechaVenc, int cvv, string tipo)
         {
             try
@@ -71,6 +83,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que eliminar una tarjeta de la base de datos
+        /// </summary>
+        /// <param name="id"></param>
         public static void Eliminar(Int64 id)
         {
             try
@@ -99,6 +115,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Retorna lista de tarjetas de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.Tarjeta> Ver()
         {
             try
@@ -138,6 +158,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Retorna tarjeta por id
+        /// </summary>
+        /// <param name="ID">id de tarjeta</param>
+        /// <returns></returns>
         public static Entities.Tarjeta VerPorID(int ID)
         {
             try
@@ -178,7 +203,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-
+        /// <summary>
+        /// Retorna todas las tarjetas de un usuario
+        /// </summary>
+        /// <param name="userEmail"></param>
+        /// <returns></returns>
         public static List<Entities.Tarjeta> VerTarjetasUsuario(string userEmail)
         {
             try

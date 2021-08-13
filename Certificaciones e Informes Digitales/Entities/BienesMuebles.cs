@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa un Bien Mueble
+    /// </summary>
     class BienesMuebles
     {
         public int id { get; set; }

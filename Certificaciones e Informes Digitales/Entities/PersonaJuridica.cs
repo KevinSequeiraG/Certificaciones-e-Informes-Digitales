@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Certificaciones_e_Informes_Digitales.Entities
 {
+    /// <summary>
+    /// Representa una persona juridica
+    /// </summary>
     class PersonaJuridica
     {
         public string id { get; set; }

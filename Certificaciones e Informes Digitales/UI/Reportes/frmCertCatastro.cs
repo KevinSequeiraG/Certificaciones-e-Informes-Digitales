@@ -44,7 +44,7 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
             }
             logicaHistorial.Guardar(Util.UsuarioSingleton.GetInstance().email, DateTime.Now, DetalleCert);
 
-            Entities.Historial his = logicaHistorial.VerUltimoHistorial();
+            Entities.Historial his = logicaHistorial.VerUltimoHistorial(Util.UsuarioSingleton.GetInstance().email);
 
             his.qr = Util.Utilities.ImageToByteArray(Util.Utilities.VerQR(his.id.ToString()));
 

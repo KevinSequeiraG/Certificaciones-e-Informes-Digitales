@@ -10,6 +10,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class NombramientoDAL
     {
+        /// <summary>
+        /// Funcion que permite guardar un nombramiento en la base de datos
+        /// </summary>
+        /// <param name="nombramiento">nombramiento a guardar</param>
         public static void Guardar(Entities.Nombramiento nombramiento)
         {
             try
@@ -42,6 +46,16 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite editar un nombramiento
+        /// </summary>
+        /// <param name="id">id de nombramiento</param>
+        /// <param name="Nombre">Nombre de la persona que pertenece al nombramiento</param>
+        /// <param name="cargo">Cargo de la persona que pertenece al nombramiento</param>
+        /// <param name="FechaInsc">Fecha de incripcion de la persona que pertenece al nombramiento</param>
+        /// <param name="VigenciaIni">Vigencia de inicio de la persona que pertenece al nombramiento</param>
+        /// <param name="VigenciaVenc">Vigencia de vencimiento de la persona que pertenece al nombramiento</param>
+        /// <param name="idPersonaJuridica">Id de la persona juridica a la que pertenece la persona</param>
         public static void Editar(int id, string Nombre, string cargo, DateTime FechaInsc,DateTime VigenciaIni, DateTime VigenciaVenc, string idPersonaJuridica)
         {
             try
@@ -74,6 +88,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite eliminar una persona de un nombramiento
+        /// </summary>
+        /// <param name="id">id del nombramiento</param>
         public static void Eliminar(Int64 id)
         {
             try
@@ -102,6 +120,10 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver todos los nombramientos de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public static List<Entities.Nombramiento> Ver()
         {
             try
@@ -143,6 +165,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Permite ver el nombramiento por id
+        /// </summary>
+        /// <param name="ID">id del nombramiento que se desea ver</param>
+        /// <returns></returns>
         public static Entities.Nombramiento VerPorID(int ID)
         {
             try
@@ -185,6 +212,11 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
+        /// <summary>
+        /// Funcion que permite ver un nombramiento por id de persona
+        /// </summary>
+        /// <param name="ID">id de persona</param>
+        /// <returns></returns>
         public static List<Entities.Nombramiento> VerPorIDPersona (string ID)
         {
             try
