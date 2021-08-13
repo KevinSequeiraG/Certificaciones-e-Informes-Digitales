@@ -20,6 +20,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         internal static bool certPersonaJ;
         internal static bool certBienMueble;
         internal static bool certBienInmueble;
+        internal static bool certCatastro;
         internal static int IDBien;
         public frmCompra()
         {
@@ -119,6 +120,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             if (cboTipos.SelectedIndex == 0)
             {
                 dgvProductos.DataSource = logica.VerPorTipo("Catastro");
+                certCatastro = true;
+                certPersonaJ = false;
+                certBienInmueble = false;
+                certBienMueble = false;
             }
             else if (cboTipos.SelectedIndex == 1)
             {
@@ -126,6 +131,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 certPersonaJ = true;
                 certBienInmueble = false;
                 certBienMueble = false;
+                certCatastro = false;
             }
             else if (cboTipos.SelectedIndex == 2)
             {
@@ -133,6 +139,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 certBienMueble = true;
                 certBienInmueble = false;
                 certPersonaJ = false;
+                certCatastro = false;
             }
             else if (cboTipos.SelectedIndex == 3)
             {
@@ -140,6 +147,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 certBienInmueble = true;
                 certBienMueble = false;
                 certPersonaJ = false;
+                certCatastro = false;
             }
         }
 
@@ -168,7 +176,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                     frmPersonaCert ventana = new frmPersonaCert();
                     ventana.ShowDialog();
 
-                    if (certBienInmueble || certBienMueble)
+                    if (certBienInmueble || certBienMueble || certCatastro)
                     {
                         frmBienDestinado ventanaBien = new frmBienDestinado();
                         ventanaBien.ShowDialog();
@@ -208,7 +216,21 @@ namespace Certificaciones_e_Informes_Digitales.UI
                         {
                             linea.idBien = IDBien;
                             logicaLinea.Guardar(linea);
-                            MessageBox.Show("Se agrega la certificacion al carrito");
+                        }
+                        else
+                        {
+                            throw new ApplicationException("El ID ingresado para el Bien no pertenece a la persona requerida");
+                        }
+                    }
+                    else if (certCatastro)
+                    {
+                        BLL.CatastroBLL logicaCat = new BLL.CatastroBLL();
+                        Entities.Catastro bienI = new Entities.Catastro();
+                        bienI = logicaCat.VerPorID(IDBien);
+                        if (bienI != null && (bienI.idPersonaF == linea.idPersonaF && bienI.idPersonaJ == linea.idPersonaJ))
+                        {
+                            linea.idBien = IDBien;
+                            logicaLinea.Guardar(linea);
                         }
                         else
                         {
@@ -231,6 +253,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void btnCarrito_Click(object sender, EventArgs e)
         {
             frmCarrito ventana = new frmCarrito();
+            ventana.Show();
+            this.Hide();
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            frmUsuario ventana = new frmUsuario();
             ventana.Show();
             this.Hide();
         }

@@ -38,6 +38,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.cambiarContraseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCrearUser = new System.Windows.Forms.Label();
             this.pnlFrames = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -144,12 +145,27 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.pnlFrames.Size = new System.Drawing.Size(927, 392);
             this.pnlFrames.TabIndex = 41;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.Maroon;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(47, 526);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(152, 41);
+            this.btnVolver.TabIndex = 42;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmGestiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Certificaciones_e_Informes_Digitales.Properties.Resources.FondoCrearUser;
-            this.ClientSize = new System.Drawing.Size(1014, 568);
+            this.ClientSize = new System.Drawing.Size(1014, 578);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pnlFrames);
             this.Controls.Add(this.lblCrearUser);
             this.Controls.Add(this.picMin);
@@ -182,5 +198,6 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseToolStripMenuItem;
         private System.Windows.Forms.Label lblCrearUser;
         private System.Windows.Forms.Panel pnlFrames;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

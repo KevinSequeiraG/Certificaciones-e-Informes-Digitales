@@ -115,18 +115,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
             frmReportes ventana = new frmReportes();
             ventana.Show();
             this.Hide();
-            Reportes.frmCertPersoneriaJuridica logica = new Reportes.frmCertPersoneriaJuridica();
-            logica.Show();
-            logica.Hide();
-            Reportes.frmCertBienInmueblePersonaF ve = new Reportes.frmCertBienInmueblePersonaF();
-            ve.Show();
-            Reportes.frmCertBienMueble ven = new Reportes.frmCertBienMueble();
-            ven.Show();
         }
 
         private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNuevoPassword ventana = new frmNuevoPassword();
+            ventana.ShowDialog();
         }
 
         private void btnReportes_MouseEnter(object sender, EventArgs e)

@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class TarjetaBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.Tarjeta tarjeta)
         {
             try
@@ -43,6 +44,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al guardar el tarjeta \n" + ex.Message);
             }
         }
@@ -82,6 +84,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
             }
         }
@@ -98,6 +101,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
             }
         }
@@ -109,6 +113,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar los usuarios \n" + ex.Message);
             }
         }
@@ -120,6 +125,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar la tarjeta\n" + ex.Message);
             }
         }
@@ -131,6 +137,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar las tarjetas \n" + ex.Message);
             }
         }

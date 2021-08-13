@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Certificaciones e Informes Digitales", "Certificaciones e Informes Digitales\Certificaciones e Informes Digitales.csproj", "{90CDC51E-67BE-4660-82DE-7F28448E9155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capas", "..\..\..\..\..\..\..\Downloads\slnCapas\Capas\Capas.csproj", "{0B7FFE5B-8F9B-40F6-8E7E-F704F51F7338}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{90CDC51E-67BE-4660-82DE-7F28448E9155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90CDC51E-67BE-4660-82DE-7F28448E9155}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90CDC51E-67BE-4660-82DE-7F28448E9155}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B7FFE5B-8F9B-40F6-8E7E-F704F51F7338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B7FFE5B-8F9B-40F6-8E7E-F704F51F7338}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B7FFE5B-8F9B-40F6-8E7E-F704F51F7338}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B7FFE5B-8F9B-40F6-8E7E-F704F51F7338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

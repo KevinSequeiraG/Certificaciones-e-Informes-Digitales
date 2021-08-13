@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class CatastroBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.Catastro catastro)
         {
             try
@@ -44,6 +45,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el catastro \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, string idPersonaJ, string idPersonaF, string localizacion, string usoLocal, int annoConst, int tamanno)
@@ -83,6 +85,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Eliminar(int id)
@@ -99,6 +102,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.Catastro> Ver()
@@ -110,6 +114,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar los catastros \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.Catastro VerPorID(int ID)
@@ -121,6 +126,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el catastro \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
     }

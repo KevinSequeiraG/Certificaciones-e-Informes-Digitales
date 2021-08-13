@@ -40,10 +40,15 @@ namespace Certificaciones_e_Informes_Digitales.UI
                     MessageBox.Show("Si existe una certificacion emitida por el Registro Nacional con este Codigo");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

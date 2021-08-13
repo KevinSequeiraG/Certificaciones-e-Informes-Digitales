@@ -11,18 +11,19 @@ namespace Certificaciones_e_Informes_Digitales.Util
 {
     class Log
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public static void LogSQLException(SqlException pExcepcion)
         {
             string texto = CreateSQLExceptionsErrorDetails(pExcepcion);
-            
-            // TODO: guardar usando log4net
+
+            _MyLogControlEventos.Error(texto);
         }
 
         public static void LogGenericException(Exception pExcepcion)
         {
             string texto = CreateGenericErrorExceptionDetail(pExcepcion);
 
-            // TODO: guardar usando log4net
+            _MyLogControlEventos.Error(texto);
         }
 
         public static string CreateSQLExceptionsErrorDetails(SqlException pExcepcion)

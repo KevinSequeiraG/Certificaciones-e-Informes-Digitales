@@ -10,7 +10,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 {
     class HistorialDAL
     {
-        public static void Guardar(byte[] pdf, string idUser, DateTime fecha, string detalleCert)
+        public static void Guardar(string idUser, DateTime fecha, string detalleCert)
         {
             try
             {
@@ -19,7 +19,6 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                     string sql = @"SP_AgregarAHistorial";
 
                     var comando = new SqlCommand(sql);
-                    comando.Parameters.AddWithValue("@PDF", pdf);
                     comando.Parameters.AddWithValue("@idUser", idUser);
                     comando.Parameters.AddWithValue("@fecha", fecha);
                     comando.Parameters.AddWithValue("@detalleCert", detalleCert);
@@ -105,6 +104,74 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                         lista.Add(hist);
                     }
                     return lista;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+
+        public static Entities.Historial VerUltimoHistorial()
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"sp_VerUltimoHistorial";
+
+                    var comando = new SqlCommand(sql);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
+
+
+                    while (reader.Read())
+                    {
+                        Entities.Historial hist = new Entities.Historial();
+                        hist.id = Convert.ToInt32(reader["id"]);
+                        hist.idUser = (reader["idUsuario"].ToString());
+                        hist.fecha = Convert.ToDateTime(reader["fecha"]);
+                        hist.detalleCert = (reader["detalleCert"].ToString());
+                        return hist;
+                    }
+                    return null;
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
+        public static void AgregarPdfAHist(int idHist, byte[] pdf)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_AgregarPDFaHist";
+
+                    var comando = new SqlCommand(sql);
+
+                    comando.Parameters.AddWithValue("@idHist", idHist);
+                    comando.Parameters.AddWithValue("@pdf", pdf);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var reader = db.ExecuteReader(comando);
                 }
             }
             catch (SqlException sqlEx)

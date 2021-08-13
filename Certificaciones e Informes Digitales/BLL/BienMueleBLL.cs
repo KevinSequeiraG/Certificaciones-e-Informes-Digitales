@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class BienMueleBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public static void Guardar(Entities.BienesMuebles bien)
         {
             try
@@ -75,6 +76,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, string idPersonaJ, string idPersonaF, string marca, string Categoria, string serie, string traccion, int annoFabricacion, Enums.Usos uso, string Color, int capacidad, double valorHacienda, bool estado, Enums.Moneda moneda)
@@ -145,6 +147,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Eliminar(int id)
@@ -161,6 +164,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.BienesMuebles> Ver()
@@ -172,6 +176,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar los Bienes \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.BienesMuebles VerPorID(int ID)
@@ -183,6 +188,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
     }

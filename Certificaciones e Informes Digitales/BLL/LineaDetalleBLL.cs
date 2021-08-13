@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class LineaDetalleBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.LineaDetalle linea)
         {
             try
@@ -34,6 +35,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el linea \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, int idCarrito, int idCert, int cant, string idPersona)
@@ -73,21 +75,23 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
-        public void Eliminar(int id)
+        public void Eliminar(int idCarro, int idCert)
         {
             try
             {
-                if (id == null)
+                if (idCarro == null)
                 {
                     throw new ApplicationException("Debe ingresar el ID");
                 }
-                DAL.LineaDetalleDAL.Eliminar(id);
+                DAL.LineaDetalleDAL.Eliminar(idCarro, idCert);
                 MessageBox.Show("Linea Detalle eliminada correctamente");
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
             }
         }
@@ -100,6 +104,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar los Bienes \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.LineaDetalle VerPorID(int ID)
@@ -110,6 +115,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar la linea detalle \n" + ex.Message);
             }
         }

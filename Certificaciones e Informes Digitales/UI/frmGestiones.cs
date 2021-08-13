@@ -97,5 +97,12 @@ namespace Certificaciones_e_Informes_Digitales.UI
             frmNuevoPassword ventana = new frmNuevoPassword();
             ventana.ShowDialog();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmAdmin ventana = new frmAdmin();
+            ventana.Show();
+            this.Hide();
+        }
     }
 }

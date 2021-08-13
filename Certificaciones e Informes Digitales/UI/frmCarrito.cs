@@ -72,5 +72,14 @@ namespace Certificaciones_e_Informes_Digitales.UI
             frmNuevoPassword ventana = new frmNuevoPassword();
             ventana.ShowDialog();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            BLL.LineaDetalleBLL logica = new BLL.LineaDetalleBLL();
+            Entities.LineaDetalle linea = (Entities.LineaDetalle)dgvCarrito.SelectedRows[0].DataBoundItem;
+            logica.Eliminar(Util.CarritoSingleton.GetInstance().id, linea.idCert);
+            BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
+            dgvCarrito.DataSource = logicaCarro.VerInfoCarrito(Util.CarritoSingleton.GetInstance().id);
+        }
     }
 }

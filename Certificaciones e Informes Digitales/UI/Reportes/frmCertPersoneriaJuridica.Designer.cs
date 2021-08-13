@@ -31,33 +31,44 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SP_PersonaJConNombramientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPersonaJConNombramiento = new Certificaciones_e_Informes_Digitales.dsPersonaJConNombramiento();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.sPPersonaJConNombramientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_PersonaJConNombramientoTableAdapter = new Certificaciones_e_Informes_Digitales.dsPersonaJConNombramientoTableAdapters.SP_PersonaJConNombramientoTableAdapter();
-            this.SP_PersonaJConNombramientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.HistorialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.SP_PersonaJConNombramientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPersonaJConNombramiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPersonaJConNombramientoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_PersonaJConNombramientoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HistorialBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SP_PersonaJConNombramientoBindingSource
+            // 
+            this.SP_PersonaJConNombramientoBindingSource.DataMember = "SP_PersonaJConNombramiento";
+            this.SP_PersonaJConNombramientoBindingSource.DataSource = this.dsPersonaJConNombramiento;
+            // 
+            // dsPersonaJConNombramiento
+            // 
+            this.dsPersonaJConNombramiento.DataSetName = "dsPersonaJConNombramiento";
+            this.dsPersonaJConNombramiento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "dsPersonaConNombramiento";
             reportDataSource1.Value = this.SP_PersonaJConNombramientoBindingSource;
+            reportDataSource2.Name = "dsHis";
+            reportDataSource2.Value = this.HistorialBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Certificaciones_e_Informes_Digitales.UI.Reportes.docCertPersoneriaJuridica.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(641, 722);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dsPersonaJConNombramiento
-            // 
-            this.dsPersonaJConNombramiento.DataSetName = "dsPersonaJConNombramiento";
-            this.dsPersonaJConNombramiento.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sPPersonaJConNombramientoBindingSource
             // 
@@ -68,10 +79,9 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
             // 
             this.sP_PersonaJConNombramientoTableAdapter.ClearBeforeFill = true;
             // 
-            // SP_PersonaJConNombramientoBindingSource
+            // HistorialBindingSource
             // 
-            this.SP_PersonaJConNombramientoBindingSource.DataMember = "SP_PersonaJConNombramiento";
-            this.SP_PersonaJConNombramientoBindingSource.DataSource = this.dsPersonaJConNombramiento;
+            this.HistorialBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.Historial);
             // 
             // frmCertPersoneriaJuridica
             // 
@@ -82,9 +92,10 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
             this.Name = "frmCertPersoneriaJuridica";
             this.Text = "frmCertPersoneriaJuridica";
             this.Load += new System.EventHandler(this.frmCertPersoneriaJuridica_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SP_PersonaJConNombramientoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsPersonaJConNombramiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPersonaJConNombramientoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SP_PersonaJConNombramientoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HistorialBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +107,6 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
         private dsPersonaJConNombramiento dsPersonaJConNombramiento;
         private System.Windows.Forms.BindingSource sPPersonaJConNombramientoBindingSource;
         private dsPersonaJConNombramientoTableAdapters.SP_PersonaJConNombramientoTableAdapter sP_PersonaJConNombramientoTableAdapter;
+        private System.Windows.Forms.BindingSource HistorialBindingSource;
     }
 }

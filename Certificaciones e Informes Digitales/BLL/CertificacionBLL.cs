@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class CertificacionBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.Certificacion certificacion)
         {
             try
@@ -39,6 +40,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el certificacion \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, string tipo, string detalle, double precio)
@@ -63,7 +65,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                 if (precio == null)
                 {
                     //warn
-                    throw new ApplicationException("Debe indicar el precio de subtotal del carrito");
+                    throw new ApplicationException("Debe indicar el precio de subtotal del carrito");                    
                 }
 
                 DAL.CertificacionDAL.Editar(id, tipo, detalle, precio);
@@ -72,6 +74,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Eliminar(int id)
@@ -88,6 +91,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.Certificacion> Ver()
@@ -99,6 +103,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar los Bienes \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.Certificacion VerPorID(int ID)
@@ -110,6 +115,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar la certificacion \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.Certificacion> VerPorTipo(string tipo)
@@ -118,9 +124,10 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             {
                 return DAL.CertificacionDAL.VerPorTipo(tipo);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrio un error al cargar la lista de " + tipo);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
     }

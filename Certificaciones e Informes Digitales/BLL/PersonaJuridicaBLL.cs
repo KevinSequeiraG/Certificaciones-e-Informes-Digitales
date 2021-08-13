@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class PersonaJuridicaBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.PersonaJuridica pj)
         {
             try
@@ -58,6 +59,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al guardar el pj \n" + ex.Message);
             }
         }
@@ -112,6 +114,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
             }
         }
@@ -128,6 +131,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
             }
         }
@@ -139,6 +143,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar las personas Juridicas \n" + ex.Message);
             }
         }
@@ -150,6 +155,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar la persona \n" + ex.Message);
             }
         }

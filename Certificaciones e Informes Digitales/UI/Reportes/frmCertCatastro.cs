@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace Certificaciones_e_Informes_Digitales.UI.Reportes
 {
-    public partial class frmCertBienInmueblePersonaF : Form
+    public partial class frmCertCatastro : Form
     {
         private string idPersona;
         private int idBien;
         private bool tipoPersona;
         string DetalleCert;
-        public frmCertBienInmueblePersonaF()
+        public frmCertCatastro(bool tipoPersona, string idPersona, int idBien, string DetalleCert)
         {
             InitializeComponent();
-        }
-        public frmCertBienInmueblePersonaF(bool tipoPersona, string idPersona, int idBien, string DetalleCert)
-        {
-            InitializeComponent();
+
             this.idPersona = idPersona;
             this.idBien = idBien;
             this.tipoPersona = tipoPersona;
@@ -30,12 +27,11 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
 
         }
 
-        private void frmCertBienInmueblePersonaF_Load(object sender, EventArgs e)
+        private void frmCertCatastro_Load(object sender, EventArgs e)
         {
-            BLL.BienInmuebleBLL logica = new BLL.BienInmuebleBLL();
+            BLL.CatastroBLL logica = new BLL.CatastroBLL();
             BLL.HistorialBLL logicaHistorial = new BLL.HistorialBLL();
-            BienesInmueblesBindingSource.DataSource = logica.VerPorID(idBien);
-
+            CatastroBindingSource.DataSource = logica.VerPorID(idBien);
             if (tipoPersona)
             {
                 BLL.PersonaFisicaBLL personalog = new BLL.PersonaFisicaBLL();
@@ -61,6 +57,6 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
             logicaHistorial.AgregarPdfAHist(his.id, bytes);
 
             Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, bytes, his.id);
-        }        
+        }
     }
 }

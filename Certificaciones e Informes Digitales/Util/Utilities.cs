@@ -1,7 +1,11 @@
 ﻿using Certificaciones_e_Informes_Digitales.Enums;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -118,7 +122,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
             return lista;
         }
 
-        public static void EnviarPDFCorreo(string correoAEnviar, byte[] bytes)
+        public static void EnviarPDFCorreo(string correoAEnviar, byte[] bytes, int idCertPDF)
         {
             using (var viewer = new LocalReport())
             {
@@ -126,6 +130,7 @@ namespace Certificaciones_e_Informes_Digitales.Util
 
                 correo.To.Add(new MailAddress(correoAEnviar, ""));
                 correo.Subject = "Reporte como Correo";
+                correo.Body = "El ID necesario en caso de querer buscar el PDF en su historial es el siguiente: " + idCertPDF;
                 correo.Attachments.Add(new Attachment(new MemoryStream(bytes), "Registro Nacional.pdf"));
 
                 using (var smtp = new SmtpClient("smtp.gmail.com"))
@@ -146,19 +151,36 @@ namespace Certificaciones_e_Informes_Digitales.Util
                     switch (item.idCert)
                     {
                         case 1:
-                            UI.Reportes.frmCertBienMueble logica = new UI.Reportes.frmCertBienMueble((item.idPersonaF != ""?true:false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien);
-                            logica.Show();
-                            logica.Hide();
+                            for (int i = 0; i < item.cant; i++)
+                            {
+                                UI.Reportes.frmCertBienMueble logica = new UI.Reportes.frmCertBienMueble((item.idPersonaF != "" ? true : false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien, item.DetalleCert);
+                                logica.Show();
+                                logica.Hide();
+                            }
                             break;
                         case 2:
-                            UI.Reportes.frmCertBienInmueblePersonaF logicaBienI = new UI.Reportes.frmCertBienInmueblePersonaF((item.idPersonaF != "" ? true : false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien, item.DetalleCert);
-                            logicaBienI.Show();
-                            logicaBienI.Hide();
+                            for (int i = 0; i < item.cant; i++)
+                            {
+                                UI.Reportes.frmCertBienInmueblePersonaF logicaBienI = new UI.Reportes.frmCertBienInmueblePersonaF((item.idPersonaF != "" ? true : false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien, item.DetalleCert);
+                                logicaBienI.Show();
+                                logicaBienI.Hide();
+                            }
                             break;
                         case 3:
-                            UI.Reportes.frmCertPersoneriaJuridica logicaPersona = new UI.Reportes.frmCertPersoneriaJuridica(item.idPersonaJ);
-                            logicaPersona.Show();
-                            logicaPersona.Hide();
+                            for (int i = 0; i < item.cant; i++)
+                            {
+                                UI.Reportes.frmCertPersoneriaJuridica logicaPersona = new UI.Reportes.frmCertPersoneriaJuridica(item.idPersonaJ, item.DetalleCert);
+                                logicaPersona.Show();
+                                logicaPersona.Hide();
+                            }
+                            break;
+                        case 4:
+                            for (int i = 0; i < item.cant; i++)
+                            {
+                                UI.Reportes.frmCertCatastro logicaCat = new UI.Reportes.frmCertCatastro((item.idPersonaF != "" ? true : false), (item.idPersonaF != "" ? item.idPersonaF : item.idPersonaJ), item.idBien, item.DetalleCert);
+                                logicaCat.Show();
+                                logicaCat.Hide();
+                            }
                             break;
                     }
                 }
@@ -167,6 +189,26 @@ namespace Certificaciones_e_Informes_Digitales.Util
             {
 
                 throw;
+            }
+        }
+        public static Bitmap VerQR(string CodigoCert)
+        {
+            QrEncoder qrEncoder = new QrEncoder();
+            QrCode qrCode = new QrCode();
+            qrEncoder.TryEncode(CodigoCert, out qrCode);
+            GraphicsRenderer renderer = new GraphicsRenderer(new FixedCodeSize(400, QuietZoneModules.Zero), Brushes.Black, Brushes.White);
+            MemoryStream ms = new MemoryStream();
+            renderer.WriteToStream(qrCode.Matrix, ImageFormat.Png, ms);
+            var imageTemporal = new Bitmap(ms);
+            var imagen = new Bitmap(imageTemporal, new Size(new Point(200, 200)));
+            return imagen;
+        }
+        public static Byte[] ImageToByteArray(Image img)
+        {
+            using (var stream = new MemoryStream())
+            {
+                img.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
             }
         }
     }

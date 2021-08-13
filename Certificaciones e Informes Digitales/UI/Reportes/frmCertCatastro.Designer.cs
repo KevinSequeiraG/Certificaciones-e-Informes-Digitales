@@ -1,6 +1,7 @@
-﻿namespace Certificaciones_e_Informes_Digitales.UI.Reportes
+﻿
+namespace Certificaciones_e_Informes_Digitales.UI.Reportes
 {
-    partial class frmCertBienInmueblePersonaF
+    partial class frmCertCatastro
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +34,20 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.BienesInmueblesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CatastroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PersonaFisicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PersonaJuridicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.HistorialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.BienesInmueblesBindingSource)).BeginInit();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.CatastroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonaFisicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonaJuridicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorialBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // BienesInmueblesBindingSource
+            // CatastroBindingSource
             // 
-            this.BienesInmueblesBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles);
+            this.CatastroBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.Catastro);
             // 
             // PersonaFisicaBindingSource
             // 
@@ -56,11 +57,15 @@
             // 
             this.PersonaJuridicaBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica);
             // 
+            // HistorialBindingSource
+            // 
+            this.HistorialBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.Historial);
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.BienesInmueblesBindingSource;
+            reportDataSource1.Name = "dsCatastro";
+            reportDataSource1.Value = this.CatastroBindingSource;
             reportDataSource2.Name = "dsPersonaFisica";
             reportDataSource2.Value = this.PersonaFisicaBindingSource;
             reportDataSource3.Name = "dsPersonaJuridica";
@@ -71,27 +76,23 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Certificaciones_e_Informes_Digitales.UI.Reportes.CertBienInmueble.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Certificaciones_e_Informes_Digitales.UI.Reportes.CertCatastro.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(654, 511);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // HistorialBindingSource
-            // 
-            this.HistorialBindingSource.DataSource = typeof(Certificaciones_e_Informes_Digitales.Entities.Historial);
-            // 
-            // frmCertBienInmueblePersonaF
+            // frmCertCatastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 511);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frmCertBienInmueblePersonaF";
-            this.Text = "frmCertBienInmueblePersonaF";
-            this.Load += new System.EventHandler(this.frmCertBienInmueblePersonaF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BienesInmueblesBindingSource)).EndInit();
+            this.Name = "frmCertCatastro";
+            this.Text = "frmCertCatastro";
+            this.Load += new System.EventHandler(this.frmCertCatastro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CatastroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonaFisicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonaJuridicaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorialBindingSource)).EndInit();
@@ -102,7 +103,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource BienesInmueblesBindingSource;
+        private System.Windows.Forms.BindingSource CatastroBindingSource;
         private System.Windows.Forms.BindingSource PersonaFisicaBindingSource;
         private System.Windows.Forms.BindingSource PersonaJuridicaBindingSource;
         private System.Windows.Forms.BindingSource HistorialBindingSource;

@@ -8,19 +8,17 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class HistorialBLL
     {
-        public void Guardar(byte[] pdf, string email, DateTime fecha, string detalleCert)
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
+        public void Guardar(string email, DateTime fecha, string detalleCert)
         {
             try
             {
-                if (pdf == null)
-                {
-                    throw new ApplicationException("El pdf no existe");
-                }
-                DAL.HistorialDAL.Guardar(pdf, email, fecha, detalleCert);
+                DAL.HistorialDAL.Guardar(email, fecha, detalleCert);
             }
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar la certificacion en el pdf \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.Historial VerPorID(int id)
@@ -32,6 +30,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar la certificacion del pdf por id \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.Historial> VerHistorialUsuario(string idUser)
@@ -43,6 +42,31 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar la certificacion del pdf por id \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
+            }
+        }
+        public Entities.Historial VerUltimoHistorial()
+        {
+            try
+            {
+                return DAL.HistorialDAL.VerUltimoHistorial();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el ultimo historial \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
+            }
+        }
+        public void AgregarPdfAHist(int idHist, byte[] pdf)
+        {
+            try
+            {
+                DAL.HistorialDAL.AgregarPdfAHist(idHist,pdf);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al buscar el ultimo historial \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
     }

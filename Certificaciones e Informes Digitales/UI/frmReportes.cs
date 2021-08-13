@@ -58,7 +58,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmNuevoPassword ventana = new frmNuevoPassword();
+            ventana.ShowDialog();
         }
 
         private void picMin_Click(object sender, EventArgs e)

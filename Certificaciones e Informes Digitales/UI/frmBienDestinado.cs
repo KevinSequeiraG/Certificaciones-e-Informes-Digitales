@@ -33,6 +33,10 @@ namespace Certificaciones_e_Informes_Digitales.UI
             {
                 lblID.Text = "ID del Bien Mueble";
             }
+            else if (frmCompra.certCatastro)
+            {
+                lblID.Text = "ID del Catastro";
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

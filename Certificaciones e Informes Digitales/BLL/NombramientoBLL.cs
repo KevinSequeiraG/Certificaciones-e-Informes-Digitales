@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class NombramientoBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.Nombramiento nombramiento)
         {
             try
@@ -54,6 +55,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el nombramiento \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, string Nombre, string cargo, DateTime FechaInsc, DateTime VigenciaIni, DateTime VigenciaVenc, string idPersonaJuridica)
@@ -102,6 +104,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
             }
         }
@@ -118,6 +121,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
             }
         }
@@ -129,6 +133,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar los nombramientos \n" + ex.Message);
             }
         }
@@ -140,6 +145,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el nombramiento \n" + ex.Message);
             }
         }
@@ -151,6 +157,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             }
             catch (Exception ex)
             {
+                _MyLogControlEventos.Error(ex.Message);
                 throw new ApplicationException("Ocurrió un error al buscar el nombramiento \n" + ex.Message);
             }
         }

@@ -9,6 +9,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
 {
     class CarritoBLL
     {
+        private static readonly log4net.ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public void Guardar(Entities.Carrito carro)
         {
             try
@@ -39,6 +40,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al guardar el carro \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Editar(int id, Entities.Usuario usuario, double total, double subTotal, double impuestos)
@@ -78,6 +80,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al editar el usuario \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public void Eliminar(Int64 id)
@@ -94,6 +97,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el bien \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.Carrito> Ver()
@@ -105,6 +109,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar los carritos \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public Entities.Carrito VerPorID(int ID)
@@ -116,6 +121,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public  Entities.Carrito VerUltimoCarrito(string email)
@@ -127,6 +133,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public List<Entities.LineaDetalle> VerInfoCarrito(int id)
@@ -138,6 +145,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public double CalcularTotal(int idCarro)
@@ -149,6 +157,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public static List<Entities.Carrito> VerComprasDelMes()
@@ -160,6 +169,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al buscar el Carrito por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
         public double CalculaTotalConImpuestos(int idCarro)
@@ -171,6 +181,7 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrió un error al Calcular el total del Carrito mas impuestos por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
             }
         }
     }

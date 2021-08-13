@@ -13,14 +13,16 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
     public partial class frmCertPersoneriaJuridica : Form
     {
         string idPersona;
+        string DetalleCert;
         public frmCertPersoneriaJuridica()
         {
             InitializeComponent();
         }
-        public frmCertPersoneriaJuridica(string idPersona)
+        public frmCertPersoneriaJuridica(string idPersona, string DetalleCert)
         {
             InitializeComponent();
             this.idPersona = idPersona;
+            this.DetalleCert = DetalleCert;
         }
 
         private void frmCertPersoneriaJuridica_Load(object sender, EventArgs e)
@@ -29,9 +31,23 @@ namespace Certificaciones_e_Informes_Digitales.UI.Reportes
             this.sP_PersonaJConNombramientoTableAdapter.Fill(this.dsPersonaJConNombramiento.SP_PersonaJConNombramiento, idPersona);
             this.reportViewer1.RefreshReport();
 
+            BLL.HistorialBLL logicaHistorial = new BLL.HistorialBLL();
+
+            logicaHistorial.Guardar(Util.UsuarioSingleton.GetInstance().email, DateTime.Now, DetalleCert);
+
+            Entities.Historial his = logicaHistorial.VerUltimoHistorial();
+
+            his.qr = Util.Utilities.ImageToByteArray(Util.Utilities.VerQR(his.id.ToString()));
+
+            HistorialBindingSource.DataSource = his;
+
+            this.reportViewer1.RefreshReport();
+
             byte[] bytes = reportViewer1.LocalReport.Render("PDF");
 
-            Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, bytes);
+            logicaHistorial.AgregarPdfAHist(his.id, bytes);
+
+            Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, bytes, his.id);
 
         }
     }

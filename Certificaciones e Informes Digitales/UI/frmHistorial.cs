@@ -57,7 +57,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
                 }
                 else
                 {
-                    Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, hist.pdf);
+                    Util.Utilities.EnviarPDFCorreo(Util.UsuarioSingleton.GetInstance().email, hist.pdf, hist.id);
                     MessageBox.Show("Correo Enviado");
                 }
             }
@@ -70,6 +70,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void frmHistorial_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Entities.Historial hist = (Entities.Historial)dataGridView1.SelectedRows[0].DataBoundItem;
+            frmQR ventana = new frmQR(hist.id.ToString());
+            ventana.ShowDialog();
         }
     }
 }

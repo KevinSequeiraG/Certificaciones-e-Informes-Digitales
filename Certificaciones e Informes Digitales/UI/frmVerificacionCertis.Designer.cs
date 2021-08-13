@@ -58,6 +58,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAceptar.Location = new System.Drawing.Point(312, 133);
@@ -71,6 +72,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.Maroon;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Font = new System.Drawing.Font("Perpetua Titling MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Location = new System.Drawing.Point(24, 133);
@@ -79,6 +81,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnVolver.TabIndex = 35;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmVerificacionCertis
             // 

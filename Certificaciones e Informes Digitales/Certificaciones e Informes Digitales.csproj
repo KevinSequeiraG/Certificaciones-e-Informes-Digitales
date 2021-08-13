@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -54,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -299,6 +306,12 @@
     <Compile Include="UI\frmPersonaCert.Designer.cs">
       <DependentUpon>frmPersonaCert.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\frmQR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmQR.Designer.cs">
+      <DependentUpon>frmQR.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmRecuperarContra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +359,12 @@
     </Compile>
     <Compile Include="UI\Reportes\frmCertBienMueble.Designer.cs">
       <DependentUpon>frmCertBienMueble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertCatastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\frmCertCatastro.Designer.cs">
+      <DependentUpon>frmCertCatastro.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\frmCertPersoneriaJuridica.cs">
       <SubType>Form</SubType>
@@ -472,6 +491,9 @@
     <EmbeddedResource Include="UI\frmPersonaCert.resx">
       <DependentUpon>frmPersonaCert.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmQR.resx">
+      <DependentUpon>frmQR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmRecuperarContra.resx">
       <DependentUpon>frmRecuperarContra.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +514,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\CertBienInmueble.rdlc" />
     <EmbeddedResource Include="UI\Reportes\CertBienMueble.rdlc" />
+    <EmbeddedResource Include="UI\Reportes\CertCatastro.rdlc" />
     <EmbeddedResource Include="UI\Reportes\docCertPersoneriaJuridica.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -500,6 +523,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\frmCertBienMueble.resx">
       <DependentUpon>frmCertBienMueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\frmCertCatastro.resx">
+      <DependentUpon>frmCertCatastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\frmCertPersoneriaJuridica.resx">
       <DependentUpon>frmCertPersoneriaJuridica.cs</DependentUpon>
@@ -542,6 +568,8 @@
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.BienesInmuebles.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.BienesMuebles.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Carrito.datasource" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Catastro.datasource" />
+    <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Historial.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.Nombramiento.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.PersonaFisica.datasource" />
     <None Include="Properties\DataSources\Certificaciones_e_Informes_Digitales.Entities.PersonaJuridica.datasource" />

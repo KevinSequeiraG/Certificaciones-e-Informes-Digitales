@@ -48,7 +48,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void tnVerificacion_Click(object sender, EventArgs e)
         {
             frmVerificacionCertis ventana = new frmVerificacionCertis();
-            ventana.Show();
+            ventana.ShowDialog();
         }
 
         private void btnHistorialCerts_Click(object sender, EventArgs e)
@@ -56,6 +56,59 @@ namespace Certificaciones_e_Informes_Digitales.UI
             frmHistorial ventana = new frmHistorial();
             ventana.Show();
             this.Hide();
+        }
+
+        private void picMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loguin loguin = new Loguin();
+            loguin.Show();
+            this.Hide();
+        }
+
+        private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNuevoPassword ventana = new frmNuevoPassword();
+            ventana.ShowDialog();
+        }
+
+        private void btnGestiones_MouseEnter(object sender, EventArgs e)
+        {
+            btnGestiones.BackColor = Color.IndianRed;
+        }
+
+        private void btnGestiones_MouseLeave(object sender, EventArgs e)
+        {
+            btnGestiones.BackColor = Color.Transparent;
+        }
+
+        private void tnVerificacion_MouseEnter(object sender, EventArgs e)
+        {
+            tnVerificacion.BackColor = Color.IndianRed;
+        }
+
+        private void tnVerificacion_MouseLeave(object sender, EventArgs e)
+        {
+            tnVerificacion.BackColor = Color.Transparent;
+        }
+
+        private void btnHistorialCerts_MouseEnter(object sender, EventArgs e)
+        {
+            btnHistorialCerts.BackColor = Color.IndianRed;
+        }
+
+        private void btnHistorialCerts_MouseLeave(object sender, EventArgs e)
+        {
+            btnHistorialCerts.BackColor = Color.Transparent;
         }
     }
 }

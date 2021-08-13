@@ -40,7 +40,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmCarrito ventana = new frmCarrito();
+            frmCompra ventana = new frmCompra();
             ventana.Show();
             this.Close();
         }

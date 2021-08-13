@@ -82,17 +82,18 @@ namespace Certificaciones_e_Informes_Digitales.DAL
                 throw;
             }
         }
-        public static void Eliminar(int id)
+        public static void Eliminar(int idCarro, int idCert)
         {
             try
             {
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    string sql = @"SP_EliminarLineaDeatalle";
+                    string sql = @"SP_EliminarLineaDetalle";
 
                     var comando = new SqlCommand(sql);
 
-                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@idCarro", idCarro);
+                    comando.Parameters.AddWithValue("@idCert", idCert);
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 
