@@ -58,6 +58,8 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void picClose_Click(object sender, EventArgs e)
         {
+            BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
+            logicaCarro.Eliminar(Util.CarritoSingleton.GetInstance().id);
             Application.Exit();
         }
 
@@ -252,8 +254,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnCarrito_Click(object sender, EventArgs e)
         {
-            frmCarrito ventana = new frmCarrito();
-            ventana.Show();
+            BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
+            if (Util.CarritoSingleton.GetInstance().total == 0)
+            {
+                logicaCarro.Eliminar(Util.CarritoSingleton.GetInstance().id);
+            }
             this.Hide();
         }
 

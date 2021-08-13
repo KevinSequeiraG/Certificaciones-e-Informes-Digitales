@@ -670,6 +670,13 @@
             <param name="idCarro">id del carro a calcular</param>
             <returns></returns>
         </member>
+        <member name="M:Certificaciones_e_Informes_Digitales.DAL.CarritoDAL.ActualizaXmlDeCarro(System.Int32,System.String)">
+            <summary>
+            Actualiza el xml de factura
+            </summary>
+            <param name="idCarro"></param>
+            <param name="xml"></param>
+        </member>
         <member name="M:Certificaciones_e_Informes_Digitales.DAL.CatastroDAL.Guardar(Certificaciones_e_Informes_Digitales.Entities.Catastro)">
             <summary>
             Funcion que permite guardar un catastro en la base de datos

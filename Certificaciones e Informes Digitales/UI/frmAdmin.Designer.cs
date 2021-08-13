@@ -55,8 +55,9 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.btnComprador.Name = "btnComprador";
             this.btnComprador.Size = new System.Drawing.Size(200, 110);
             this.btnComprador.TabIndex = 6;
-            this.btnComprador.Text = "Ventana de comprador";
+            this.btnComprador.Text = "Ventana de usuario";
             this.btnComprador.UseVisualStyleBackColor = false;
+            this.btnComprador.Click += new System.EventHandler(this.btnComprador_Click);
             this.btnComprador.MouseEnter += new System.EventHandler(this.btnComprador_MouseEnter);
             this.btnComprador.MouseLeave += new System.EventHandler(this.btnComprador_MouseLeave);
             // 

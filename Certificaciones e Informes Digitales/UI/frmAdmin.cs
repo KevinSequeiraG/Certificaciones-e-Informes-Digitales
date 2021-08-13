@@ -27,9 +27,16 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void btnGestiones_Click(object sender, EventArgs e)
         {
-            frmGestiones ventana = new frmGestiones();
-            ventana.Show();
-            this.Hide();
+            try
+            {
+                frmGestiones ventana = new frmGestiones();
+                ventana.Show();
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void picMin_Click(object sender, EventArgs e)
@@ -44,10 +51,17 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void frmAdmin_Activated(object sender, EventArgs e)
         {
-            if (Util.UsuarioSingleton.GetInstance().changePassword)
+            try
             {
-                frmNuevoPassword ventana = new frmNuevoPassword();
-                ventana.ShowDialog();
+                if (Util.UsuarioSingleton.GetInstance().changePassword)
+                {
+                    frmNuevoPassword ventana = new frmNuevoPassword();
+                    ventana.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -131,6 +145,13 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void btnReportes_MouseLeave(object sender, EventArgs e)
         {
             btnReportes.BackColor = Color.Transparent;
+        }
+
+        private void btnComprador_Click(object sender, EventArgs e)
+        {
+            frmUsuario ventana = new frmUsuario();
+            ventana.Show();
+            this.Hide();
         }
     }
 }

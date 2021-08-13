@@ -148,7 +148,7 @@ namespace Certificaciones_e_Informes_Digitales.DAL
 
                     var comando = new SqlCommand(sql);
 
-                    comando.Parameters.AddWithValue("@ID", correoUsario);
+                    comando.Parameters.AddWithValue("@idUsuario", correoUsario);
 
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
 

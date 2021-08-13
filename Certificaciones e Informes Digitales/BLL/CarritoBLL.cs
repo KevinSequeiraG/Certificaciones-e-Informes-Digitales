@@ -108,7 +108,6 @@ namespace Certificaciones_e_Informes_Digitales.BLL
                     throw new ApplicationException("Debe ingresar el ID");
                 }
                 DAL.CarritoDAL.Eliminar(id);
-                MessageBox.Show("Carrito eliminado correctamente");
             }
             catch (Exception ex)
             {
@@ -226,6 +225,19 @@ namespace Certificaciones_e_Informes_Digitales.BLL
             try
             {
                 return DAL.CarritoDAL.CalculaTotalConImpuestos(idCarro);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Ocurrió un error al Calcular el total del Carrito mas impuestos por ID \n" + ex.Message);
+                _MyLogControlEventos.Error(ex.Message);
+            }
+        }
+
+        public void ActualizaXmlDeCarro(int idCarro, string xml)
+        {
+            try
+            {
+                DAL.CarritoDAL.ActualizaXmlDeCarro(idCarro, xml);
             }
             catch (Exception ex)
             {

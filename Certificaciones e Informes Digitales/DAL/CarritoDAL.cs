@@ -410,5 +410,39 @@ namespace Certificaciones_e_Informes_Digitales.DAL
         {
             return CalcularTotal(idCarro) + (CalcularTotal(idCarro) * 0.13);
         }
+        /// <summary>
+        /// Actualiza el xml de factura
+        /// </summary>
+        /// <param name="idCarro"></param>
+        /// <param name="xml"></param>
+        public static void ActualizaXmlDeCarro(int idCarro, string xml)
+        {
+            try
+            {
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    string sql = @"SP_AgregaXML";
+
+                    var comando = new SqlCommand(sql);
+
+                    comando.Parameters.AddWithValue("@IDCarro", idCarro);
+                    comando.Parameters.AddWithValue("@xmlDoc", xml);
+
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    db.ExecuteNonQuery(comando);
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                Util.Log.LogSQLException(sqlEx);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Util.Log.LogGenericException(ex);
+                throw;
+            }
+        }
     }
 }

@@ -26,6 +26,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
             txtImpuestos.Text = Util.CarritoSingleton.GetInstance().impuestos.ToString();
             txtTotalConImpuestos.Text = Util.CarritoSingleton.GetInstance().total.ToString();
             Util.Utilities.EnviarCertificaciones(logicaCarro.VerInfoCarrito(Util.CarritoSingleton.GetInstance().id));
+
+            XML.xml xml = new XML.xml();
+            xml.GenerarXml(Util.UsuarioSingleton.GetInstance(), Util.CarritoSingleton.GetInstance(), logicaCarro.VerInfoCarrito(Util.CarritoSingleton.GetInstance().id));
+            
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

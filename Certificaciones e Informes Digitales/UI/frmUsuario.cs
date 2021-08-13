@@ -65,6 +65,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
 
         private void picClose_Click(object sender, EventArgs e)
         {
+            BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
+            if (Util.CarritoSingleton.GetInstance().total == 0)
+            {
+                logicaCarro.Eliminar(Util.CarritoSingleton.GetInstance().id);
+            }
             Application.Exit();
         }
 
@@ -109,6 +114,11 @@ namespace Certificaciones_e_Informes_Digitales.UI
         private void btnHistorialCerts_MouseLeave(object sender, EventArgs e)
         {
             btnHistorialCerts.BackColor = Color.Transparent;
+        }
+
+        private void frmUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

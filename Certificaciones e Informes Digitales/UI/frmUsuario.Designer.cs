@@ -180,6 +180,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUsuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmUsuario_FormClosed);
             this.Load += new System.EventHandler(this.frmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

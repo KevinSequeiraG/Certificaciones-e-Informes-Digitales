@@ -105,6 +105,7 @@ namespace Certificaciones_e_Informes_Digitales.UI
             {
                 BLL.UsuarioBLL usuarioBLL = new BLL.UsuarioBLL();
                 Entities.Usuario user = usuarioBLL.TraerUsuario(txtEmail.Text, txtPassw.Text);
+
                 Util.UsuarioSingleton.setUser(user);
                 if (user==null)
                 {

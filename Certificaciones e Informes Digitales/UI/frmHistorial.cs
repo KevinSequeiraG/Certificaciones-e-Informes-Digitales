@@ -78,5 +78,33 @@ namespace Certificaciones_e_Informes_Digitales.UI
             frmQR ventana = new frmQR(hist.id.ToString());
             ventana.ShowDialog();
         }
+
+        private void picMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            BLL.CarritoBLL logicaCarro = new BLL.CarritoBLL();
+            if (Util.CarritoSingleton.GetInstance().total == 0)
+            {
+                logicaCarro.Eliminar(Util.CarritoSingleton.GetInstance().id);
+            }
+            Application.Exit();
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Loguin loguin = new Loguin();
+            loguin.Show();
+            this.Hide();
+        }
+
+        private void cambiarContraseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNuevoPassword ventana = new frmNuevoPassword();
+            ventana.ShowDialog();
+        }
     }
 }
